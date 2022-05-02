@@ -44,7 +44,7 @@
 			<form method="POST">
 				<label for="text">Usuario</label>
 				<input type="text" name="txtusuario" id="txtusuario" placeholder="Ingresar usuario" required /> 
-				<label for="password">Contraseña</label>
+				<label for="password">Contraseñaaaaaaaaaaaaaaa</label>
 				<input type="password" name="txtpassword" id="txtpassword" placeholder="Ingresar contraseña" required /> 
 				<input type="submit" name="btningresar" id="btningresar" value="Ingresar"/>
 				<!-- <input type="submit" name="btningresar" id="btningresar" value="Registrarse"/> -->
