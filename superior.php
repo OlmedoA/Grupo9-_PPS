@@ -41,7 +41,7 @@ if(isset($_POST['btncerrar']))
     <title>JACE-SERVICIOS INFORMÁTICOS</title>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css">
     <link rel="stylesheet" href="css/estilos.css">
-    <link rel="icon" type="image/png" href="./img/logo.png"> 
+    <link rel="icon" type="image/png" href="./img/logoicon.png"> 
     <script src="https://kit.fontawesome.com/9d17348d99.js" crossorigin="anonymous"></script>
 </head>
 <body>
