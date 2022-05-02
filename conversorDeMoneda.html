@@ -1,0 +1,56 @@
+<html>
+CONVERSOR DE MONEDA
+            <main class="main col">
+                <div class="row justify-content-center align-content-center text-center">
+                    <div class="columna col-lg-6">
+                        <div id="app">
+                            <div class="container">
+                      
+                              <h1>Conversor Moneda</h1>
+                      
+                              <div class="row">
+                                <div class="col-sm-6">
+                                  <label for="actual"></label>
+                                  <select v-model="from" name="" id="" class="form-control">
+                                    <option :value="moneda.id" v-for="moneda in formatearMonedas">
+                                      {{moneda.currencyName}}
+                                    </option>
+                                  </select>
+                                </div>
+                                <div class="col-sm-6">
+                                  <label for="final"></label>
+                                  <select v-model="to" name="" id="" class="form-control">
+                                    <option :value="moneda.id" v-for="moneda in formatearMonedas">
+                                      {{moneda.currencyName}}
+                                    </option>
+                                  </select>
+                                </div>
+                              </div>
+                      
+                              <div class="row">
+                                <div class="col-md-6 offset-md-3 text-center">
+                                  <input v-model="cantidad" type="text" class="for-control my-5" placeholder="Ingresar Cantidad">
+                                </div>
+                              </div>
+                      
+                              <div class="row">
+                                <div class="col-md-12 text-center">
+                                  <button :disabled="deshabilitado" @click="convertirMoneda()" class="btn btn-primary">Convertir</button>
+                                </div>
+                              </div>
+                      
+                              <div class="row mt-5">
+                                <div class="col-sm-12 text-center">
+                                  <h1>{{ calcularResultado }} {{ monedaConvertida }}</h1>
+                                </div>
+                              </div>
+                      
+                            </div>
+                          </div>
+                    </div>
+
+                </div>
+
+            </main>
+
+</html>
