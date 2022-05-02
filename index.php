@@ -4,6 +4,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Login</title>
 <link rel="stylesheet" href="./css/formulario.css">
+<link rel="icon" type="image/png" href="./img/logo.png"> 
 <script type="text/javascript" src="./js/formulario.js"></script>
 <script type="text/javascript" src="./js/anime.min.js"></script>
 </head>
@@ -83,23 +84,24 @@ if(isset($_POST['btningresar']))
 	$pass=$_POST['txtpassword'];
 	
 	$query=mysqli_query($conn,"SELECT * from login where usuario = '".$nombre."' and password = '".$pass."'");
-	$sql="SELECT access FROM login WHERE usuario = '".$nombre."' and password = '".$pass."' and access = 0";
-	$result = mysqli_num_rows($sql);
-	$nr=mysqli_num_rows($query);
+	$nr= mysqli_num_rows($query);
 	
 	if(!isset($_SESSION['nombredelusuario']))
 	{
 	if($nr == 1)
 	{
-		if($result == 1){
+		$sql= mysqli_query($conn, "SELECT access FROM login WHERE usuario = '".$nombre."' and password = '".$pass."' and access = 0");
+		$result = mysqli_num_rows($sql);
+
+		if($result == 0){
 
 			echo "<script>alert('Usuario en uso');window.location= 'index.php' </script>";
 		}
-		else if ($result == 0){
+		else if ($result == 1){
 
 			$_SESSION['nombredelusuario'] = $nombre;
 			$_SESSION['contrausuario'] = $pass;
-			header("location: ventas.php");
+			header("location: menu.php");
 			$query=mysqli_query($conn,"UPDATE login SET access = 1 where usuario = '".$nombre."' and password = '".$pass."'");
 
 		}

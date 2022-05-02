@@ -1,3 +1,37 @@
+<?php
+
+session_start();
+
+$dbhost="localhost";
+  $dbuser="root";
+  $dbpass="";
+  $dbname="users";
+  
+  $conn=mysqli_connect($dbhost,$dbuser,$dbpass,$dbname);
+  if(!$conn)
+  {
+    die("No hay conexión: ".mysqli_connect_error());
+  }
+
+
+if(isset($_SESSION['nombredelusuario']))
+{
+  $nom = $_SESSION['nombredelusuario'];
+  $pass = $_SESSION['contrausuario'];
+}
+else
+{
+  header('location: index.php');
+}
+
+if(isset($_POST['btncerrar']))
+{
+  session_destroy();
+  header('location: index.php');
+  $query=mysqli_query($conn,"UPDATE login SET access = 0 where usuario = '".$nom."' and password = '".$pass."'");
+
+}
+?>
 <!DOCTYPE html>
 <html lang="es">
 
@@ -7,6 +41,7 @@
     <title>JACE-SERVICIOS INFORMÁTICOS</title>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css">
     <link rel="stylesheet" href="css/estilos.css">
+    <link rel="icon" type="image/png" href="./img/logo.png"> 
     <script src="https://kit.fontawesome.com/9d17348d99.js" crossorigin="anonymous"></script>
 </head>
 <body>
@@ -23,8 +58,10 @@
                         <a href="#" class="px-3 text-light perfil dropdown-toggle" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><i class="fas fa-user-circle user"></i></a>
 
                         <div class="dropdown-menu" aria-labelledby="navbar-dropdown">
-                            <a class="dropdown-item menuperfil cerrar" href="#"><i class="fas fa-sign-out-alt m-1"></i>Salir
-                            </a>
+                            <form method="POST">
+                            <button class="dropdown-item menuperfil cerrar" type="submit" name="btncerrar"><i class="fas fa-sign-out-alt m-1"></i>Salir
+                            </button>
+                            </form>
                         </div>
                     </li>
                 </ul>
