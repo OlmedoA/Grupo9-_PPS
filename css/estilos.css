@@ -12,6 +12,10 @@ body {
     font-size: 32px;
 
 }
+.imagen{
+    height: 90px;
+    width: 90px;
+}
 
 .dropdown-menu {
     margin: 17px;
