@@ -57,6 +57,9 @@ body{
    padding-right: 20px; 
 
 }
+textarea{
+    resize: none;
+}
 .link{
     color: white;
    }
