@@ -39,7 +39,7 @@ CREATE TABLE `login` (
 --
 
 INSERT INTO `login` (`id`, `usuario`, `password`, `access`) VALUES
-(1, 'casti', 'ahreloco123', b'1'),
+(1, 'casti', 'ahreloco123', b'0'),
 (2, 'casti2', 'felipox234', b'0');
 
 --
