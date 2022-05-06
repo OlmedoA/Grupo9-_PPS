@@ -12,25 +12,9 @@
 </head>
 <body>
     <!--contiene el logo y el incio de sesion del usuario-->
-    <div class="container-fluid">
-        <div class="row justify-content-center align-content-center">
-            <div class="col-8 barra">
-                <!--<img src="img/logo.png" alt="" width="90" height="90"> JACE-SI-->
-                <img class="imagen" src="img/logo.png" alt="Logo Jace Servicios Informaticos"> JACE-SI 
-                <!--<h4 class="text-light" style="padding-right: 5px;">JACE-SI</h4>-->
-            </div>
-            <div class="col-4 text-right barra">
-                <ul class="navbar-nav mr-auto">
-                    <li>
-                        <a href="#" class="px-3 text-light perfil dropdown-toggle" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><i class="fas fa-user-circle user"></i></a>
-
-                        <div class="dropdown-menu" aria-labelledby="navbar-dropdown">
-                            <a class="dropdown-item menuperfil cerrar" href="login.php"><i class="fas fa-sign-in-alt m-1"></i>Ingresar
-                            </a>
-                        </div>
-                    </li>
-                </ul>
-            </div>
+    <div class="barrita container-fluid ">
+        <?php require_once "superior.php" ?>
+        
         </div>
         
         <!--formulario mesa de ayuda-->

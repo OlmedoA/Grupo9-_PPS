@@ -39,6 +39,16 @@ body {
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.568);
 }
 
+.entrar:hover {
+    background-color: #3498DB;
+   /* background-color: rgba(206, 65, 22, 0.877);*/
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.568);
+}
+
+.entrar{
+    display: none;
+}
+
 .user {
     font-size: 35px;
 }
