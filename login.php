@@ -95,7 +95,7 @@ if(isset($_POST['btningresar']))
 
 		if($result == 0){
 
-			echo "<script>alert('Usuario en uso');window.location= 'index.php' </script>";
+			echo "<script>alert('Usuario en uso');window.location= 'login.php' </script>";
 		}
 		else if ($result == 1){
 
@@ -108,7 +108,7 @@ if(isset($_POST['btningresar']))
 	}
 	else if ($nr == 0)
 	{
-		echo "<script>alert('Usuario no existe');window.location= 'index.php' </script>";
+		echo "<script>alert('Usuario no existe');window.location= 'login.php' </script>";
 	}
 	}
 	}
