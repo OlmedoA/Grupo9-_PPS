@@ -21,13 +21,13 @@ if(isset($_SESSION['nombredelusuario']))
 }
 else
 {
-  header('location: index.php');
+  header('location: login.php');
 }
 
 if(isset($_POST['btncerrar']))
 {
   session_destroy();
-  header('location: index.php');
+  header('location: login.php');
   $query=mysqli_query($conn,"UPDATE login SET access = 0 where usuario = '".$nom."' and password = '".$pass."'");
 
 }
