@@ -4,7 +4,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Login</title>
 <link rel="stylesheet" href="./css/formulario.css">
-<link rel="icon" type="image/png" href="./img/logoicon.png" 
+<link rel="icon" type="image/png" href="./img/logoicon.png">
 <script type="text/javascript" src="./js/formulario.js"></script>
 <script type="text/javascript" src="./js/anime.min.js"></script>
 </head>

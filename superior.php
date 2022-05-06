@@ -75,8 +75,7 @@ if(isset($_POST['btncerrar']))
                 
                 <nav class="menu d-flex d-sm-block justify-content-center flex-wrap">
                     <a href="menu.php"><i class="fa-solid fa-house iconos"></i></i><span> Inicio</span></a> 
-                    <a href="formPresupuesto.php"><i class="fa-solid fa-plus iconos"></i><span>Generar Presupuesto</span></a>
+                    <a href="GenerarPresupuesto.php"><i class="fa-solid fa-plus iconos"></i><span>Generar Presupuesto</span></a>
                     <a href=""><i class="fa-regular fa-file iconos"></i><span>Historial de Presupuestos</span></a>                   
-                    <a href="mesaDeAyuda.html"><i class="fa-solid fa-table iconos"></i><span>Mesa de Ayuda</span></a>
                 </nav>
             </div>
