@@ -1,5 +1,5 @@
 <?php require_once "superior.php" ?>
-
+<?php require_once "costado.html" ?>
 
 <main class="main col">
     <div class="row justify-content-center align-content-center text-center">

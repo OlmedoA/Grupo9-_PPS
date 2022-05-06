@@ -1,4 +1,5 @@
 <?php require_once "superior.php"?>
+<?php require_once "costado.html"?>
 
 
 <main class="main col">
