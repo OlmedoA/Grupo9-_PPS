@@ -19,6 +19,7 @@
         
         <!--formulario mesa de ayuda-->
         <form action=""  method="POST" class="row g-3 formStyle mx-auto py-4 px-4 form">
+            
             <div class="form">
                 <h1>Mesa de ayuda</h1>
             <div class="col-12">
