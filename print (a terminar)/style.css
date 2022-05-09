@@ -1,0 +1,30 @@
+body{
+	margin: 0;
+	width: 75%;
+	height: 100%;
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	font-family: 'Roboto', sans-serif;
+}
+#herramientas{
+
+	margin-top: 20px;
+	margin-left: 4.7%;
+	margin-bottom: 25px;
+
+}
+.botones{
+	background:#ff5252;
+	height:40px;
+	text-indent: 5px; /*Sangria en los botones*/
+	width:9%;
+	height:40px;
+	color: white;
+	text-decoration:none;
+	font-family: Arial;
+	font-weight:700;
+	border: none;
+	padding: 10px;
+}
