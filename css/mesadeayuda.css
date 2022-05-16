@@ -108,3 +108,11 @@ footer {
 .entrar{
     display: block !important;
 }
+
+.log{
+    visibility: hidden !important;
+}
+.jace{
+    font-size: 35px;
+    color: #3498DB;
+}

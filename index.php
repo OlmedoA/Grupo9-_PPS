@@ -21,7 +21,10 @@
         <form action=""  method="POST" class="row g-3 formStyle mx-auto py-4 px-4 form">
             
             <div class="form">
-                <h1>Mesa de ayuda</h1>
+            <div class="col-12 jace" align="center">
+                <img src="img/logo.png" alt="" class="imagen"> JACE-SI
+            </div>
+             <h1>Mesa de ayuda</h1>
             <div class="col-12">
                 <label for="nombre" class="form-label">Nombre</label>
                 <input type="text" class="form-control" id="nombre" name="nombre" required="required" placeholder="Escriba su nombre"><br>

@@ -14,7 +14,7 @@
     <!--contiene el logo y el incio de sesion del usuario-->
     <div class="container-fluid">
         <div class="row justify-content-center align-content-center">
-            <div class="col-8 barra">
+            <div class="col-8 barra log">
                 <img src="img/logo.png" alt="" class="imagen"> JACE-SI
                 <!--<h4 class="text-light" style="padding-right: 5px;">JACE-SI</h4>-->
             </div>
