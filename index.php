@@ -26,17 +26,21 @@
             </div>
              <h1>Mesa de ayuda</h1>
             <div class="col-12">
+                 <!--nombre, type text-->
                 <label for="nombre" class="form-label">Nombre</label>
                 <input type="text" class="form-control" id="nombre" name="nombre" required="required" placeholder="Escriba su nombre"><br>
             </div>
             <div class="col-12">
-                <label for="celular" class="form-label">Numero de Celular</label>
-                <input type="tel" class="form-control"  id="celular" name="celular" required="required" placeholder="Escriba su numero de celular"><br>
+                 <!--celular, type tel-->
+                <label for="celular" class="form-label">Número de Celular</label>
+                <input type="tel" class="form-control"  id="celular" name="celular" size="14" required="required" placeholder="Escriba su número de celular xxx-xxxx-xxxx" pattern="[0-9]{3}-[0-9]{4}-[0-9]{4}"><br>
             </div>  
             <div class="col-12">
+                 <!--consulta, textarea-->
                 <label for="consulta" class="form-label">Consulta</label>
-                <textarea name="consulta" id="" class="w-100"rows="4" required="required" placeholder="Escriba su consulta"></textarea><br><br>
+                <textarea name="consulta" id="consulta" class="w-100"rows="4" required="required" placeholder="Escriba su consulta"></textarea><br><br>
             </div>
+             <!--boton-->
             <button class="btn btn-primary" type="submit">Enviar</button>
             </div>
         </form>
@@ -45,7 +49,7 @@
     <footer>
         <div>
             <div>
-                 &copy; Copyright <strong><span>Jace-SI</span></strong>
+            &nbsp&nbsp &copy; Copyright <strong><span>Jace-SI</span></strong>
             </div>
     <!--links redes sociales-->
             <div align="right">
