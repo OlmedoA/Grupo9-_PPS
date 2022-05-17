@@ -14,7 +14,7 @@
 
 	<div class="container">
           <div class="left">
-            <div class="login">Ingresar</div>
+            <div class="Registrar">registrar</div>
             <div class="eula">Bienvenido al sistema de gestion de presupuestos</div>
     </div>
     <div class="right">
@@ -43,11 +43,11 @@
     	<div class="form">
 			<form method="POST">
 				<label for="text">Usuario</label>
-				<input type="text" name="txtusuario" id="txtusuario" placeholder="Ingresar usuario" required /> 
+				<input type="text" name="txtusuario" id="txtusuario" placeholder="registrar usuario" required /> 
 				<label for="password">Contraseña</label>
-				<input type="password" name="txtpassword" id="txtpassword" placeholder="Ingresar contraseña" required /> 
-				<input type="submit" name="btningresar" id="btningresar" value="Ingresar"/>
-				<!-- <input type="submit" name="btningresar" id="btningresar" value="Registrarse"/> -->
+				<input type="password" name="txtpassword" id="txtpassword" placeholder="registrar contraseña" required /> 
+				<input type="submit" name="btnregistrar" id="btnregistrar" value="Registrar"/>
+				<!-- <input type="submit" name="btnregistrar" id="btnregistrar" value="Registrarse"/> -->
 			</form>
 		</div>
 	</div>
@@ -66,7 +66,7 @@ if(isset($_SESSION['nombredelusuario']))
 	header('location: menu.php');
 }
 
-if(isset($_POST['btningresar']))
+if(isset($_POST['btnregistrar']))
 {
 	
 	$dbhost="localhost";
@@ -82,18 +82,23 @@ if(isset($_POST['btningresar']))
 	
 	$nombre=$_POST['txtusuario'];
 	$pass=$_POST['txtpassword'];
+	//codificar contraseña
+	$pass_fuerte= password_hash($pass,PASSWORD_DEFAULT);
 	
-		$queryusuario= mysqli_query($conn,"SELECT * FROM login WHERE usuario='$nombre'");
-	$nr          = mysqli_num_rows($queryusuario);
+//guardar en la base de datos
+	$queryregistrar= "INSERT INTO `login`(`usuario`, `password`) VALUES ('$nombre','$pass_fuerte')";
 	
-	//llamada a la contraseña
-	$buscarpass  = mysqli_fetch_array($queryusuario);
-	
-	//desencriptar contraseña
-	if(($nr== 1)&& (password_verify($pass,$buscarpass['password'])))
-	{
-	
-	if(!isset($_SESSION['nombredelusuario']))
+//verificacion en pantalla
+if(mysqli_query($conn,$queryregistrar))
+{
+	//salio bien
+	echo"<script>alert('usuario registrado:$nombre');window.location='index.php'</script>";
+}else
+{
+	//salio mal
+	echo"Error: ".$queryregistrar."<br>".mysqli_error($conn);
+}
+if(!isset($_SESSION['nombredelusuario']))
 	{
 	if($nr == 1)
 	{
@@ -119,5 +124,5 @@ if(isset($_POST['btningresar']))
 	}
 	}
 }
-}
+
 ?>
