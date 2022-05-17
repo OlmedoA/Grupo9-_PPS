@@ -2,7 +2,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Login</title>
+<title>Registrar</title>
 <link rel="stylesheet" href="./css/formulario.css">
 <link rel="icon" type="image/png" href="./img/logoicon.png">
 <script type="text/javascript" src="./js/formulario.js"></script>
@@ -92,12 +92,20 @@ if(isset($_POST['btnregistrar']))
 if(mysqli_query($conn,$queryregistrar))
 {
 	//salio bien
-	echo"<script>alert('usuario registrado:$nombre');window.location='index.php'</script>";
+	echo"<script>alert('usuario registrado:$nombre');</script>";
 }else
 {
 	//salio mal
 	echo"Error: ".$queryregistrar."<br>".mysqli_error($conn);
 }
+	$queryusuario= mysqli_query($conn,"SELECT * FROM login WHERE usuario='$nombre'");
+	$nr          = mysqli_num_rows($queryusuario);
+	
+	//llamada a la contraseña
+	$buscarpass  = mysqli_fetch_array($queryusuario);
+	//desencriptar contraseña
+	if(($nr== 1)&& (password_verify($pass,$buscarpass['password'])))
+	{
 if(!isset($_SESSION['nombredelusuario']))
 	{
 	if($nr == 1)
@@ -120,7 +128,8 @@ if(!isset($_SESSION['nombredelusuario']))
 	}
 	else if ($nr == 0)
 	{
-		echo "<script>alert('Usuario no existe');window.location= 'login.php' </script>";
+		echo "<script>alert('Usuario no existe');window.location= 'registrar.php' </script>";
+	}
 	}
 	}
 }
