@@ -27,7 +27,7 @@ else
 if(isset($_POST['btncerrar']))
 {
   session_destroy();
-  header('location: login.php');
+  header('location: index.php');
   $query=mysqli_query($conn,"UPDATE login SET access = 0 where usuario = '".$nom."' and password = '".$pass."'");
 
 }
