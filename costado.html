@@ -1,11 +1,20 @@
 <!--barra lateral con las opciones-->
-<div class="container-fluid">
-    <div class="row">
-        <div class="barra-lateral col-12 col-sm-auto">
-            
-            <nav class="menu d-flex d-sm-block justify-content-center flex-wrap">
-                <a href="menu.php"><i class="fa-solid fa-house iconos"></i></i><span> Inicio</span></a> 
-                <a href="GenerarPresupuesto.php"><i class="fa-solid fa-plus iconos"></i><span>Generar Presupuesto</span></a>
-                <a href="HistorialPresupuestos.php"><i class="fa-regular fa-file iconos"></i><span>Historial de Presupuestos</span></a>                   
-            </nav>
-        </div>
+
+        <div class="container-fluid">
+            <div class="row">
+                <div class="barra-lateral col-12 col-sm-auto">
+                    
+                    <nav class="menu d-flex d-sm-block justify-content-center flex-wrap">                 
+                        <ul  style="list-style: none;">
+                            <li><a href="menu.php"><i class="fa-solid fa-house iconos"></i><span>Inicio</span></a></li>
+        
+                            <li><a href="GenerarPresupuesto.php"><i class="fa-solid fa-plus iconos"></i><span>Generar Presupuesto</span></a></li>
+        
+                            <li><a href="#"><i class="fa-regular fa-file iconos"></i><span>Historial de Presupuestos</span></a><ul>
+                                <li><a href="PresupuestosPendientes.php">Pendientes</a></li>
+                                <li><a href="PresupuestosAprobados.php">Aprobados</a></li>
+                                <li><a href="PresupuestosDesaprobados.php">Desaprobados</a></li>
+                            </ul></li>
+                        </ul>
+                    </nav>
+                </div>
