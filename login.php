@@ -83,14 +83,21 @@ if(isset($_POST['btningresar']))
 	$nombre=$_POST['txtusuario'];
 	$pass=$_POST['txtpassword'];
 	
-	$query=mysqli_query($conn,"SELECT * from login where usuario = '".$nombre."' and password = '".$pass."'");
-	$nr= mysqli_num_rows($query);
+		$queryusuario= mysqli_query($conn,"SELECT * FROM login WHERE usuario='$nombre'");
+	$nr          = mysqli_num_rows($queryusuario);
+	
+	//llamada a la contraseña
+	$buscarpass  = mysqli_fetch_array($queryusuario);
+	
+	//desencriptar contraseña
+	if(($nr== 1)&& (password_verify($pass,$buscarpass['password'])))
+	{
 	
 	if(!isset($_SESSION['nombredelusuario']))
 	{
 	if($nr == 1)
 	{
-		$sql= mysqli_query($conn, "SELECT access FROM login WHERE usuario = '".$nombre."' and password = '".$pass."' and access = 0");
+		$sql= mysqli_query($conn, "SELECT access FROM login WHERE usuario = '".$nombre."' and password = '".$buscarpass['password']."' and access = 0");
 		$result = mysqli_num_rows($sql);
 
 		if($result == 0){
@@ -111,5 +118,6 @@ if(isset($_POST['btningresar']))
 		echo "<script>alert('Usuario no existe');window.location= 'login.php' </script>";
 	}
 	}
-	}
+}
+}
 ?>
