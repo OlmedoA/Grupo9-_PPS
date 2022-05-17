@@ -14,11 +14,11 @@
     <!--contiene el logo y el incio de sesion del usuario-->
     <div class="container-fluid">
         <div class="row justify-content-center align-content-center">
-            <div class="col-8 barra log">
+            <div class="col-10 barra log">
                 <img src="img/logo.png" alt="" class="imagen"> JACE-SI
                 <!--<h4 class="text-light" style="padding-right: 5px;">JACE-SI</h4>-->
             </div>
-            <div class="col-4 text-right barra">
+            <div class="col-2 text-right barra">
                 <ul class="navbar-nav mr-auto">
                     <li>
                         <a href="#" class="px-3 text-light perfil dropdown-toggle" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><i class="fas fa-user-circle user"></i></a>
