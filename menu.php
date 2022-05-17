@@ -2,7 +2,7 @@
 <?php require_once "costado.html" ?>
 <?php require_once "session.php" ?>
 
-
+<!-- pagina de inicio del empleado-->
 <main class="main col">
     <div class="row justify-content-center align-content-center text-center">
          <div class="columna col-lg-6">

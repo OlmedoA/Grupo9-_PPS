@@ -3,9 +3,9 @@ $servername = "localhost";
 $database = "jacesi";
 $username = "root";
 $password = "";
-// crear coneccion
+// crear conexion
 $conn = mysqli_connect($servername, $username, $password, $database);
-// revisar conecion
+// revisar conexion
 if (!$conn) {
     die("Coneccion fallida: " . mysqli_connect_error());
 }

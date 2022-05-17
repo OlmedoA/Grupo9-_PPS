@@ -2,6 +2,7 @@
 <?php require_once "costado.html"?>
 <?php require_once "session.php" ?>
 
+<!--tabla de presupuestos-->
 <main class="main col">
 <table class="table col-12">
                     <thead>

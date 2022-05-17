@@ -30,7 +30,7 @@
                 <input type="text" class="form-control" id="nombre" name="nombre" required="required" placeholder="Escriba su nombre"><br>
             </div>
             <div class="col-12">
-                <label for="celular" class="form-label">Numero de Celular</label>
+                <label for="celular" class="form-label">Número de Celular</label>
                 <input type="tel" class="form-control"  id="celular" name="celular" required="required" placeholder="Escriba su numero de celular"><br>
             </div>  
             <div class="col-12">

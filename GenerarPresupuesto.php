@@ -2,7 +2,7 @@
 <?php require_once "costado.html"?>
 <?php require_once "session.php" ?>
 
-
+<!--formulario para generar presupuesto-->
 <main class="main col">
 
         <form action=""  method="POST" class="row g-3 formStyle mx-auto py-4 px-4 form">
