@@ -1,3 +1,30 @@
+<?php
+$secretkey = "secret key";
+$nombre = "";
+$telefono = "";
+$mail= "";
+$consulta = "";
+if (isset($_POST["submit"])){
+    $nombre = $_POST["nombre"];
+    //$mail = $_POST["mail"];
+    $telefono = $_POST["celular"];
+    $consulta = $_POST["consulta"];
+    $recaptchaResponse = $_POST["g-recaptcha-response"];
+
+    $resp = "https://www.google.com/recaptcha/api/siteverify?secret={$secretkey}&response={$recaptchaResponse}";
+    $content = file_get_contents($resp);
+    $json = json_decode($content);
+    
+    if ($json-> success == "true"){
+        $msj = "Hola {$nombre}, Ya enviamos su consulta";
+    } else {
+        $msj = "Reintente enviarlo de nuevo";
+      
+    }    
+}
+
+?>
+
 <!DOCTYPE html>
 <html lang="es">
 
@@ -9,6 +36,7 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css">
     <link rel="stylesheet" href="css/mesadeayuda.css">
     <script src="https://kit.fontawesome.com/9d17348d99.js" crossorigin="anonymous"></script>
+    <script src="https://www.google.com/recaptcha/api.js" async defer></script>
 </head>
 <body>
     <!--contiene el logo y el incio de sesion del usuario-->
@@ -35,13 +63,18 @@
                 <label for="celular" class="form-label">Número de Celular</label>
                 <input type="tel" class="form-control"  id="celular" name="celular" size="14" required="required" placeholder="Escriba su número de celular xxx-xxxx-xxxx" pattern="[0-9]{3}-[0-9]{4}-[0-9]{4}"><br>
             </div>  
+            <!-- <div class="col-12">
+             e-mail <label for="mail" class="form-label">Correo Electronico</label>
+                <input type="email" class="form-control"  id="mail" name="mail" placeholder="Escriba correo valido"><br>
+            </div> -->
             <div class="col-12">
                  <!--consulta, textarea-->
                 <label for="consulta" class="form-label">Consulta</label>
                 <textarea name="consulta" id="consulta" class="w-100"rows="4" required="required" placeholder="Escriba su consulta"></textarea><br><br>
-            </div>
+            </div>                
+            <div class="g-recaptcha" data-sitekey="site key"></div>  <!-- crear recaptcha y copiar la llave --> 
              <!--boton-->
-            <button class="btn btn-primary" type="submit">Enviar</button>
+            <button class="btn btn-primary" name ="submit" type="submit">Enviar</button>
             </div>
         </form>
     </div>
