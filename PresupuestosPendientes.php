@@ -20,21 +20,30 @@
                         <td>6/5/22</td>
                         <td>21/5/22</td>
                         <td>lilen</td>
-                        <td>Descargar/Editar</td>
+                        <td>
+                           <button type="button" class="btn btn-primary"><i class="fa-solid fa-pencil"></i></button>
+                           <button type="button" class="btn btn-danger"><i class="fa-solid fa-download"></i></button>
+                        </td>
                         </tr>
                         <tr>
                         <th scope="row">presupuesto bla bla</th>
                         <td>6/5/22</td>
                         <td>21/5/22</td>
                         <td>fran</td>
-                        <td>Descargar/Editar</td>
+                        <td>
+                           <button type="button" class="btn btn-primary"><i class="fa-solid fa-pencil"></i></button>
+                           <button type="button" class="btn btn-danger"><i class="fa-solid fa-download"></i></button>
+                        </td>
                         </tr>
                         <tr>
                         <th scope="row">presupuesto bla bla bla</th>
                         <td>6/5/22</td>
                         <td>21/5/22</td>
                         <td>lilen</td>
-                        <td>Descargar/Editar</td>
+                        <td>
+                           <button type="button" class="btn btn-primary"><i class="fa-solid fa-pencil"></i></button>
+                           <button type="button" class="btn btn-danger"><i class="fa-solid fa-download"></i></button>
+                        </td>
                         </tr>
  
                     </tbody>
