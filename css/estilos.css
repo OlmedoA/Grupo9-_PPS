@@ -2,6 +2,10 @@ body {
     background: #f1f1f1;
 }
 
+ul{
+    padding-left: 27px !important;
+}
+
 .barra {
     background-color: #3498DB;
     /*background: #00ADEF;*/
@@ -80,7 +84,7 @@ body {
     color: #fff;
     min-width: 230px;
     min-height: 100vh;
-    padding: 0;
+    padding: 0 !important;
 }
 
 .barra-lateral a {
