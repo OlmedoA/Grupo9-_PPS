@@ -199,3 +199,39 @@ ul{
         overflow: visible;
     }
 }
+
+.encabezado{
+    text-align: center;
+}
+
+@media screen and (max-width:800px){
+    .table{
+        border: 0px;
+        background-color:white;
+    }
+    .table thead {
+        display: none;
+    }
+    .table tr{
+        margin-bottom: 8px;
+        border-bottom: 6px solid #3498DB;
+        display: block;
+    }
+    .table th, table td{
+        font-size: 18px;
+        display: block;
+        border-bottom: 1px solid white;
+        text-align: right;
+    }
+    .table td:last-child{
+        border-bottom: 0px;
+    }
+    .table td::before, .table th::before{
+        content: attr(data-label);
+        float: left;
+    }
+    .encabezado{
+        font-size:25px;
+    }
+   
+   }
