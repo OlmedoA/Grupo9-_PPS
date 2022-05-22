@@ -84,7 +84,7 @@ if(isset($_POST['btningresar']))
 	$pass=$_POST['txtpassword'];
 	
 		$queryusuario= mysqli_query($conn,"SELECT * FROM login WHERE usuario='" . $nombre . "'");
-	$nr          = mysqli_num_rows($queryusuario);
+	$nr = mysqli_num_rows($queryusuario);
 	
 	//llamada a la contraseña
 	$buscarpass  = mysqli_fetch_array($queryusuario);
