@@ -9,11 +9,10 @@
                <tr>
                   <th scope="col">Nombre y Apellido</th>      
                   <th scope="col">Fecha de Alta</th>
-                  <th scope="col">Télefoo</th>
+                  <th scope="col">Télefono</th>
                   <th scope="col">Mail</th>
                   <th scope="col">Usuario</th>   
-                  <th scope="col">Clave</th>
-                  <th scope="col">Acciones</th>         
+                  <th scope="col">Eliminar</th>         
                </tr>         
             </thead>
             <tbody>
@@ -22,10 +21,8 @@
                   <td data-label="Fecha de alta">6/5/22</td>
                   <td data-label="Telefono">1133485004</td>
                   <td data-label="Mail">fs080700@gmail.com</td>
-                  <td data-label="Usuario">Fran</td>
-                  <td data-label="Clave">*******</td>                  
-                  <td data-label="Acciones">
-                     <button type="button" class="btn btn-primary"><i class="fa-solid fa-pencil"></i></button>
+                  <td data-label="Usuario">Fran</td>               
+                  <td data-label="Eliminar">
                      <button type="button" class="btn btn-danger"><i class="fa-regular fa-trash-can"></i></button>
                   </td>
                </tr>
@@ -35,9 +32,7 @@
                   <td data-label="Telefono">1133485004</td>
                   <td data-label="Mail">fs080700@gmail.com</td>
                   <td data-label="Usuario">Lilen</td>
-                  <td data-label="Clave">*******</td>
-                  <td data-label="Acciones">
-                      <button type="button" class="btn btn-primary"><i class="fa-solid fa-pencil"></i></button>
+                  <td data-label="Eliminar">
                       <button type="button" class="btn btn-danger"><i class="fa-regular fa-trash-can"></i></button>
                   </td>
                </tr>
@@ -47,9 +42,7 @@
                   <td data-label="Telefono">1133485004</td>
                   <td data-label="Mail">fs080700@gmail.com</td>
                   <td data-label="Usuario">Nahuel</td>
-                  <td data-label="Clave">*******</td>
-                  <td data-label="Acciones">
-                     <button type="button" class="btn btn-primary"><i class="fa-solid fa-pencil"></i></button>
+                  <td data-label="Eliminar">
                      <button type="button" class="btn btn-danger"><i class="fa-regular fa-trash-can"></i></button>
                    </td>
                </tr>
