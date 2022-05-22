@@ -72,7 +72,7 @@ if(isset($_POST['btningresar']))
 	$dbhost="localhost";
 	$dbuser="root";
 	$dbpass="";
-	$dbname="budgetsys";
+	$dbname="javi02_budgetsys";
 	
 	$conn=mysqli_connect($dbhost,$dbuser,$dbpass,$dbname);
 	if(!$conn)

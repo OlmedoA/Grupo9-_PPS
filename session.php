@@ -5,7 +5,7 @@ session_start();
 $dbhost="localhost";
   $dbuser="root";
   $dbpass="";
-  $dbname="budgetsys";
+  $dbname="javi02_budgetsys";
   
   $conn=mysqli_connect($dbhost,$dbuser,$dbpass,$dbname);
   if(!$conn)
