@@ -72,7 +72,7 @@ if(isset($_POST['btnregistrar']))
 	$dbhost="localhost";
 	$dbuser="root";
 	$dbpass="";
-	$dbname="javi02_budgetsys";
+	$dbname="users";
 	
 	$conn=mysqli_connect($dbhost,$dbuser,$dbpass,$dbname);
 	if(!$conn)
@@ -98,7 +98,7 @@ if(mysqli_query($conn,$queryregistrar))
 	//salio mal
 	echo"Error: ".$queryregistrar."<br>".mysqli_error($conn);
 }
-	$queryusuario= mysqli_query($conn,"SELECT * FROM login WHERE usuario='$nombre'");
+	$queryusuario= mysqli_query($conn,"SELECT * FROM login WHERE usuario='".$nombre."'");
 	$nr          = mysqli_num_rows($queryusuario);
 	
 	//llamada a la contraseña

@@ -72,7 +72,7 @@ if(isset($_POST['btningresar']))
 	$dbhost="localhost";
 	$dbuser="root";
 	$dbpass="";
-	$dbname="javi02_budgetsys";
+	$dbname="users";
 	
 	$conn=mysqli_connect($dbhost,$dbuser,$dbpass,$dbname);
 	if(!$conn)
@@ -83,7 +83,7 @@ if(isset($_POST['btningresar']))
 	$nombre=$_POST['txtusuario'];
 	$pass=$_POST['txtpassword'];
 	
-		$queryusuario= mysqli_query($conn,"SELECT * FROM login WHERE usuario='$nombre'");
+		$queryusuario= mysqli_query($conn,"SELECT * FROM login WHERE usuario='" . $nombre . "'");
 	$nr          = mysqli_num_rows($queryusuario);
 	
 	//llamada a la contraseña
@@ -102,7 +102,7 @@ if(isset($_POST['btningresar']))
 
 		if($result == 0){
 
-			echo "<script>alert('Usuario en uso');window.location= 'login.php' </script>";
+			echo "<script>alert('Usuario en uso'); window.location= 'login.php' </script>";
 		}
 		else if ($result == 1){
 
