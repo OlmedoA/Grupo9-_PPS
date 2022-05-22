@@ -157,7 +157,7 @@ CREATE TABLE `usuario` (
 -- Indices de la tabla `login`
 --
 ALTER TABLE `login`
-  ADD PRIMARY KEY (`id`);
+  ADD PRIMARY KEY (`id`) NOT NULL AUTO_INCREMENT;
 
 --
 -- Indices de la tabla `presupuesto`
@@ -180,7 +180,7 @@ ALTER TABLE `servicios`
 -- Indices de la tabla `usuario`
 --
 ALTER TABLE `usuario`
-  ADD PRIMARY KEY (`ID`);
+  ADD PRIMARY KEY (`ID`) NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT de las tablas volcadas
