@@ -72,7 +72,7 @@ if(isset($_POST['btnregistrar']))
 	$dbhost="localhost";
 	$dbuser="root";
 	$dbpass="";
-	$dbname="users";
+	$dbname="budgetsys";
 	
 	$conn=mysqli_connect($dbhost,$dbuser,$dbpass,$dbname);
 	if(!$conn)

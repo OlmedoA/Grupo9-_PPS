@@ -72,7 +72,7 @@ if (isset($_POST["submit"])){
                 <label for="consulta" class="form-label">Consulta</label>
                 <textarea name="consulta" id="consulta" class="w-100"rows="4" required="required" placeholder="Escriba su consulta"></textarea><br><br>
             </div>                
-            <div class="g-recaptcha" data-sitekey="site key"></div>  <!-- crear recaptcha y copiar la llave --> 
+           <!-- <div class="g-recaptcha" data-sitekey="site key"></div>   crear recaptcha y copiar la llave --> 
              <!--boton-->
             <button class="btn btn-primary" name ="submit" type="submit">Enviar</button>
             </div>

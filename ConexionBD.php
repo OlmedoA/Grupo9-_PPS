@@ -1,6 +1,6 @@
 <?php
 $servername = "localhost";
-$database = "jacesi";
+$database = "budgetsys";
 $username = "root";
 $password = "";
 // crear conexion
