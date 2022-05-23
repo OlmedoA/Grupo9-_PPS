@@ -9,7 +9,7 @@
                <tr>
                   <th scope="col">Nombre y Apellido</th>      
                   <th scope="col">Fecha de Alta</th>
-                  <th scope="col">Télefoo</th>
+                  <th scope="col">Télefono</th>
                   <th scope="col">Mail</th>
                   <th scope="col">Usuario</th>   
                   <th scope="col">Eliminar</th>         

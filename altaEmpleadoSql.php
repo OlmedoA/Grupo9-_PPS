@@ -27,7 +27,8 @@ while($a =mysqli_fetch_assoc($resultado)){
 if($existe==1){
     header("Location: altaEmpleado.php?mensaje=uno");
 }else{
-    $alta = "insert into login values ('','$usuario','$password','$nombre','$apellido','$telefono','$mail','$fechaalta','')";
+    $encriptacion= password_hash($password,PASSWORD_DEFAULT);
+    $alta = "insert into login values ('','$usuario','$encriptacion','$nombre','$apellido','$telefono','$mail','$fechaalta','')";
     $resultado_alta = mysqli_query($conn,$alta);
 
     header("Location: bajaEmpleado.php");                           
