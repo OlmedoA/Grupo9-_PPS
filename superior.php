@@ -27,7 +27,7 @@
                             <form method="POST">
                             <a class="dropdown-item menuperfil entrar" href="logmenu.php"><i class="fas fa-sign-in-alt m-1"></i>Ingresar
                             </a>
-							<a class="dropdown-item menuperfil entrar" href="registrar.php"><i class="fas fa-sign-in-alt m-1"></i>Registrarse
+							<a class="dropdown-item menuperfil miperfil" href=""><i class="fas fa-sign-in-alt m-1"></i>Mi perfil
                             </a>
                             <button class="dropdown-item menuperfil cerrar" type="submit" name="btncerrar"><i class="fas fa-sign-out-alt m-1"></i>Salir
                             </button>

@@ -64,6 +64,9 @@ footer {
 .entrar{
     display: block !important;
 }
+.miperfil{
+    display: none !important;
+}
 
  /*responsive*/ 
   @media screen and (max-width:1300px) {
