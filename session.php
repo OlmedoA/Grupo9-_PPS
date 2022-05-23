@@ -2,10 +2,10 @@
 
 session_start();
 
-$dbhost="localhost";
-  $dbuser="root";
-  $dbpass="";
-  $dbname="users";
+  $dbhost="localhost";
+	$dbuser="javi02";
+	$dbpass="Jace2010";
+	$dbname="javi02_budgetsys";
   
   $conn=mysqli_connect($dbhost,$dbuser,$dbpass,$dbname);
   if(!$conn)
@@ -21,14 +21,13 @@ if(isset($_SESSION['nombredelusuario']))
 }
 else
 {
-  header('location: login.php');
+  echo "<script>window.location= './logmenu.php'; </script>";
 }
 
 if(isset($_POST['btncerrar']))
 {
   session_destroy();
-  header('location: index.php');
   $query=mysqli_query($conn,"UPDATE login SET access = 0 where usuario = '".$nom."' and password = '".$pass."'");
-
+  echo "<script>window.location= './index.php'; </script>";
 }
 ?>

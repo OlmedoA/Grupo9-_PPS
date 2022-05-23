@@ -70,9 +70,9 @@ if(isset($_POST['btnregistrar']))
 {
 	
 	$dbhost="localhost";
-	$dbuser="root";
-	$dbpass="";
-	$dbname="users";
+	$dbuser="javi02";
+	$dbpass="Jace2010";
+	$dbname="javi02_budgetsys";
 	
 	$conn=mysqli_connect($dbhost,$dbuser,$dbpass,$dbname);
 	if(!$conn)
@@ -98,7 +98,7 @@ if(mysqli_query($conn,$queryregistrar))
 	//salio mal
 	echo"Error: ".$queryregistrar."<br>".mysqli_error($conn);
 }
-	$queryusuario= mysqli_query($conn,"SELECT * FROM login WHERE usuario='".$nombre."'");
+	$queryusuario= mysqli_query($conn,"SELECT * FROM login WHERE usuario='$nombre'");
 	$nr          = mysqli_num_rows($queryusuario);
 	
 	//llamada a la contraseña
@@ -121,9 +121,9 @@ if(!isset($_SESSION['nombredelusuario']))
 
 			$_SESSION['nombredelusuario'] = $nombre;
 			$_SESSION['contrausuario'] = $pass;
-			header("location: menu.php");
+		
 			$query=mysqli_query($conn,"UPDATE login SET access = 1 where usuario = '".$nombre."' and password = '".$pass."'");
-
+			echo "<script>window.location= './menu.php'; </script>";
 		}
 	}
 	else if ($nr == 0)
