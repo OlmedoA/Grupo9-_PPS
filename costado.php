@@ -1,5 +1,4 @@
 <?php require_once "session.php" ?>
-
 <!--barra lateral con las opciones-->
 
         <div class="container-fluid">
@@ -12,11 +11,16 @@
         
                             <li><a href="GenerarPresupuesto.php"><i class="fa-solid fa-plus iconos"></i><span>Generar Presupuesto</span></a></li>
         
-                            <li><a href="#"><i class="fa-regular fa-file iconos"></i><span>Historial de Presupuestos</span></a>
+                            <li><a href="#"><i class="fa-regular fa-file iconos" ></i><span>Historial de Presupuestos</span></a>
                                 <ul  style="list-style: none;">
                                 <li><a href="PresupuestosPendientes.php">Pendientes</a></li>
                                 <li><a href="PresupuestosAprobados.php">Aprobados</a></li>
                                 <li><a href="PresupuestosDesaprobados.php">Desaprobados</a></li>
+                            </ul></li>
+                            <li><a href="#"><i class="fa-regular fa-file iconos" ></i><span>Empleados</span></a>
+                                <ul  style="list-style: none;">
+                                <li><a href="altaEmpleado.php">Alta empleado</a></li>
+                                <li><a href="bajaEmpleado.php">Lista de empleados</a></li>
                             </ul></li>
                         </ul>
                     </nav>
