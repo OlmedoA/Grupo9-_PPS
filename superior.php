@@ -25,7 +25,7 @@
 
                         <div class="dropdown-menu" aria-labelledby="navbar-dropdown">
                             <form method="POST">
-                            <a class="dropdown-item menuperfil entrar" href="logmenu.php"><i class="fas fa-sign-in-alt m-1"></i>Ingresar
+                            <a class="dropdown-item menuperfil entrar" href="login.php"><i class="fas fa-sign-in-alt m-1"></i>Ingresar
                             </a>
 							<a class="dropdown-item menuperfil miperfil" href=""><i class="fas fa-sign-in-alt m-1"></i>Mi perfil
                             </a>

@@ -21,7 +21,7 @@ if(isset($_SESSION['nombredelusuario']))
 }
 else
 {
-  echo "<script>window.location= './logmenu.php'; </script>";
+  echo "<script>window.location= './login.php'; </script>";
 }
 
 if(isset($_POST['btncerrar']))
