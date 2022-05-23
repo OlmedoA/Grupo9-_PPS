@@ -1,8 +1,8 @@
-<body>
+
     <?php require_once "superior.php" ?>
     <?php require_once "costado.html" ?>
     <?php require_once "session.php" ?>
-
+<body>
     <main class="main col">
     <!--Formulario alta de usuarios-->
             <form action=""  method="POST" class="row g-3 formStyle mx-auto py-4 px-4 form">
