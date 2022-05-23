@@ -1,5 +1,5 @@
 <?php require_once "superior.php"?>
-<?php require_once "costado.php"?>
+<?php require_once "costado.html"?>
 <?php require_once "session.php" ?>
 
 <!--formulario para generar presupuesto-->
@@ -19,21 +19,14 @@
                 <label for="servicio" class="form-label">Servicio</label>
                 <select id="inputState" class="form-select form-control" name="servicio">
                 <option selected>Elegir servicio...</option>
-                <?php
-				$servername = "localhost";
-				$database = "jacesi";
-				$username = "root";
-				$password = "";
-				// crear conexion
-				$conn = mysqli_connect($servername, $username, $password, $database);
-				$queryservicios= mysqli_query($conn,"SELECT * FROM `servicios`");
-			//	$servicio = mysqli_fetch_array($queryservicios);
-				$nr = mysqli_num_rows($queryservicios);
-				foreach ($queryservicios as  $I){
-					$opcion=$I['Descripcion'];
-					echo"<option>$opcion</option>";
-				}
-				?>
+                <option>Montado de rack	</option>
+                <option>Instalación de wifi	</option>
+                <option>Canalización para cableado de red</option>
+                <option>Cableado de red x 18 bocas</option>
+                <option>Pruebas de conexión</option>
+                <option>cableado 1 boca</option>
+                <option>Montado toma doble</option>
+                <option>Reinstalación de Instalación eléctrica</option>
                 </select>
             </div>        
             <div class="col-12">

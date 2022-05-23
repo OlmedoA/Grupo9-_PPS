@@ -1,3 +1,4 @@
+<?php require_once "session.php" ?>
 <!--barra lateral con las opciones-->
 
 <div class="container-fluid">
