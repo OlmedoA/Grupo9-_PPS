@@ -20,17 +20,18 @@
                 <select id="inputState" class="form-select form-control" name="servicio">
                 <option selected>Elegir servicio...</option>
                 <?php
-				$servername = "localhost";
-				$database = "jacesi";
-				$username = "root";
-				$password = "";
+				$dbhost="localhost";
+				$dbuser="root";
+				$dbpass="";
+				$dbname="jacesi";
 				// crear conexion
-				$conn = mysqli_connect($servername, $username, $password, $database);
+				$conn=mysqli_connect($dbhost,$dbuser,$dbpass,$dbname);
 				$queryservicios= mysqli_query($conn,"SELECT * FROM `servicios`");
-			//	$servicio = mysqli_fetch_array($queryservicios);
+				
 				$nr = mysqli_num_rows($queryservicios);
+				
 				foreach ($queryservicios as  $I){
-					$opcion=$I['Descripcion'];
+					$opcion=$I['Descrip'];
 					echo"<option>$opcion</option>";
 				}
 				?>

@@ -1,8 +1,8 @@
 <?php
-$servername = "localhost";
-$database = "javi02_budgetsys";
-$username = "javi02";
-$password = "Jace2010";
+$dbhost="localhost";
+$dbuser="root";
+$dbpass="";
+$dbname="jacesi";
 // crear conexion
 $conn = mysqli_connect($servername, $username, $password, $database);
 // revisar conexion

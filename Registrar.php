@@ -69,10 +69,10 @@ if(isset($_SESSION['nombredelusuario']))
 if(isset($_POST['btnregistrar']))
 {
 	
-	$dbhost="localhost";
-	$dbuser="javi02";
-	$dbpass="Jace2010";
-	$dbname="javi02_budgetsys";
+				$dbhost="localhost";
+				$dbuser="root";
+				$dbpass="";
+				$dbname="jacesi";
 	
 	$conn=mysqli_connect($dbhost,$dbuser,$dbpass,$dbname);
 	if(!$conn)
