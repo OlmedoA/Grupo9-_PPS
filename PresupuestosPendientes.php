@@ -24,7 +24,9 @@
                   <td data-label="Creado por">lilen</td>
                   <td data-label="Acciones">
                      <button type="button" class="btn btn-primary"><i class="fa-solid fa-pencil"></i></button>
-                     <button type="button" class="btn btn-danger"><i class="fa-solid fa-download"></i></button>
+                     <button type="button" class="btn btn-warning"><i class="fa-solid fa-download"></i></button>
+                     <button type="button" class="btn btn-success"><i class="fa-solid fa-check"></i></button>
+                     <button type="button" class="btn btn-danger"><i class="fa-regular fa-trash-can"></i></i></button>
                   </td>
                </tr>
                <tr>
@@ -34,7 +36,9 @@
                   <td data-label="Creado por">fran</td>
                   <td data-label="Acciones">
                       <button type="button" class="btn btn-primary"><i class="fa-solid fa-pencil"></i></button>
-                      <button type="button" class="btn btn-danger"><i class="fa-solid fa-download"></i></button>
+                      <button type="button" class="btn btn-warning"><i class="fa-solid fa-download"></i></button>
+                      <button type="button" class="btn btn-success"><i class="fa-solid fa-check"></i></button>
+                      <button type="button" class="btn btn-danger"><i class="fa-regular fa-trash-can"></i></button>
                   </td>
                </tr>
                <tr>
@@ -44,7 +48,9 @@
                   <td data-label="Creado por">lilen</td>
                   <td data-label="Acciones">
                      <button type="button" class="btn btn-primary"><i class="fa-solid fa-pencil"></i></button>
-                     <button type="button" class="btn btn-danger"><i class="fa-solid fa-download"></i></button>
+                     <button type="button" class="btn btn-warning"><i class="fa-solid fa-download"></i></button>
+                     <button type="button" class="btn btn-success"><i class="fa-solid fa-check"></i></button>
+                     <button type="button" class="btn btn-danger"><i class="fa-regular fa-trash-can"></i></button>
                    </td>
                </tr>
             </tbody>

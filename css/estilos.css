@@ -2,18 +2,23 @@ body {
     background: #f1f1f1;
 }
 
+/*
 ul{
     padding-left: 27px !important;
+    
 }
-
+*/
 .barra {
-    background-color: #3498DB;
-    /*background: #00ADEF;*/
+    /*background-color: #3498DB;
     padding-top: 5px;
     padding-bottom: 5px;
     margin: 0;
     color: white;
-    font-size: 32px;
+    font-size: 32px;*/
+    background-color: #3498DB;
+    padding-top: 15px;
+    padding-bottom: 15px;
+    margin: 0;
 
 }
 .form {
@@ -73,6 +78,14 @@ ul{
    padding-right: 20px; 
 
 }
+li {
+    list-style: none;
+}
+
+.barra-lateral .menu li ul  {
+    list-style: none;
+}
+
 
 
 /*BARRA LATERAL*/
@@ -84,11 +97,13 @@ ul{
     color: #fff;
     min-width: 230px;
     min-height: 100vh;
-    padding: 0 !important;
+   padding: 0;
+    /* padding: 0 !important;*/
 }
 
 .barra-lateral a {
     color: #fff;
+   
 }
 
 
@@ -100,10 +115,12 @@ ul{
     font-family: Roboto, sans-serif;
     font-weight: 500;
     border-bottom: 1px solid rgba(255, 255, 255, .1);
+   
 }
 
 .barra-lateral .menu a:hover {
-    background-color: #003C5D;
+    background-color: rgba(255, 255, 255, 0.485);
+    /*background-color: rgba(255, 255, 255, .1);*/
     text-decoration: none;
 }
 
@@ -119,8 +136,13 @@ ul{
     margin-right: 20px;
 }
 
+.barra-lateral .menu ul li a{
+    background:black;
+     
+}
 
-/*MAIN*/
+/*MAIN
+rgba(255, 255, 255, 0.144);*/
 
 .main {
     padding-top: 40px;
