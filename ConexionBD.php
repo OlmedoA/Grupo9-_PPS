@@ -1,8 +1,8 @@
 <?php
-$dbhost="localhost";
-$dbuser="root";
-$dbpass="";
-$dbname="jacesi";
+$servername = "localhost";
+$database = "jacesi";
+$username = "root";
+$password = "";
 // crear conexion
 $conn = mysqli_connect($servername, $username, $password, $database);
 // revisar conexion

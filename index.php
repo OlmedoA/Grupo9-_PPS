@@ -80,16 +80,12 @@ if (isset($_POST["submit"])){
     </div>
 
     <footer>
-    <div class="container-fluid">
-        <div class="row justify-content-center align-content-center">
-            <div class="col-6">
-                <div>
+        <div>
+            <div>
             &nbsp&nbsp &copy; Copyright <strong><span>Jace-SI</span></strong>
             </div>
-            <!--links redes sociales-->
-            </div>
-            <div class="col-6 text-right">
-                <div>
+    <!--links redes sociales-->
+            <div align="right">
                 <a class="link" href="https://api.whatsapp.com/send?phone=541166500636" target="_blank">
                     &nbsp&nbsp<i class="fab fa-whatsapp fa-2x" aria-hidden="true"></i>
                 </a> 
@@ -106,14 +102,7 @@ if (isset($_POST["submit"])){
                     &nbsp&nbsp<i class="fa fa-youtube fa-2x" aria-hidden="true"></i>&nbsp&nbsp
                 </a> 
             </div>
-            </div>
         </div>
-    </div>
-
-
-            
-    
-            
     </footer> 
      <!--importes para la  -->
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>

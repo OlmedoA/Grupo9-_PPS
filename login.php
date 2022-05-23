@@ -41,7 +41,7 @@
             <path d="m 40,120.00016 239.99984,-3.2e-4 c 0,0 24.99263,0.79932 25.00016,35.00016 0.008,34.20084 -25.00016,35 -25.00016,35 h -239.99984 c 0,-0.0205 -25,4.01348 -25,38.5 0,34.48652 25,38.5 25,38.5 h 215 c 0,0 20,-0.99604 20,-25 0,-24.00396 -20,-25 -20,-25 h -190 c 0,0 -20,1.71033 -20,25 0,24.00396 20,25 20,25 h 168.57143" />
     	</svg>
     	<div class="form">
-			<form method="POST" action="login.php">
+			<form method="POST">
 				<label for="text">Usuario</label>
 				<input type="text" name="txtusuario" id="txtusuario" placeholder="Ingresar usuario" required /> 
 				<label for="password">Contraseña</label>
@@ -69,10 +69,10 @@ if(isset($_SESSION['nombredelusuario']))
 if(isset($_POST['btningresar']))
 {
 	
-				$dbhost="localhost";
-				$dbuser="root";
-				$dbpass="";
-				$dbname="jacesi";
+	$dbhost="localhost";
+	$dbuser="root";
+	$dbpass="";
+	$dbname="users";
 	
 	$conn=mysqli_connect($dbhost,$dbuser,$dbpass,$dbname);
 	if(!$conn)
@@ -83,42 +83,41 @@ if(isset($_POST['btningresar']))
 	$nombre=$_POST['txtusuario'];
 	$pass=$_POST['txtpassword'];
 	
-	$queryusuario= mysqli_query($conn, "SELECT * FROM login WHERE usuario ='" . $nombre . "'");
-	$nr          = mysqli_num_rows($queryusuario);
+		$queryusuario= mysqli_query($conn,"SELECT * FROM login WHERE usuario='" . $nombre . "'");
+	$nr = mysqli_num_rows($queryusuario);
 	
 	//llamada a la contraseña
 	$buscarpass  = mysqli_fetch_array($queryusuario);
-
+	
 	//desencriptar contraseña
 	if(($nr== 1)&& (password_verify($pass,$buscarpass['password'])))
 	{
-		
-		if(!isset($_SESSION['nombredelusuario']))
-		{
-			
-			if($nr == 1)
-			{
-				$sql= mysqli_query($conn, "SELECT access FROM login WHERE usuario = '".$nombre."' and password = '".$buscarpass['password']."' and access = 0");
-				$result = mysqli_num_rows($sql);
 	
-	
-				if($result == 0){
+	if(!isset($_SESSION['nombredelusuario']))
+	{
+	if($nr == 1)
+	{
+		$sql= mysqli_query($conn, "SELECT access FROM login WHERE usuario = '".$nombre."' and password = '".$buscarpass['password']."' and access = 0");
+		$result = mysqli_num_rows($sql);
 
-					echo "<script>alert('Usuario en uso'); window.location= './login.php'; </script>";
-				}
-				else if ($result == 1){
-					$_SESSION['nombredelusuario'] = $nombre;
-					$_SESSION['contrausuario'] = $buscarpass['password'];
-					$query=mysqli_query($conn,"UPDATE login SET access = 1 where usuario = '".$nombre."' and password = '".$buscarpass['password']."'");
-					echo "<script>window.location= './menu.php'; </script>";
-				}
-			}
-			else if ($nr == 0)
-			{
-				echo "<script>alert('Usuario no existe'); window.location= './login.php'; </script>";
-			}
-		
+		if($result == 0){
+
+			echo "<script>alert('Usuario en uso'); window.location= 'login.php' </script>";
+		}
+		else if ($result == 1){
+
+			$_SESSION['nombredelusuario'] = $nombre;
+			$_SESSION['contrausuario'] = $pass;
+			header("location: menu.php");
+			$query=mysqli_query($conn,"UPDATE login SET access = 1 where usuario = '".$nombre."' and password = '".$pass."'");
+
 		}
 	}
+	else if ($nr == 0)
+	{
+		echo "<script>alert('Usuario no existe');window.location= 'login.php' </script>";
+	}
+	}
+}
 }
 ?>
