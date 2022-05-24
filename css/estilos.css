@@ -136,13 +136,16 @@ li {
     margin-right: 20px;
 }
 
+
 .barra-lateral .menu ul li a{
-    background:black;
-     
+    background:rgba(255, 255, 255, 0.144);     
+}
+.barra-lateral .menu ul {
+    display: none;
 }
 
-/*MAIN
-rgba(255, 255, 255, 0.144);*/
+
+/*MAIN*/
 
 .main {
     padding-top: 40px;
