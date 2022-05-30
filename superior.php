@@ -29,6 +29,8 @@
                             </a>
 							<a class="dropdown-item menuperfil miperfil" href="miPerfil.php"><i class="fas fa-sign-in-alt m-1"></i>Mi perfil
                             </a>
+                            <a class="dropdown-item menuperfil entrar" href="registrar.php"><i class="fas fa-sign-in-alt m-1"></i>Registrar
+                            </a>
                             <button class="dropdown-item menuperfil cerrar" type="submit" name="btncerrar"><i class="fas fa-sign-out-alt m-1"></i>Salir
                             </button>
                             </form>

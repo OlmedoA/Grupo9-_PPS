@@ -2,23 +2,19 @@ body {
     background: #f1f1f1;
 }
 
-/*
+
 ul{
-    padding-left: 27px !important;
+    padding-left: 15px !important;
     
 }
-*/
+
 .barra {
-    /*background-color: #3498DB;
     padding-top: 5px;
     padding-bottom: 5px;
     margin: 0;
     color: white;
-    font-size: 32px;*/
+    font-size: 32px;
     background-color: #3498DB;
-    padding-top: 15px;
-    padding-bottom: 15px;
-    margin: 0;
 
 }
 .form {
@@ -102,8 +98,7 @@ li {
 }
 
 .barra-lateral a {
-    color: #fff;
-   
+    color: #fff;   
 }
 
 
@@ -111,7 +106,7 @@ li {
 
 .barra-lateral .menu a {
     display: block;
-    padding: 20px;
+    padding: 15px;
     font-family: Roboto, sans-serif;
     font-weight: 500;
     border-bottom: 1px solid rgba(255, 255, 255, .1);
@@ -119,8 +114,9 @@ li {
 }
 
 .barra-lateral .menu a:hover {
-    background-color: rgba(255, 255, 255, 0.485);
-    /*background-color: rgba(255, 255, 255, .1);*/
+    /*background-color: rgba(255, 255, 255, 0.485);
+    background-color: rgba(255, 255, 255, .1);*/
+    background-color: #003C5D;
     text-decoration: none;
 }
 
@@ -137,13 +133,12 @@ li {
 }
 
 
-.barra-lateral .menu ul li a{
+/*.barra-lateral .menu ul li a{
     background:rgba(255, 255, 255, 0.144);     
 }
 .barra-lateral .menu ul {
     display: none;
-}
-
+}*/
 
 /*MAIN*/
 
