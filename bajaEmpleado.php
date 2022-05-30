@@ -22,7 +22,7 @@ $conexion=mysqli_connect('localhost','root','','users')
                </tr>         
             </thead>
             <?php
-            $sql="SELECT * from login";
+            $sql="SELECT * from login where usuario != 'Admin'";
             $result= mysqli_query($conexion,$sql);
             while($mostrar=mysqli_fetch_array($result)){
                ?>
