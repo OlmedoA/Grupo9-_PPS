@@ -35,7 +35,7 @@
                     <td data-label="Consulta"><?php echo $consulta;?></td>
                     <td data-label="Telefono"><?php echo $telefono;?></td>
                     <td data-label="Eliminar">
-                         <button type="button" class="btn btn-danger"><i class="fa-regular fa-check-can"></i></button>
+                         <button type="button" class="btn btn-danger"><i class="fa-regular fa-check"></i></button>
                     </td>
                </tr>   
                   <?php
