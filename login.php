@@ -15,7 +15,7 @@
 	<div class="container">
           <div class="left">
             <div class="login">Ingresar</div>
-            <div class="eula">Bienvenido al sistema de gestion de presupuestos</div>
+            <div class="eula">Bienvenido al sistema de gestión de presupuestos</div>
     </div>
     <div class="right">
 		<svg viewBox="0 0 320 300">
