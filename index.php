@@ -137,13 +137,9 @@ if(isset($_POST['btnconsulta'])){
             </div>
             </div>
         </div>
-    </div>
+    </div>        
+</footer> 
 
-
-            
-    
-            
-    </footer> 
      <!--importes para la  -->
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
