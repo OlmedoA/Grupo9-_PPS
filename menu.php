@@ -1,7 +1,9 @@
-<!-- pagina de inicio del empleado-->
 <?php require_once "superior.php"?>
 <?php require_once "costado.php"?>
 <?php require_once "session.php" ?>
+
+<!-- pagina de inicio del empleado-->
+
 <main class="main col">
    <div class="container">
       <table class="table col-12">
@@ -34,8 +36,8 @@
                     <td scope="row" data-label="Nombre"><?php echo $nombre;?></td>
                     <td data-label="Consulta"><?php echo $consulta;?></td>
                     <td data-label="Telefono"><?php echo $telefono;?></td>
-                    <td data-label="Eliminar">
-                         <button type="button" class="btn btn-success"><i class="fa-bold fa-check"></i></button>
+                    <td data-label="Atendido?">
+                         <button type="button" class="btn btn-success"><i class="fa-solid fa-check"></i></button>
                     </td>
                </tr>   
                   <?php

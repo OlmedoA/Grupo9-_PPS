@@ -19,7 +19,7 @@
                             </ul></li>
                             <li><a href="#"><i class="fa-regular fa-file iconos" ></i><span>Mesa de ayuda</span></a>
                                 <ul  style="list-style: none;">
-                                <li><a href="">Consultas</a></li>
+                                <li><a href="menu.php">Consultas</a></li>
                                 <li><a href="">Lista de consultas respondidas</a></li>
                             </ul></li>
                             <li><a href="#"><i class="fa-regular fa-file iconos" ></i><span>Empleados</span></a>
