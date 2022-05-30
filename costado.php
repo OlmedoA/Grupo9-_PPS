@@ -6,12 +6,17 @@
         <div class="barra-lateral col-12 col-sm-auto">
             <nav class="menu d-flex d-sm-block justify-content-center flex-wrap">
                 <a href="menu.php"><i class="fas fa-home"></i><span> Inicio</span></a>                    
-                <li><a href="#" class="desplegarU"><i class="fa-solid fa-user-plus"></i></i><span> Usuarios <i class="fa-solid fa-chevron-down"></i></span></a>
-                    <ul id="datos-usuario">
-                        <li><a href="altaEmpleado.php"><span>Alta de Usuario</span></a></li>
-                        <li><a href="bajaEmpleado.php"><span>Baja de Usuario</span></a></li>
+               <?php
+			   if($_SESSION['nombredelusuario']=="Admin"){
+				   echo" <li><a href='#' class='desplegarU'><i class='fa-solid fa-user-plus'></i></i><span> Usuarios <i class='fa-solid fa-chevron-down'></i></span></a>
+                    <ul id='datos-usuario'>
+                        <li><a href='altaEmpleado.php'><span>Alta de Usuario</span></a></li>
+                        <li><a href='bajaEmpleado.php'><span>Baja de Usuario</span></a></li>
                     </ul>
-                    </li>
+                    </li>";
+			   }
+			   
+			   ?>
                     <a href="GenerarPresupuesto.php"><i class="fa-solid fa-plus"></i><span> Generar Presupusto</span></a> 
                 <li><a href="#" class="desplegarP"><i class="fa-regular fa-file"></i><span> Historial de Presupusto <i class="fa-solid fa-chevron-down"></i></span></a>
                 <ul id="datos-presupuesto">

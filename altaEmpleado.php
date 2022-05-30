@@ -2,6 +2,9 @@
     <?php require_once "superior.php" ?>
     <?php require_once "costado.php" ?>
     <?php require_once "session.php" ?>
+	<?php  if(!($_SESSION['nombredelusuario']=="Admin")){
+		 header('location: menu.php');
+	}?>
 <body>
     <main class="main col">
     <!--Formulario alta de usuarios-->
