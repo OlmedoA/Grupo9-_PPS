@@ -17,8 +17,8 @@
 			   }
 			   
 			   ?>
-                    <a href="GenerarPresupuesto.php"><i class="fa-solid fa-plus"></i><span> Generar Presupusto</span></a> 
-                <li><a href="#" class="desplegarP"><i class="fa-regular fa-file"></i><span> Historial de Presupusto <i class="fa-solid fa-chevron-down"></i></span></a>
+                    <a href="GenerarPresupuesto.php"><i class="fa-solid fa-plus"></i><span> Generar Presupuesto</span></a> 
+                <li><a href="#" class="desplegarP"><i class="fa-regular fa-file"></i><span> Historial de Presupuesto <i class="fa-solid fa-chevron-down"></i></span></a>
                 <ul id="datos-presupuesto">
                     <li><a href="PresupuestosAprobados.php"><span>Aprobado</span></a></li>
                     <li><a href="PresupuestosDesaprobados.php"><span>Desaprobado</span></a></li>
