@@ -70,7 +70,7 @@ if(isset($_POST['btnconsulta'])){
         </div>
         
         <!--formulario mesa de ayuda-->
-        <form action=""  method="POST" class="row g-3 formStyle mx-auto py-4 px-4 form">
+        <form action=""  method="POST" class="row g-3 formStyle mx-auto py-4 px-4 form mesayuda">
             
             <div class="form">
             <div class="col-12 jace" align="center">
@@ -108,7 +108,13 @@ if(isset($_POST['btnconsulta'])){
         </form>
     </div>
 
-    <footer>
+     <!--importes para la  -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.min.js"></script>
+    
+</body>
+<footer>
     <div class="container-fluid">
         <div class="row justify-content-center align-content-center">
             <div class="col-6">
@@ -139,13 +145,6 @@ if(isset($_POST['btnconsulta'])){
         </div>
     </div>        
 </footer> 
-
-     <!--importes para la  -->
-    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.min.js"></script>
-    
-</body>
 <script type="text/javascript">   
     var refreshButton = document.querySelector(".refresh-captcha");
     refreshButton.onclick = function() {
