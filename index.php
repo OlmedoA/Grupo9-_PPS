@@ -1,33 +1,57 @@
 <?php
-$secretkey = "secret key";
-$nombre = "";
-$telefono = "";
-$mail= "";
-$consulta = "";
-if (isset($_POST["submit"])){
-    $nombre = $_POST["nombre"];
-    //$mail = $_POST["mail"];
-    $telefono = $_POST["celular"];
-    $consulta = $_POST["consulta"];
-    $recaptchaResponse = $_POST["g-recaptcha-response"];
+session_start();
 
-    $resp = "https://www.google.com/recaptcha/api/siteverify?secret={$secretkey}&response={$recaptchaResponse}";
-    $content = file_get_contents($resp);
-    $json = json_decode($content);
-    
-    if ($json-> success == "true"){
-        $msj = "Hola {$nombre}, Ya enviamos su consulta";
-    } else {
-        $msj = "Reintente enviarlo de nuevo";
-      
-    }    
+// Detecta el envio de formulario
+if(isset($_POST['btnconsulta'])){ 
+
+    // Verifica si el captcha es correcto
+    if(isset($_POST['captcha_challenge']) && $_POST['captcha_challenge'] == $_SESSION['captcha_text']){ 
+
+        //Conexion
+
+        $dbhost="localhost";
+        $dbuser="root";
+        $dbpass="";
+        $dbname="jacesi";
+  
+        $conn=mysqli_connect($dbhost,$dbuser,$dbpass,$dbname);
+        if(!$conn)
+        {
+           die("No hay conexión: ".mysqli_connect_error());
+        }
+
+        //Recupero los valores del formulario
+
+        $nombre = $_POST['nombre'];
+        $consulta = $_POST['consulta'];
+        $telefono = $_POST['celular'];
+
+        $alta = "INSERT INTO `consultas` (nombre, consulta, telefono) VALUES ('$nombre', '$consulta', '$telefono')";
+
+        //verificacion en pantalla
+
+        if(mysqli_query($conn,$alta))
+        {
+        //salio bien
+        echo"<script>alert('Gracias por su consulta, $nombre, lo contactaremos a la brevedad');</script>";
+        }else
+        {
+        //salio mal
+        echo"Error: ".$alta."<br>".mysqli_error($conn);
+        }                       
+    }
+    //Si el captcha es incorrecto
+    else {
+        echo"<script>alert('El captcha es incorrecto. Recuerde que es en MAYÚSCULAS');</script>";
+    }
+
 }
+
 
 ?>
 
 <!DOCTYPE html>
 <html lang="es">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -61,7 +85,7 @@ if (isset($_POST["submit"])){
             <div class="col-12">
                  <!--celular, type tel-->
                 <label for="celular" class="form-label">Número de Celular</label>
-                <input type="tel" class="form-control"  id="celular" name="celular" size="14" required="required" placeholder="Escriba su número de celular xxx-xxxx-xxxx" pattern="[0-9]{3}-[0-9]{4}-[0-9]{4}"><br>
+                <input type="tel" class="form-control"  id="celular" name="celular" size="14" required="required" placeholder="Escriba su número de celular"> <!-- pattern="[0-9]{3}-[0-9]{4}-[0-9]{4}"--> <br>
             </div>  
             <!-- <div class="col-12">
              e-mail <label for="mail" class="form-label">Correo Electronico</label>
@@ -72,9 +96,14 @@ if (isset($_POST["submit"])){
                 <label for="consulta" class="form-label">Consulta</label>
                 <textarea name="consulta" id="consulta" class="w-100"rows="4" required="required" placeholder="Escriba su consulta"></textarea><br><br>
             </div>                
-           <!-- <div class="g-recaptcha" data-sitekey="site key"></div>   crear recaptcha y copiar la llave --> 
-             <!--boton-->
-            <button class="btn btn-primary" name ="submit" type="submit">Enviar</button>
+           <!-- <div class="g-recaptcha" data-sitekey="site key"></div>   crear recaptcha y copiar la llave -->   
+            <div class="col-12"  align="center">
+                <label for="captcha" class="form-label">Resuelva el captcha para continuar</label><br>
+                <img src="captcha.php" alt="CAPTCHA" class="captcha-image"><i class="fas fa-redo refresh-captcha"></i><br><br>
+                <input type="text" id="captcha" name="captcha_challenge" required><br><br>
+            </div>
+            <!--boton-->
+            <button class="btn btn-primary" name ="btnconsulta" type="submit">Enviar</button>
             </div>
         </form>
     </div>
@@ -121,5 +150,11 @@ if (isset($_POST["submit"])){
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.min.js"></script>
     
 </body>
+<script type="text/javascript">   
+    var refreshButton = document.querySelector(".refresh-captcha");
+    refreshButton.onclick = function() {
+    document.querySelector(".captcha-image").src = 'captcha.php?' + Date.now();
+}
+</script>
 
 </html>
