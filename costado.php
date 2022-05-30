@@ -12,7 +12,7 @@
                         <li><a href="bajaEmpleado.php"><span>Baja de Usuario</span></a></li>
                     </ul>
                     </li>
-                    <a href="GenerarPresupuesto.php"><i class="fa-solid fa-plus"></i><span> Generar Presupusto</span></a> 
+                    <a href="GenerarPresupuesto.php"><i class="fa-solid fa-plus"></i><span> Generar Presupuesto</span></a> 
                 <li><a href="#" class="desplegarP"><i class="fa-regular fa-file"></i><span> Historial de Presupusto <i class="fa-solid fa-chevron-down"></i></span></a>
                 <ul id="datos-presupuesto">
                     <li><a href="PresupuestosAprobados.php"><span>Aprobado</span></a></li>
