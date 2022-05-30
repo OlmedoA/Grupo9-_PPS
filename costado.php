@@ -7,7 +7,6 @@
                     
                     <nav class="menu d-flex d-sm-block justify-content-center flex-wrap">                 
                         <ul  style="list-style: none;">
-                            <li><a href="menu.php"><i class="fa-solid fa-house iconos"></i><span>Inicio</span></a></li>
         
                             <li><a href="GenerarPresupuesto.php"><i class="fa-solid fa-plus iconos"></i><span>Generar Presupuesto</span></a></li>
         
@@ -19,7 +18,7 @@
                             </ul></li>
                             <li><a href="#"><i class="fa-regular fa-file iconos" ></i><span>Mesa de ayuda</span></a>
                                 <ul  style="list-style: none;">
-                                <li><a href="menu.php">Consultas</a></li>
+                                <li><a href="consultas.php">Consultas</a></li>
                                 <li><a href="">Lista de consultas respondidas</a></li>
                             </ul></li>
                             <?php

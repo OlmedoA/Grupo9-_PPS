@@ -63,7 +63,7 @@
 session_start();
 if(isset($_SESSION['nombredelusuario']))
 {
-	header('location: menu.php');
+	header('location: GenerarPresupuesto.php');
 }
 
 if(isset($_POST['btningresar']))
@@ -108,7 +108,7 @@ if(isset($_POST['btningresar']))
 
 			$_SESSION['nombredelusuario'] = $nombre;
 			$_SESSION['contrausuario'] = $pass;
-			header("location: menu.php");
+			header("location: GenerarPresupuesto.php");
 			$query=mysqli_query($conn,"UPDATE login SET access = 1 where usuario = '".$nombre."' and password = '".$pass."'");
 
 		}
