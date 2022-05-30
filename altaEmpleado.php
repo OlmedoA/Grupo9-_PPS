@@ -41,7 +41,7 @@
                 <div class="col-12">
                     <!--contraseña, type password-->
                     <label for="contraseña" class="form-label">Contraseña</label>
-                    <input type="password" class="form-control" id="contraseña" name="contraseña" required="required"><br>
+                    <input type="password" class="form-control" id="password" name="password" required="required"><br>
                 </div>
                     <!--boton-->
                 <button class="btn btn-primary" type="submit">Crear Usuario</button>
