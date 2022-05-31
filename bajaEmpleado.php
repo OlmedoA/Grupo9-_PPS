@@ -35,7 +35,8 @@ $conexion=mysqli_connect('localhost','root','','users')
                   <td data-label="Mail"><?php echo $mostrar['mail'] ?></td>
                   <td data-label="Usuario"><?php echo $mostrar['usuario'] ?></td>               
                   <td data-label="Eliminar">
-                     <button type="button" class="btn btn-danger"><i class="fa-regular fa-trash-can"></i></button>
+                      <!--<button type="button" class="btn btn-danger"><i class="fa-regular fa-trash-can"><a href="eliminar.php"></i></button>-->
+                     <a href="eliminar.php?usuario=<?php echo $mostrar["usuario"]; ?>" class="btn btn-danger"><i class="fa-regular fa-trash-can"></i></a>
                   </td>
                </tr>
             </tbody>
