@@ -2,9 +2,9 @@
 <?php require_once "costado.php"?>
 <?php require_once "session.php" ?>
 
-<!--formulario para generar presupuesto-->
-<main class="main col">
 
+<main class="main col">
+        <!--formulario para generar presupuesto-->
         <form action=""  method="POST" class="row g-3 formStyle mx-auto py-4 px-4 form">
             <div class="form">
                 <h1>Generar presupuesto</h1>
@@ -20,6 +20,7 @@
                 <select id="inputState" class="form-select form-control" name="servicio">
                 <option selected>Elegir servicio...</option>
                 <?php
+                //conexion con la base de datos
 				$servername = "localhost";
 				$database = "jacesi";
 				$username = "root";

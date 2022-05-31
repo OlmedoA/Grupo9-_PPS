@@ -68,7 +68,7 @@ if(isset($_SESSION['nombredelusuario']))
 
 if(isset($_POST['btnregistrar']))
 {
-	
+	//conexion con la base de datos
 	$dbhost="localhost";
 	$dbuser="root";
 	$dbpass="";

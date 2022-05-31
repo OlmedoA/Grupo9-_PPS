@@ -9,6 +9,7 @@
          <h1 class="encabezado">Presupuestos Aprobados</h1>
             <thead>
                <tr>
+                  <!--columnas-->
                   <th scope="col">Título</th>      
                   <th scope="col">Fecha de realización</th>
                   <th scope="col">Fecha de vencimiento</th>

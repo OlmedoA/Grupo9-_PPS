@@ -4,6 +4,7 @@
     <?php require_once "session.php" ?>
 <body>    
     <main class="main col">
+        <!--formulario con los datos del inicio de sesion-->
     <form action=""  method="POST" class="row g-3 formStyle mx-auto py-4 px-4 form">
                 <div class="form">
                     <h1>Mi perfil</h1>

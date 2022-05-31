@@ -7,7 +7,7 @@ if(isset($_POST['btnconsulta'])){
     // Verifica si el captcha es correcto
     if(isset($_POST['captcha_challenge']) && $_POST['captcha_challenge'] == $_SESSION['captcha_text']){ 
 
-        //Conexion
+        //Conexion con la base de datos
 
         $dbhost="localhost";
         $dbuser="root";
@@ -73,6 +73,7 @@ if(isset($_POST['btnconsulta'])){
         <form action=""  method="POST" class="row g-3 formStyle mx-auto py-4 px-4 form mesayuda">
             
             <div class="form">
+            <!--logo-->
             <div class="col-12 jace" align="center">
                 <img src="img/logo.png" alt="" class="imagen"> JACE-SI
             </div>
@@ -102,7 +103,7 @@ if(isset($_POST['btnconsulta'])){
                 <img src="captcha.php" alt="CAPTCHA" class="captcha-image"><i class="fas fa-redo refresh-captcha"></i><br><br>
                 <input type="text" id="captcha" name="captcha_challenge" required><br><br>
             </div>
-            <!--boton-->
+            <!--boton para enviar a consultas.php-->
             <button class="btn btn-primary" name ="btnconsulta" type="submit">Enviar</button>
             </div>
         </form>
@@ -117,6 +118,7 @@ if(isset($_POST['btnconsulta'])){
 <footer>
     <div class="container-fluid">
         <div class="row justify-content-center align-content-center">
+            <!--Copyright-->
             <div class="col-6">
                 <div>
             &nbsp&nbsp &copy; Copyright <strong><span>Jace-SI</span></strong>
