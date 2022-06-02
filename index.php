@@ -77,16 +77,16 @@ if(isset($_POST['btnconsulta'])){
             <div class="col-12 jace" align="center">
                 <img src="img/logo.png" alt="" class="imagen"> JACE-SI
             </div>
-             <h1>Mesa de ayuda</h1>
+             <h1 class="titulito">Mesa de ayuda</h1>
             <div class="col-12">
                  <!--nombre, type text-->
                 <label for="nombre" class="form-label">Nombre</label>
-                <input type="text" class="form-control" id="nombre" name="nombre" required="required" placeholder="Escriba su nombre"><br>
+                <input type="text" class="form-control" id="nombre" name="nombre" required="required" placeholder="Escriba su nombre">
             </div>
             <div class="col-12">
                  <!--celular, type tel-->
                 <label for="celular" class="form-label">Número de Celular</label>
-                <input type="tel" class="form-control"  id="celular" name="celular" size="14" required="required" placeholder="Escriba su número de celular"> <!-- pattern="[0-9]{3}-[0-9]{4}-[0-9]{4}"--> <br>
+                <input type="tel" class="form-control"  id="celular" name="celular" size="14" required="required" placeholder="Escriba su número de celular"> <!-- pattern="[0-9]{3}-[0-9]{4}-[0-9]{4}"--> 
             </div>  
             <!-- <div class="col-12">
              e-mail <label for="mail" class="form-label">Correo Electronico</label>
@@ -101,7 +101,7 @@ if(isset($_POST['btnconsulta'])){
             <div class="col-12"  align="center">
                 <label for="captcha" class="form-label">Resuelva el captcha para continuar</label><br>
                 <img src="captcha.php" alt="CAPTCHA" class="captcha-image"><i class="fas fa-redo refresh-captcha"></i><br><br>
-                <input type="text" id="captcha" name="captcha_challenge" required><br><br>
+                <input type="text" id="captcha" name="captcha_challenge" required>
             </div>
             <!--boton para enviar a consultas.php-->
             <button class="btn btn-primary" name ="btnconsulta" type="submit">Enviar</button>

@@ -18,8 +18,10 @@ body{
     padding: 5px 0;
     border-radius: 10px;
     box-shadow: 0 0 10px 0 white;
+    max-height: 630px;
 
   }
+
 
 /*logo*/ 
 .imagen{
@@ -37,6 +39,9 @@ body{
  /*consulta*/ 
 textarea{
     resize: none !important;
+    width: 300px; 
+    height: 80px;
+
 }
 
  /*links redes sociales*/ 
@@ -57,7 +62,7 @@ footer {
     position: fixed;
     bottom: 0;
     width: 100%;
-    height: 60px;
+    height: 40px;
   }
 /*usuario*/   
 .cerrar{
@@ -88,11 +93,37 @@ footer {
   .mesayuda{
     margin-bottom: 80px !important;
   }
-
+  .form{
+    max-height: 560px;
+  }
+  .imagen{
+    height: 70px !important;
+    width: 70px !important;
+  } 
+  .titulito{
+    font-size: 30px;
+  }
+  .jace{
+    font-size: 25px;
+  }
+  textarea{
+    width: 300px; 
+    height: 60px;
+  }
 }
-
-@media screen and (max-width:575px) {
-}
-
-@media screen and (max-width:575px) {
+@media screen and (max-height:770px) {
+  .form{
+    max-height: 530px;
+  }
+  .imagen{
+    height: 50px !important;
+    width: 50px !important;
+  } 
+  .titulito{
+    font-size: 25px;
+  }
+  .jace{
+    font-size: 20px;
+    color: #3498DB;
+  }
 }
