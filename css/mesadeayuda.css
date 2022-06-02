@@ -89,6 +89,7 @@ footer {
   }
   .barra{
     height: 50px !important;
+    background-color: transparent !important;
   }
   .mesayuda{
     margin-bottom: 80px !important;
