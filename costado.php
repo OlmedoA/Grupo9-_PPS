@@ -24,7 +24,7 @@
                             <li><a href="#"><i class="fa-regular fa-comment-dots iconos"></i><span>Mesa de ayuda</span></a>
                                 <ul >
                                 <li><a href="consultas.php">Consultas</a></li>
-                                <li><a href="">Lista de consultas respondidas</a></li>
+                                <li><a href="listaConsultas.php">Lista de consultas respondidas</a></li>
                             </ul></li>
 
                         <!--Alta y baja de Empleados, solo visible por el admin-->

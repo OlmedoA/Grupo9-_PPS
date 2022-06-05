@@ -13,8 +13,8 @@
                   <!--columnas-->
                   <th scope="col">Nombre</th>      
                   <th scope="col">Consulta</th>
-                  <th scope="col">Télefono</th>  
-                  <th scope="col">Atendido?</th>         
+                  <th scope="col">Teléfono</th>  
+                  <th scope="col">Acciones</th>         
                </tr>         
           </thead>
           <tbody>
@@ -41,8 +41,13 @@
                     <td scope="row" data-label="Nombre"><?php echo $nombre;?></td>
                     <td data-label="Consulta"><?php echo $consulta;?></td>
                     <td data-label="Telefono"><?php echo $telefono;?></td>
-                    <td data-label="Atendido?">
-                         <button type="button" class="btn btn-success"><i class="fa-solid fa-check"></i></button>
+                    <td data-label="Acciones">
+                        <a href=listaConsultas.php>
+                           <button type="button" class="btn btn-success" title="Contestado"><i class="fa-solid fa-check"></i></button>
+                        </a>
+                        <a href=GenerarPresupuesto.php>
+                           <button type="button" class="btn btn-success" title="Generar presupuesto"><i class="fa-solid fa-plus"></i></button>
+                        </a>
                     </td>
                </tr>   
                   <?php
