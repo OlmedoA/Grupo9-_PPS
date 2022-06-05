@@ -24,8 +24,8 @@
                   <td data-label="Fecha de vencimiento">21/5/22</td>
                   <td data-label="Creado por">lilen</td>
                   <td data-label="Acciones">
-                     <button type="button" class="btn btn-primary"><i class="fa-solid fa-pencil"></i></button>
-                     <button type="button" class="btn btn-danger"><i class="fa-solid fa-download"></i></button>
+                     <button type="button" class="btn btn-primary" title="Editar"><i class="fa-solid fa-pencil"></i></button>
+                     <button type="button" class="btn btn-warning" title="Descargar"><i class="fa-solid fa-download"></i></button>
                   </td>
                </tr>
                <tr>
@@ -34,8 +34,8 @@
                   <td data-label="Fecha de vencimiento">21/5/22</td>
                   <td data-label="Creado por">fran</td>
                   <td data-label="Acciones">
-                      <button type="button" class="btn btn-primary"><i class="fa-solid fa-pencil"></i></button>
-                      <button type="button" class="btn btn-danger"><i class="fa-solid fa-download"></i></button>
+                      <button type="button" class="btn btn-primary" title="Editar"><i class="fa-solid fa-pencil"></i></button>
+                      <button type="button" class="btn btn-warning" title="Descargar"><i class="fa-solid fa-download"></i></button>
                   </td>
                </tr>
                <tr>
@@ -44,8 +44,8 @@
                   <td data-label="Fecha de vencimiento">21/5/22</td>
                   <td data-label="Creado por">lilen</td>
                   <td data-label="Acciones">
-                     <button type="button" class="btn btn-primary"><i class="fa-solid fa-pencil"></i></button>
-                     <button type="button" class="btn btn-danger"><i class="fa-solid fa-download"></i></button>
+                     <button type="button" class="btn btn-primary" title="Editar"><i class="fa-solid fa-pencil"></i></button>
+                     <button type="button" class="btn btn-warning" title="Descargar"><i class="fa-solid fa-download"></i></button>
                    </td>
                </tr>
             </tbody>

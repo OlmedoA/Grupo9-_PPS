@@ -7,7 +7,7 @@ ul{
     padding-left: 15px !important;
     
 }
-
+ 
 .barra {
     padding-top: 5px;
     padding-bottom: 5px;
@@ -70,19 +70,13 @@ ul{
 }
 
 .iconos{
-   font-size: 30px;
+   font-size: 25px;
    padding-right: 20px; 
 
 }
 li {
     list-style: none;
 }
-
-.barra-lateral .menu li ul  {
-    list-style: none;
-}
-
-
 
 /*BARRA LATERAL*/
 
@@ -100,7 +94,15 @@ li {
 .barra-lateral a {
     color: #fff;   
 }
+.btn_menu{
+    cursor: pointer;
+    padding:10px;
+    padding-left: 30px;
+    padding-bottom: 5px;
+    font-size: 30px;
+    color: white;
 
+}
 
 /*ESTILOS MENU*/
 
@@ -187,7 +189,7 @@ li {
         width: 100%;
     }
     body {
-        background: #D3D3D3;
+        background: #f1f1f1;
         font-size: 16px;
         overflow: visible;
     }
@@ -253,5 +255,8 @@ li {
     .encabezado{
         font-size:25px;
     }
-   
+
+
+
    }
+
