@@ -13,7 +13,7 @@
                             <li><a href="GenerarPresupuesto.php"><i class="fa-solid fa-plus iconos"></i><span>Generar Presupuesto</span></a></li>
 
                         <!--Historial de presupuesto-->
-                            <li><a href="#"><i class="fa-regular fa-file iconos" ></i><span>Historial de Presupuestos</span></a>
+                            <li><a href="#" id="titulo"><i class="fa-regular fa-file iconos" ></i><span>Historial de Presupuestos</span></a>
                                 <ul>
                                 <li><a href="PresupuestosPendientes.php">Pendientes</a></li>
                                 <li><a href="PresupuestosAprobados.php">Aprobados</a></li>
@@ -21,7 +21,7 @@
                             </ul></li>
 
                         <!--Consultas Mesa de ayuda-->
-                            <li><a href="#"><i class="fa-regular fa-comment-dots iconos"></i><span>Mesa de ayuda</span></a>
+                            <li><a href="#" id="titulo"><i class="fa-regular fa-comment-dots iconos"></i><span>Mesa de ayuda</span></a>
                                 <ul >
                                 <li><a href="consultas.php">Consultas</a></li>
                                 <li><a href="listaConsultas.php">Lista de consultas respondidas</a></li>

@@ -122,12 +122,12 @@ li {
     text-decoration: none;
 }
 
-.active {
-    background: #003C5D;
+#titulo{
+    cursor: default;
 }
 
-.barra-lateral .menu {
-    border-top: 5px #fff solid;
+.active {
+    background: #003C5D;
 }
 
 .barra-lateral .menu a i {
@@ -199,10 +199,6 @@ li {
     box-shadow: 0 0 3px rgba(0, 0, 0, 0.568);
     border-radius: 10px;
     padding: 20px;
-}
-
-.menu {
-    border-top: 5px #fff solid;
 }
 
 @media screen and (max-width:575px) {
