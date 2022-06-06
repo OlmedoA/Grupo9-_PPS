@@ -97,21 +97,9 @@ if(isset($_POST['btningresar']))
 	{
 	if($nr == 1)
 	{
-		$sql= mysqli_query($conn, "SELECT access FROM login WHERE usuario = '".$nombre."' and password = '".$buscarpass['password']."' and access = 0");
-		$result = mysqli_num_rows($sql);
-
-		if($result == 0){
-
-			echo "<script>alert('Usuario en uso'); window.location= 'login.php' </script>";
-		}
-		else if ($result == 1){
-
-			$_SESSION['nombredelusuario'] = $nombre;
-			$_SESSION['contrausuario'] = $pass;
-			header("location: GenerarPresupuesto.php");
-			$query=mysqli_query($conn,"UPDATE login SET access = 1 where usuario = '".$nombre."' and password = '".$pass."'");
-
-		}
+		$_SESSION['nombredelusuario'] = $nombre;
+		$_SESSION['contrausuario'] = $pass;
+		header("location: GenerarPresupuesto.php");
 	}
 	else if ($nr == 0)
 	{
