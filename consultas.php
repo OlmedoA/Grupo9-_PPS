@@ -39,7 +39,7 @@
                <tr>
                   <!--trae los datos y los muestra-->
                     <td scope="row" data-label="Nombre"><?php echo $nombre;?></td>
-                    <td data-label="Consulta"><?php echo $consulta;?></td>
+                    <td data-label="Telefono"><?php echo "<a href='https://api.whatsapp.com/send?phone=+54'$telefono'>$telefono</a>";?></td>
                     <td data-label="Telefono"><?php echo $telefono;?></td>
                     <td data-label="Acciones">
                         <a href=listaConsultas.php>
