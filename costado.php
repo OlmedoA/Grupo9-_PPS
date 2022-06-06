@@ -1,12 +1,15 @@
 <?php require_once "session.php" ?>
 <!--barra lateral con las opciones-->
         <div class="container-fluid">
+		<i onclick="myFunction()" id="boton" class="fas fa-bars btn_menu0"></i>
             <div class="row">
-                <div class="barra-lateral col-12 col-sm-auto">
+			
+
+                <div id="myDIV" class="barra-lateral col-12 col-sm-auto" style="display: none;">
                     <!--nav bar-->
                     <nav class="menu d-flex d-sm-block justify-content-center flex-wrap">   
 
-                    <i class="fas fa-bars btn_menu"></i>
+                    <i onclick="myFunction()" class="fas fa-bars btn_menu"></i>
                         <!--lista-->              
                         <ul>
                         <!--generar presupuesto-->

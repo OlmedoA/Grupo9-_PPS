@@ -94,6 +94,15 @@ li {
 .barra-lateral a {
     color: #fff;   
 }
+.btn_menu0{
+    cursor: pointer;
+    padding:10px;
+    padding-left: 15px;
+    padding-bottom: 5px;
+    font-size: 30px;
+    color: black;
+
+}
 .btn_menu{
     cursor: pointer;
     padding:10px;
@@ -102,6 +111,10 @@ li {
     font-size: 30px;
     color: white;
 
+}
+/*boton de menu lateral*/
+.boton .boton{
+	background-color: #003C5D;
 }
 
 /*ESTILOS MENU*/

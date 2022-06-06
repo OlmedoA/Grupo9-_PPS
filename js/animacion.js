@@ -1,17 +1,20 @@
 $(document).ready(function(){
-<<<<<<< HEAD
- 
-=======
-   
->>>>>>> ec5b6351ff87b10c87aa461a05dcff1c79b92662
+
 });
+function blockear(){
+var x = document.getElementById("myDIV");
+x.style.display = "block";
+}
 
 
-$('.desplegarU').click(function(){
-    $('#datos-usuario').slideToggle();    
-})
-
-$('.desplegarP').click(function(){
-    $('#datos-presupuesto').slideToggle();    
-})
-
+function myFunction() {
+    var x = document.getElementById("myDIV");
+    var c = document.getElementById("boton");
+    if (x.style.display === "none") {
+        x.style.display = "block";
+		c.style.display = "none";
+    } else {
+        x.style.display = "none";
+		c.style.display = "block";
+    }
+}
