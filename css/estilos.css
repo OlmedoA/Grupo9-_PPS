@@ -126,6 +126,10 @@ li {
     cursor: default;
 }
 
+#titulo:hover{
+    background-color: transparent;
+}
+
 .active {
     background: #003C5D;
 }

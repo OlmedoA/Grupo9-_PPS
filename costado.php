@@ -30,7 +30,7 @@
                         <!--Alta y baja de Empleados, solo visible por el admin-->
                             <?php
 			   if($_SESSION['nombredelusuario']=="Admin"){
-				   echo" <li><a href='#' class='desplegarU'><i class='fa-solid fa-user-plus iconos'></i></i><span> Empleados</span></a>
+				   echo" <li><a href='#' class='desplegarU' id='titulo'><i class='fa-solid fa-user-plus iconos'></i></i><span> Empleados</span></a>
                     <ul id='datos-usuario'>
                         <li><a href='altaEmpleado.php'><span>Alta de Empleados</span></a></li>
                         <li><a href='bajaEmpleado.php'><span>Baja de Empleados</span></a></li>

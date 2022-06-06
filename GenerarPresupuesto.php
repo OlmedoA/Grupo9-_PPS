@@ -29,16 +29,6 @@
     }
 ?>
 
-
-<script type="text/javascript">
-    function revelar() {
-    var x = document.getElementById("temporal");
-    if (x.style.display === "none") {
-        x.style.display = "block";
-    } else {
-        x.style.display = "none";
-    }
-}
 </script>
 
 <main class="main col">
@@ -82,10 +72,10 @@
             </div>
             </div>
              <!--boton-->
-            <button class="btn btn-primary" onclick="revelar()" type="submit" name="agregar">Agregar a presupuesto</button>
+            <button class="btn btn-primary" type="submit" name="agregar">Agregar a presupuesto</button>
         </form>
         
-    <div class="container" align="center" id = "temporal" style="display: none;">
+    <div class="container" align="center" id = "temporal">
         <form method="POST">
             <table class="table col-12">
                 <thead>
