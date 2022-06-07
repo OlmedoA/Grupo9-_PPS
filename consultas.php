@@ -40,7 +40,7 @@
                   <!--trae los datos y los muestra-->
                     <td scope="row" data-label="Nombre"><?php echo $nombre;?></td>
                     <td data-label="Consulta"><?php echo $consulta;?></td>
-                    <td data-label="Telefono"><?php echo "<a href='https://api.whatsapp.com/send?phone=+54'$telefono'>$telefono</a>";?></td>
+                    <td data-label="Telefono"><?php echo "<a href='https://api.whatsapp.com/send?phone=54'$telefono'>$telefono</a>";?></td>
                     <td data-label="Acciones">
                         <a href=listaConsultas.php>
                            <button type="button" class="btn btn-success" title="Contestado"><i class="fa-solid fa-check"></i></button>

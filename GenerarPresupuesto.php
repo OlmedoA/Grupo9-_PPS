@@ -20,7 +20,7 @@
         $subtotal = 0.00;
         $query = mysqli_query($conn,"INSERT INTO `pretemp` (cel_cliente, servicio, cantidad, subtotal) VALUES ( '$celular', '$servicio', '$cantidad', '$subtotal')");
 
-        $sql = "SELECT `Precio` FROM `servicios` WHERE `Descripcion` = '$servicio'";
+        $sql = "SELECT `Precio` FROM `servicios` WHERE `Descrip` = '$servicio'";
         $res = mysqli_query($conn, $sql);           
         while ($row=mysqli_fetch_object($res)){
             $precio=$row->Precio;
@@ -59,7 +59,7 @@
 			//	$servicio = mysqli_fetch_array($queryservicios);
 				$nr = mysqli_num_rows($queryservicios);
 				foreach ($queryservicios as  $I){
-					$opcion=$I['Descripcion'];
+					$opcion=$I['Descrip'];
 					echo"<option>$opcion</option>";
 				}
 				?>
@@ -142,7 +142,7 @@
             $unitario = 0;
             $query = mysqli_query($conn,"INSERT INTO `cerrados` (cod, cel_cliente, servicio, cantidad, unitario, subtotal, estado) VALUES ('$cod', '$celular', '$servicio', '$cantidad', '$unitario', '$subtotal', 'Pendiente')");
 
-            $sql = "SELECT `Precio` FROM `servicios` WHERE `Descripcion` = '$servicio'";
+            $sql = "SELECT `Precio` FROM `servicios` WHERE `Descrip` = '$servicio'";
             $response = mysqli_query($conn, $sql);           
             while ($row=mysqli_fetch_object($response)){
                 $precio=$row->Precio;
