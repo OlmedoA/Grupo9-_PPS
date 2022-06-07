@@ -30,6 +30,13 @@
                                 <li><a href="listaConsultas.php">Lista de consultas respondidas</a></li>
                             </ul></li>
 
+                         <!--Servicios-->
+                         <li><a href="#" id="titulo"><i class="fa-regular fa-computer iconos"></i><span>Servicios</span></a>
+                                <ul >
+                                <li><a href="bajaServicios.php">Baja de servicio</a></li>
+                                <li><a href="altaServicios.php">Alta de servicio</a></li>
+                            </ul></li>
+
                         <!--Alta y baja de Empleados, solo visible por el admin-->
                             <?php
 			   if($_SESSION['nombredelusuario']=="Admin"){
