@@ -8,7 +8,6 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css"></script>
     <!--script de jquery -->
     <script src="js/animacion.js"></script>
-    <script src="js/jquery-3.6.0.min.js"></script>
 
     <!--scripts para el cambio de divisas -->
     <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
