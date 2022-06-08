@@ -1,5 +1,26 @@
-<?php ob_start(); ?>
+<?php 
+    $dbhost="localhost";
+    $dbuser="root";
+    $dbpass="";
+    $dbname="jacesi";
+  
+        $conn=mysqli_connect($dbhost,$dbuser,$dbpass,$dbname);
+    if (isset($_GET['titulo'])){
+      $titulo=$_GET['titulo'];
+    } else {
+      header("location:../PresupuestosPendientes.php");
+    }
+    $sql = "SELECT titulo, cod, fecha FROM cerrados WHERE titulo = '$titulo'";
+    $res = mysqli_query($conn, $sql); 
+    $row = mysqli_fetch_object($res);
+    $titulo=$row->titulo;
+    $cod=$row->cod; 
+    $fecha=$row->fecha;
+    $formateo = DateTime::createFromFormat('Y-m-d', $fecha);
+    $formateofecha = $formateo->format('d/m/Y');
+?>
 
+<?php ob_start(); ?>
 <html>
 <head>
     <link rel="stylesheet" type="text/css" href="style.css">
@@ -18,10 +39,10 @@
  	</div>
 <table width="730px" cellpadding="5px" cellspacing="5px" border="1" align="center">
     <tr>
-        <td><h1>Presupuesto</h1></td>
-        <td>Nro:</td>
+        <td><h1>Presupuesto <?php echo $titulo ?></h1></td>
+        <td>Nro: <?php echo $cod ?></td>
         <td></td>
-        <td>Fecha: <?php echo date('d/m/y') ?> </td>
+        <td>Fecha: <?php echo $formateofecha ?> </td>
     </tr>
 
     <tr>
@@ -32,13 +53,7 @@
     </tr>
    </tr>
     <?php 
-        $dbhost="localhost";
-        $dbuser="root";
-        $dbpass="";
-        $dbname="jacesi";
-  
-        $conn=mysqli_connect($dbhost,$dbuser,$dbpass,$dbname);
-        $sql = "SELECT * FROM cerrados";
+        $sql = "SELECT * FROM cerrados WHERE titulo = '$titulo'";
         $res = mysqli_query($conn, $sql);
         $total = 0;           
         while ($row=mysqli_fetch_object($res)){
@@ -77,6 +92,7 @@
 require_once 'vendor/autoload.php';
 use Dompdf\Dompdf;
 $dompdf = new DOMPDF();
+$dompdf->set_option('defaultFont', 'Roboto');
 $dompdf->load_html(ob_get_clean());
 $dompdf->render();
 $pdf = $dompdf->output();
