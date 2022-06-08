@@ -42,7 +42,8 @@
 
 ?>
 
-</div>
+
+
 <!-- Modal -->
 <div class="modal fade" id="datos" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle" aria-hidden="true">
   <div class="modal-dialog">
@@ -115,10 +116,10 @@
             </div>
             </div>
              <!--boton-->
-            <button class="btn btn-primary" type="submit" name="agregar">Agregar a presupuesto</button>
+            <button class="btn btn-primary" type="submit" name="agregar" onclick="mostrar()">Agregar a presupuesto</button>
         </form>
         
-    <div class="container" align="center" id = "temporal">
+    <div class="container" align="center" id="temporal" style="display: none;">
         <form method="POST">
             <table class="table col-12">
                 <thead>
@@ -161,7 +162,7 @@
                     ?>                 
                 </tbody> 
             </table>
-            <button class="btn btn-primary" type="submit" name="cerrar">Cerrar Presupuesto</button> 
+            <button class="btn btn-primary" type="submit" name="cerrar" onclick="ocultar()">Cerrar Presupuesto</button> 
         </form>  
    </div>
 
@@ -199,15 +200,19 @@
             }
         }
         $consulta = mysqli_query($conn,  "TRUNCATE TABLE pretemp");
-        //echo "<script>window.location= '/print/print.php' </script>";
     }
 ?>
 
 </main>
 
 <script type="text/javascript">
-//     $( document ).ready(function() {
-//     $('#datos').modal('show')
-// });
+    var x = document.getElementById("temporal");
+    function ocultar() {
+        x.style.display = "none";
+        };
+    function mostrar() {
+        x.style.display = "block";
+        };
 </script>
+
 <?php require_once "inferior.php"?>
