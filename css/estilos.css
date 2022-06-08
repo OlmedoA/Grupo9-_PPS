@@ -2,12 +2,71 @@ body {
     background: #f1f1f1;
 }
 
-
-ul{
-    padding-left: 15px !important;
-    
+/*BARRA LATERAL costado.php*/
+/*boton de menu lateral cerrado*/
+.btn_menu0{
+    cursor: pointer;
+    padding:10px;
+    padding-left: 15px;
+    padding-bottom: 5px;
+    font-size: 30px;
+    color: black;
 }
- 
+/*barra lateral*/
+.barra-lateral {
+    background-color: #3498DB;
+    color: #fff;
+    min-width: 230px;
+    min-height: 100vh;
+   padding: 0;
+}
+.barra-lateral a {
+    color: #fff;   
+}
+.barra-lateral .menu a {
+    display: block;
+    padding: 15px;
+    font-family: Roboto, sans-serif;
+    font-weight: 500;
+    border-bottom: 1px solid rgba(255, 255, 255, .1);
+}
+.barra-lateral .menu a:hover {
+    background-color: #003C5D;
+    text-decoration: none;
+}
+/*boton de menu lateral abierto*/
+.btn_menu{
+    cursor: pointer;
+    padding:10px;
+    padding-left: 30px;
+    padding-bottom: 5px;
+    font-size: 30px;
+    color: white;
+}
+/*lista*/
+ul{
+    padding-left: 15px !important; 
+}
+li {
+    list-style: none;
+}
+#titulo{
+    cursor: default;
+}
+#titulo:hover{
+    background-color: transparent;
+}
+/*iconos de lista*/
+.iconos{
+   font-size: 25px;
+   padding-right: 20px; 
+}
+
+
+
+
+/*BARRA SUPERIOR superior.php*/
+/*barra*/
 .barra {
     padding-top: 5px;
     padding-bottom: 5px;
@@ -15,8 +74,56 @@ ul{
     color: white;
     font-size: 32px;
     background-color: #3498DB;
-
 }
+/*logo jacesi*/
+.imagen{
+    height: 90px;
+    width: 90px;
+}
+/*usuario*/
+.dropdown-menu {
+    margin: 17px;
+    background: #262a34;
+    color: white;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.568);
+}
+.menuperfil {
+    color: white;
+}
+.cerrar:hover {
+    background-color: #3498DB;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.568);
+}
+.entrar:hover {
+    background-color: #3498DB;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.568);
+}
+.miperfil:hover {
+    background-color: #3498DB;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.568);
+}
+.entrar{
+    display: none;
+}
+.user {
+    font-size: 35px;
+}
+
+
+
+
+/*MAIN*/
+.main {
+    padding-top: 40px;
+}
+.main .columna {
+    padding-left: 40px;
+    padding-right: 40px;
+}
+
+
+
+/*FORMULARIOS*/
 .form {
     width: 100%;
     max-width: 600px;
@@ -27,151 +134,20 @@ ul{
     align-items: center;
     padding: 5px 0;
 
-  }
-.imagen{
-    height: 90px;
-    width: 90px;
-}
-
-.dropdown-menu {
-    margin: 17px;
-    background: #262a34;
-    color: white;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.568);
-}
-
-.menuperfil {
-    color: white;
-}
-
-.menuperfil:focus {
-    background: #23ae6b;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.568);
-}
-
-.cerrar:hover {
-    background-color: #3498DB;
-   /* background-color: rgba(206, 65, 22, 0.877);*/
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.568);
-}
-
-.entrar:hover {
-    background-color: #3498DB;
-   /* background-color: rgba(206, 65, 22, 0.877);*/
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.568);
-}
-
-.entrar{
-    display: none;
-}
-
-.user {
-    font-size: 35px;
-}
-
-.iconos{
-   font-size: 25px;
-   padding-right: 20px; 
-
-}
-li {
-    list-style: none;
-}
-
-/*BARRA LATERAL*/
-
-.barra-lateral {
-    
-    background-color: #3498DB;
-    /*background: #252121;*/
-    color: #fff;
-    min-width: 230px;
-    min-height: 100vh;
-   padding: 0;
-    /* padding: 0 !important;*/
-}
-
-.barra-lateral a {
-    color: #fff;   
-}
-.btn_menu0{
-    cursor: pointer;
-    padding:10px;
-    padding-left: 15px;
-    padding-bottom: 5px;
-    font-size: 30px;
-    color: black;
-
-}
-.btn_menu{
-    cursor: pointer;
-    padding:10px;
-    padding-left: 30px;
-    padding-bottom: 5px;
-    font-size: 30px;
-    color: white;
-
-}
-/*boton de menu lateral*/
-.boton .boton{
-	background-color: #003C5D;
-}
-
-/*ESTILOS MENU*/
-
-.barra-lateral .menu a {
-    display: block;
-    padding: 15px;
-    font-family: Roboto, sans-serif;
-    font-weight: 500;
-    border-bottom: 1px solid rgba(255, 255, 255, .1);
-   
-}
-
-.barra-lateral .menu a:hover {
-    /*background-color: rgba(255, 255, 255, 0.485);
-    background-color: rgba(255, 255, 255, .1);*/
-    background-color: #003C5D;
-    text-decoration: none;
-}
-
-#titulo{
-    cursor: default;
-}
-
-#titulo:hover{
-    background-color: transparent;
-}
-
-.active {
-    background: #003C5D;
-}
-
-.barra-lateral .menu a i {
-    margin-right: 20px;
 }
 
 
-/*.barra-lateral .menu ul li a{
-    background:rgba(255, 255, 255, 0.144);     
-}
-.barra-lateral .menu ul {
-    display: none;
-}*/
 
-/*MAIN*/
 
-.main {
-    padding-top: 40px;
-}
-
-.main .columna {
-    padding-left: 40px;
-    padding-right: 40px;
+/*TABLAS*/
+.encabezado{
+    text-align: center;
 }
 
 
-/*mediaquerys*/
+
+
+/*mediaquerys
 
 @media screen and (max-width:1300px) {
     .barra-lateral {
@@ -190,7 +166,6 @@ li {
         margin: 20px -79px 0px;
     }
 }
-
 @media screen and (max-width:575px) {
     .barra-lateral {
         min-height: auto;
@@ -211,13 +186,6 @@ li {
         overflow: visible;
     }
 }
-
-.formulariorecursos {
-    box-shadow: 0 0 3px rgba(0, 0, 0, 0.568);
-    border-radius: 10px;
-    padding: 20px;
-}
-
 @media screen and (max-width:575px) {
     .barra-lateral {
         height: auto;
@@ -233,12 +201,8 @@ li {
         font-size: 16px;
         overflow: visible;
     }
-}
-
-.encabezado{
-    text-align: center;
-}
-
+}*/
+/*responsive tablas*/
 @media screen and (max-width:1000px){
     .table{
         border: 0px;
@@ -268,8 +232,4 @@ li {
     .encabezado{
         font-size:25px;
     }
-
-
-
    }
-
