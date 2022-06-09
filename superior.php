@@ -22,7 +22,7 @@
             <div class="col-2 text-right barra">
                 <ul class="navbar-nav mr-auto">
                     <li>
-                        <a href="#" class="px-3 text-light perfil dropdown-toggle" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><i class="fas fa-user-circle user"></i></a>
+                        <a href="#" class="px-3 text-light perfil " id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><i class="fas fa-user-circle user"></i></a>
 
                         <!--opciones del usuario-->
                         <div class="dropdown-menu" aria-labelledby="navbar-dropdown">

@@ -35,8 +35,8 @@
 			   if($_SESSION['nombredelusuario']=="Admin"){
 				   echo" <li><a href='#' class='desplegarU' id='titulo'><i class='fa-solid fa-user-plus iconos'></i></i><span> Empleados</span></a>
                     <ul id='datos-usuario'>
-                        <li><a href='altaEmpleado.php'><span>Alta de Empleados</span></a></li>
-                        <li><a href='bajaEmpleado.php'><span>Baja de Empleados</span></a></li>
+                        <li><a href='altaEmpleado.php'>Alta de Empleados</a></li>
+                        <li><a href='bajaEmpleado.php'>Baja de Empleados</a></li>
                     </ul>
                     </li>";
 			   }

@@ -4,10 +4,10 @@
 <?php
     if(isset($_POST['agregar'])){ 
         //conexion con la base de datos
-        $servername = "localhost";
-        $database = "jacesi";
-        $username = "root";
-        $password = "";
+		$dbhost="localhost";
+		$dbuser="root";
+		$dbpass="";
+		$dbname="users";
         // crear conexion
         $conn = mysqli_connect($servername, $username, $password, $database);
         if(!$conn){
