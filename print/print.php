@@ -30,22 +30,32 @@
     <meta charset="UTF-8">
 </head>
     
-    <!-- <div align="center"><img src="imagen/logo.png"></div> -->
-    <img src='imagen/logo.png' width="300px"/>
+    <div align="center"><img src="imagen/logo.png" width="300px"></div>
     <div>
  		<div>Terrarosa 3015, El Jagüel </div>
  		<div>http://www.jace-si.com</div>
-     	<div>1166500636</div>
+     	<div>1166500636</div><br>
  	</div>
 
-<table width="730px" cellpadding="5px" cellspacing="5px" border="1" align="center">
+<table width="730px" cellpadding="5px" cellspacing="5px" border="0" align="center">
     <tr>
-        <td><h1>Presupuesto <?php echo $titulo ?></h1></td>
+        <td><h1>Presupuesto</h1></td>
         <td>Nro: <?php echo $cod ?></td>
         <td></td>
         <td>Fecha: <?php echo $formateofecha ?> </td>
+        
     </tr>
+    <tr>
+        <td></td>
+        <td><b>Proyecto</b> <br><?php echo $titulo ?></td>
+        <td></td>
+        <td><b>Fecha de vencimiento</b><br><br></td>
+    </tr>
+</table>
 
+
+<table width="730px" cellpadding="5px" cellspacing="5px" border="1" align="center">
+    
     <tr>
         <td>Descripción</td>
         <td>Cantidad</td>
@@ -84,7 +94,9 @@
     </tr>
 </table>
     <div align="right">
-        <h1>Subtotal: ARS$<?php echo $total;?></h1>
+        <h4>Subtotal: $<?php echo $total;?></h4>
+        <h4>Ajustes                         </h4>
+        <h2>$<?php echo $total;?></h2>
     </div>
 </html>
 
