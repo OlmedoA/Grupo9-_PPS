@@ -23,35 +23,67 @@
 <?php ob_start(); ?>
 <html>
 <head>
-    <link rel="stylesheet" type="text/css" href="style.css">
+    <link rel="stylesheet" href="style.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
     <meta charset="UTF-8">
+    <style>
+    img{
+        width:300px;
+    }
+    .logo{
+        text-align: center;
+    }
+    table
+    {
+        width: 730px;
+        align: center;
+    }
+    .tablita{
+        border: 1px solid black;
+        border-collapse: collapse;
+	    height: 30px;
+   }
+   .colorcito{
+       background-color:#eeeeee;
+   }
+   .final{
+       text-align:right;
+   }
+  
+</style>
 </head>
-    
-    <!-- <div align="center"><img src="imagen/logo.png"></div> -->
-
+    <div class="logo"><img src="imagen/logo.png" ></div>
     <div>
  		<div>Terrarosa 3015, El Jagüel </div>
  		<div>http://www.jace-si.com</div>
-     	<div>1166500636</div>
+     	<div>1166500636</div><br>
  	</div>
-<table width="730px" cellpadding="5px" cellspacing="5px" border="1" align="center">
-    <tr>
-        <td><h1>Presupuesto <?php echo $titulo ?></h1></td>
-        <td>Nro: <?php echo $cod ?></td>
-        <td></td>
-        <td>Fecha: <?php echo $formateofecha ?> </td>
-    </tr>
 
+<table>
     <tr>
-        <td>Descripción</td>
-        <td>Cantidad</td>
-        <td>Precio Unitario</td>
-        <td>Precio Total</td>
+        <td><h1>Presupuesto</h1></td>
+        <td>Nro: <?php echo $cod ?></td>
+        <td>Fecha: <?php echo $formateofecha ?> </td>
+        
     </tr>
-   </tr>
+    <tr>
+        <td></td>
+        <td><b>Proyecto</b> <br><?php echo $titulo ?></td>
+        <td><b>Fecha de vencimiento</b><br><br></td>
+    </tr>
+</table>
+
+
+<table class="tablita">
+    
+    <tr class="tablita">
+        <td class="tablita">Descripción</td>
+        <td class="tablita">Cantidad</td>
+        <td class="tablita">Precio Unitario</td>
+        <td class="tablita">Precio Total</td>
+    </tr>
     <?php 
         $sql = "SELECT * FROM cerrados WHERE titulo = '$titulo'";
         $res = mysqli_query($conn, $sql);
@@ -64,26 +96,26 @@
      
         ?>
 
-        <tr bgcolor="#E4EDEE">
+        <tr class="tablita colorcito">
             <!--trae los datos y los muestra-->
-            <td ><?php echo $servicio;?></td>
-            <td><?php echo $cantidad;?></td>
-            <td>ARS$<?php echo $unitario;?></td>
-            <td>ARS$<?php echo $subtotal;?></td> 
+            <td class="tablita"><?php echo $servicio;?></td>
+            <td class="tablita"><?php echo $cantidad;?></td>
+            <td class="tablita">ARS$<?php echo $unitario;?></td>
+            <td class="tablita">ARS$<?php echo $subtotal;?></td> 
         </tr>   
         <?php
         $total = $total + $subtotal;
         }
         ?> 
      <tr>
-        <td>Notas</td>
-        <td></td>
-        <td></td>
-        <td></td>
+        <td class="tablita" colspan="4">Notas</td>
+
     </tr>
 </table>
-    <div align="right">
-        <h1>Subtotal: ARS$<?php echo $total;?></h1>
+    <div class="final">
+        <h4>Subtotal: $<?php echo $total;?></h4>
+        <h4>Ajustes                         </h4>
+        <h2>$<?php echo $total;?></h2>
     </div>
 </html>
 
