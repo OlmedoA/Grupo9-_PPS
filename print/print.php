@@ -46,7 +46,7 @@
 	    height: 30px;
    }
    .colorcito{
-       background-color:#E4EDEE;
+       background-color:#eeeeee;
    }
    .final{
        text-align:right;
