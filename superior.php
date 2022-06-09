@@ -1,4 +1,7 @@
+<<<<<<< HEAD
 
+=======
+>>>>>>> 713e97210dfbe40dcc7e4b2d9c7235a7f952c76b
 <!DOCTYPE html>
 <html lang="es">
 
@@ -33,12 +36,7 @@
                             <a class="dropdown-item menuperfil entrar" href="login.php"><i class="fas fa-sign-in-alt m-1"></i>Ingresar
                             </a>
                             <!--Mi perfil-->
-                            <?php
-                                if($_SESSION['nombredelusuario'] != "Admin"){
-                                    echo"<a class='dropdown-item menuperfil miperfil' href='miPerfil.php'><i class='fas fa-sign-in-alt m-1'></i>Mi perfil</a>";
-                                }
-                            ?>
-							
+                            <a class='dropdown-item menuperfil miperfil' href='miPerfil.php'><i class='fas fa-sign-in-alt m-1'></i>Mi perfil</a>							
                             <!--Registrar-->
                             <a class="dropdown-item menuperfil entrar" href="registrar.php"><i class="fas fa-sign-in-alt m-1"></i>Registrar
                             </a>

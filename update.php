@@ -4,7 +4,7 @@
    if (isset($_GET['titulo'])){
       $titulo=$_GET['titulo'];
    } else {
-      header("location/PresupuestosPendientes.php");
+      header("location:/PresupuestosPendientes.php");
    }
 ?>         
       <form method="POST" class="row g-3 formStyle mx-auto py-4 px-4 form">

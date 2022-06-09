@@ -2,9 +2,15 @@
 <?php require_once "costado.php"?>
 <?php require_once "session.php" ?>
 <?php
+    if (isset($_GET['celular'])){
+
+        $celular=$_GET['celular'];
+
+    } else {
+        $celular="";
+    }
 
     $titulo="";
-    $celular="";
 
     if(isset($_POST['setear'])){ 
 
@@ -50,7 +56,7 @@
     <div class="modal-content">
         <div class="modal-header">
             <h5 class="modal-title" id="exampleModalLongTitle">Agregar o cambiar telefono y titulo</h5>
-            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close" value="<?php echo $titulo ?>">
             <span aria-hidden="true">&times;</span>
             </button>
         </div>
@@ -60,7 +66,7 @@
                 <input type="text" class="form-control"  id="title" name="title">
                 <br>
                 <label for="celular" class="form-label">Número de Celular del Cliente</label>
-                <input type="tel" class="form-control"  id="celular" name="celular">
+                <input type="tel" class="form-control"  id="celular" name="celular" value="<?php echo $celular ?>">
                 <br>
                 <button class="btn btn-primary" type="submit" name="setear">Guardar</button>
             </form>
@@ -119,15 +125,13 @@
             <button class="btn btn-primary" type="submit" name="agregar" onclick="mostrar()">Agregar a presupuesto</button>
         </form>
         
-    <div class="container" align="center" id="temporal" style="display: none;">
+    <div class="container" align="center" id="temporal">
         <form method="POST">
             <table class="table col-12">
                 <thead>
                     <tr>
                         <!--columnas-->
-                        <th scope="col">ID</th>
-                        <th scope="col">Titulo</th>
-                        <th scope="col">Celular Cliente</th>      
+                        <th scope="col">Items</th>    
                         <th scope="col">Servicio</th>
                         <th scope="col">Cantidad</th>  
                         <th scope="col">Subtotal</th>         
@@ -139,9 +143,7 @@
                     $sql = "SELECT * FROM pretemp";
                     $res = mysqli_query($conn, $sql);           
                     while ($row=mysqli_fetch_object($res)){
-                    $id=$row->id;
-                    $titulo=$row->titulo; 
-                    $celular=$row->cel_cliente;
+                    $items=$row->id;
                     $servicio=$row->servicio;
                     $cantidad=$row->cantidad;
                     $subtotal=$row->subtotal;
@@ -150,9 +152,7 @@
 
                     <tr>
                         <!--trae los datos y los muestra-->
-                        <td scope="row" data-label="Id"><?php echo $id;?></td>
-                        <td data-label="Titulo" name="titulo"><?php echo $titulo;?></td>
-                        <td data-label="Celular" name="celular"><?php echo $celular;?></td>
+                        <td scope="row" data-label="Items"><?php echo $items;?></td>
                         <td data-label="Servicio" name="servicio"><?php echo $servicio;?></td>
                         <td data-label="Cantidad" name="cantidad"><?php echo $cantidad;?></td>
                         <td data-label="Subtotal" name="subtotal">ARS$<?php echo $subtotal;?></td>
