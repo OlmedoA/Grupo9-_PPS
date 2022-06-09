@@ -45,7 +45,7 @@
                         <a href=listaConsultas.php>
                            <button type="button" class="btn btn-success" title="Contestado"><i class="fa-solid fa-check"></i></button>
                         </a>
-                        <a href=GenerarPresupuesto.php>
+                        <a href="GenerarPresupuesto.php?celular=<?php echo $telefono;?>">
                            <button type="button" class="btn btn-success" title="Generar presupuesto"><i class="fa-solid fa-plus"></i></button>
                         </a>
                     </td>
