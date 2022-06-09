@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="es">
 
@@ -5,6 +6,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>JACE-SERVICIOS INFORMÁTICOS</title>
+    <script src="js/jquery-3.6.0.min.js"></script>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css">
     <link rel="stylesheet" href="css/estilos.css">    
     <link rel="icon" type="image/png" href="./img/logoicon.png"> 
@@ -31,8 +33,12 @@
                             <a class="dropdown-item menuperfil entrar" href="login.php"><i class="fas fa-sign-in-alt m-1"></i>Ingresar
                             </a>
                             <!--Mi perfil-->
-							<a class="dropdown-item menuperfil miperfil" href="miPerfil.php"><i class="fas fa-sign-in-alt m-1"></i>Mi perfil
-                            </a>
+                            <?php
+                                if($_SESSION['nombredelusuario'] != "Admin"){
+                                    echo"<a class='dropdown-item menuperfil miperfil' href='miPerfil.php'><i class='fas fa-sign-in-alt m-1'></i>Mi perfil</a>";
+                                }
+                            ?>
+							
                             <!--Registrar-->
                             <a class="dropdown-item menuperfil entrar" href="registrar.php"><i class="fas fa-sign-in-alt m-1"></i>Registrar
                             </a>

@@ -9,8 +9,8 @@
 <script type="text/javascript" src="./js/anime.min.js"></script>
 </head>
 
-<body>
-<div class="page">
+<body class="page">
+<div >
 
 	<div class="container">
           <div class="left">

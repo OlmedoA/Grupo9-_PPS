@@ -2,6 +2,17 @@
 <?php require_once "costado.php"?>
 <?php require_once "session.php" ?>
 <?php
+
+    $titulo="";
+    $celular="";
+
+    if(isset($_POST['setear'])){ 
+
+        $titulo = $_POST['title'];
+        $celular = $_POST['celular'];
+
+    }
+
     if(isset($_POST['agregar'])){ 
         //conexion con la base de datos
 		$dbhost="localhost";
@@ -14,38 +25,71 @@
             die("No hay conexión: ".mysqli_connect_error());
         }
 
+        $titulo = $_POST['title'];
         $celular = $_POST['celular'];
         $servicio = $_POST['servicio'];
         $cantidad = $_POST['cantidad'];
         $subtotal = 0.00;
-        $query = mysqli_query($conn,"INSERT INTO `pretemp` (cel_cliente, servicio, cantidad, subtotal) VALUES ( '$celular', '$servicio', '$cantidad', '$subtotal')");
+        $query = mysqli_query($conn,"INSERT INTO `pretemp` (titulo, cel_cliente, servicio, cantidad, subtotal) VALUES ('$titulo', '$celular', '$servicio', '$cantidad', '$subtotal')");
 
-        $sql = "SELECT `Precio` FROM `servicios` WHERE `Descripcion` = '$servicio'";
+        $sql = "SELECT `Precio` FROM `servicios` WHERE `Descrip` = '$servicio'";
         $res = mysqli_query($conn, $sql);           
         while ($row=mysqli_fetch_object($res)){
             $precio=$row->Precio;
             $query = mysqli_query($conn,"UPDATE `pretemp` SET `subtotal` = '$precio' * '$cantidad'  WHERE `servicio` = '$servicio'");
         }
     }
+
 ?>
 
-</script>
+
+
+<!-- Modal -->
+<div class="modal fade" id="datos" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+        <div class="modal-header">
+            <h5 class="modal-title" id="exampleModalLongTitle">Agregar o cambiar telefono y titulo</h5>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+            </button>
+        </div>
+        <div class="modal-body">
+            <form action=""  method="POST" class="row g-3 formStyle mx-auto py-4 px-4 form">
+                <label for="titulo" class="form-label">Titulo Presupuesto</label>
+                <input type="text" class="form-control"  id="title" name="title">
+                <br>
+                <label for="celular" class="form-label">Número de Celular del Cliente</label>
+                <input type="tel" class="form-control"  id="celular" name="celular">
+                <br>
+                <button class="btn btn-primary" type="submit" name="setear">Guardar</button>
+            </form>
+        </div>
+    </div>
+  </div>
+</div>
 
 <main class="main col">
         <!--formulario para generar presupuesto-->
         <form action=""  method="POST" class="row g-3 formStyle mx-auto py-4 px-4 form">
             <div class="form">
                 <h1>Generar presupuesto</h1>
-
             <div class="col-12">
-                <!--celular, type tel-->
+            
+                <label for="titulo" class="form-label">Titulo Presupuesto</label>
+                <input type="text" class="form-control"  id="title" name="title" placeholder="Agregue el titulo" readonly value="<?php echo $titulo ?>" required>
+                
                 <label for="celular" class="form-label">Número de Celular del Cliente</label>
-                <input type="tel" class="form-control"  id="celular" name="celular">
-            </div> 
+                <input type="tel" class="form-control"  id="celular" name="celular" placeholder="Agregue el teléfono" readonly value="<?php echo $celular ?>" required>
+                
+            </div>
+
+            <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#datos">Agregar o cambiar teléfono y titulo</button>
+ 
             <div class="col-12">
                  <!--servicio-->
                 <label for="servicio" class="form-label">Servicio</label>
-                <select id="inputState" class="form-select form-control" name="servicio">
+                <select id="inputState" class="form-select form-control" name="servicio" required>
                 <option selected>Elegir servicio...</option>
                 <?php
                 //conexion con la base de datos
@@ -59,7 +103,7 @@
 			//	$servicio = mysqli_fetch_array($queryservicios);
 				$nr = mysqli_num_rows($queryservicios);
 				foreach ($queryservicios as  $I){
-					$opcion=$I['Descripcion'];
+					$opcion=$I['Descrip'];
 					echo"<option>$opcion</option>";
 				}
 				?>
@@ -68,20 +112,21 @@
             <div class="col-12">
                  <!--cantidad, type number, minimo 1-->
                 <label for="cantidad" class="form-label">Cantidad</label>
-                <input type="number" min="1" class="form-control"  id="cantidad" name="cantidad">
+                <input type="number" min="1" class="form-control"  id="cantidad" name="cantidad" required>
             </div>
             </div>
              <!--boton-->
-            <button class="btn btn-primary" type="submit" name="agregar">Agregar a presupuesto</button>
+            <button class="btn btn-primary" type="submit" name="agregar" onclick="mostrar()">Agregar a presupuesto</button>
         </form>
         
-    <div class="container" align="center" id = "temporal">
+    <div class="container" align="center" id="temporal" style="display: none;">
         <form method="POST">
             <table class="table col-12">
                 <thead>
                     <tr>
                         <!--columnas-->
                         <th scope="col">ID</th>
+                        <th scope="col">Titulo</th>
                         <th scope="col">Celular Cliente</th>      
                         <th scope="col">Servicio</th>
                         <th scope="col">Cantidad</th>  
@@ -95,6 +140,7 @@
                     $res = mysqli_query($conn, $sql);           
                     while ($row=mysqli_fetch_object($res)){
                     $id=$row->id;
+                    $titulo=$row->titulo; 
                     $celular=$row->cel_cliente;
                     $servicio=$row->servicio;
                     $cantidad=$row->cantidad;
@@ -105,6 +151,7 @@
                     <tr>
                         <!--trae los datos y los muestra-->
                         <td scope="row" data-label="Id"><?php echo $id;?></td>
+                        <td data-label="Titulo" name="titulo"><?php echo $titulo;?></td>
                         <td data-label="Celular" name="celular"><?php echo $celular;?></td>
                         <td data-label="Servicio" name="servicio"><?php echo $servicio;?></td>
                         <td data-label="Cantidad" name="cantidad"><?php echo $cantidad;?></td>
@@ -115,7 +162,7 @@
                     ?>                 
                 </tbody> 
             </table>
-            <button class="btn btn-primary" type="submit" name="cerrar">Cerrar Presupuesto</button> 
+            <button class="btn btn-primary" type="submit" name="cerrar" onclick="ocultar()">Cerrar Presupuesto</button> 
         </form>  
    </div>
 
@@ -135,14 +182,17 @@
         $cod = mt_rand(100000, 999999);
         $res = mysqli_query($conn, "SELECT * FROM pretemp");           
         while ($table=mysqli_fetch_object($res)){
+            $titulo=$table->titulo;
             $celular=$table->cel_cliente;
             $servicio=$table->servicio;
             $cantidad=$table->cantidad;
             $subtotal=$table->subtotal;
+            $fecha=date("Y/m/d");
+            $por=$_SESSION['nombredelusuario'];
             $unitario = 0;
-            $query = mysqli_query($conn,"INSERT INTO `cerrados` (cod, cel_cliente, servicio, cantidad, unitario, subtotal, estado) VALUES ('$cod', '$celular', '$servicio', '$cantidad', '$unitario', '$subtotal', 'Pendiente')");
+            $query = mysqli_query($conn,"INSERT INTO `cerrados` (cod, titulo, cel_cliente, servicio, cantidad, unitario, subtotal, estado, fecha, creado_por) VALUES ('$cod', '$titulo', '$celular', '$servicio', '$cantidad', '$unitario', '$subtotal', 'Pendiente', '$fecha', '$por')");
 
-            $sql = "SELECT `Precio` FROM `servicios` WHERE `Descripcion` = '$servicio'";
+            $sql = "SELECT `Precio` FROM `servicios` WHERE `Descrip` = '$servicio'";
             $response = mysqli_query($conn, $sql);           
             while ($row=mysqli_fetch_object($response)){
                 $precio=$row->Precio;
@@ -150,11 +200,19 @@
             }
         }
         $consulta = mysqli_query($conn,  "TRUNCATE TABLE pretemp");
-        //echo "<script>window.location= '/print/print.php' </script>";
     }
 ?>
 
 </main>
 
+<script type="text/javascript">
+    var x = document.getElementById("temporal");
+    function ocultar() {
+        x.style.display = "none";
+        };
+    function mostrar() {
+        x.style.display = "block";
+        };
+</script>
 
 <?php require_once "inferior.php"?>
