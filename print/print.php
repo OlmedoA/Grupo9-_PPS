@@ -31,12 +31,13 @@
 </head>
     
     <!-- <div align="center"><img src="imagen/logo.png"></div> -->
-
+    <img src='imagen/logo.png' width="300px"/>
     <div>
  		<div>Terrarosa 3015, El Jagüel </div>
  		<div>http://www.jace-si.com</div>
      	<div>1166500636</div>
  	</div>
+
 <table width="730px" cellpadding="5px" cellspacing="5px" border="1" align="center">
     <tr>
         <td><h1>Presupuesto <?php echo $titulo ?></h1></td>
