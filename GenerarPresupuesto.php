@@ -82,7 +82,7 @@
                 <h1>Generar presupuesto</h1>
             <div class="col-12">
             
-                <label for="titulo" class="form-label">Titulo Presupuesto</label>
+                <label for="titulo" class="form-label">Título Presupuesto</label>
                 <input type="text" class="form-control"  id="title" name="title" placeholder="Agregue el titulo" readonly value="<?php echo $titulo ?>" required>
                 
                 <label for="celular" class="form-label">Número de Celular del Cliente</label>

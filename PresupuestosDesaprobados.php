@@ -1,7 +1,19 @@
 <?php require_once "superior.php"?>
 <?php require_once "costado.php"?>
 <?php require_once "session.php" ?>
+<?php
+    if (isset($_GET['titulo'])){
 
+         $titulo=$_GET['titulo'];
+         $servername = "localhost";
+         $database = "jacesi";
+         $username = "root";
+         $password = "";
+         // crear conexion
+         $conn = mysqli_connect($servername, $username, $password, $database);
+         $query = mysqli_query($conn,"UPDATE `cerrados` SET `estado` = 'Desaprobado'  WHERE `titulo` = '$titulo'");  
+      }  
+?>
 <!--tabla de presupuestos-->
 <main class="main col">
    <div class="container">
@@ -10,9 +22,9 @@
             <thead>
                <tr>
                   <!--columnas-->
-                  <th scope="col">Título</th>      
+                  <th scope="col">Título</th>   
+                  <th scope="col">Num. Cliente</th>   
                   <th scope="col">Fecha de realización</th>
-                  <th scope="col">Fecha de vencimiento</th>
                   <th scope="col">Creado por</th>
                   <th scope="col">Acciones</th>      
                </tr>         
@@ -34,24 +46,24 @@
                   $res = mysqli_query($conn, $sql);           
                   while ($row=mysqli_fetch_object($res)){
                   $titulo=$row->titulo;
+                  $celular=$row->cel_cliente;
                   $fecha=$row->fecha;
                   $formateo = DateTime::createFromFormat('Y-m-d', $fecha);
                   $formateofecha = $formateo->format('d/m/Y');
+                  $hasta = DateTime::createFromFormat("Y-m-d", date("Y-m-d", strtotime($fecha."+ 2 weeks")));
+                  $hoy=DateTime::createFromFormat("Y-m-d", date("Y-m-d"));
+                  $intervalo = date_diff($hasta, $hoy); 
                   $por=$row->creado_por;
-                  $hasta = date("d/m/Y",strtotime($fecha."+ 2 weeks"))
-     
                   ?>
 
-                  <tr>
-                     <th scope="row" data-label="Título"><?php echo $titulo; ?></th>
+                   <tr>
+                     <th scope="row" data-label="Título" name="titulo"><?php echo $titulo; ?></th>
+                     <td data-label="Celular"><?php echo "<a href='https://api.whatsapp.com/send?phone=54$celular'>$celular</a>";?></td>
                      <td data-label="Fecha de realización"><?php echo $formateofecha; ?></td>
-                     <td data-label="Fecha de vencimiento"><?php echo $hasta; ?></td>
                      <td data-label="Creado por"><?php echo $por; ?></td>
                      <td data-label="Acciones">
                         <a href="update.php?titulo=<?php echo $titulo;?>"><button type="button" class="btn btn-primary"><i class="fa-solid fa-pencil"></i></button></a>
-                        <button type="button" class="btn btn-warning"><i class="fa-solid fa-download"></i></button>
-                        <button type="button" class="btn btn-success"><i class="fa-solid fa-check"></i></button>
-                        <button type="button" class="btn btn-danger"><i class="fa-regular fa-trash-can"></i></i></button>
+                        <a href="./print/print.php?titulo=<?php echo $titulo;?>"><button type="button" class="btn btn-warning"><i class="fa-solid fa-download"></i></button></a>
                      </td>
                   </tr>   
                <?php

@@ -26,7 +26,7 @@ if(isset($_POST['btnconsulta'])){
         $consulta = $_POST['consulta'];
         $telefono = $_POST['celular'];
 
-        $alta = "INSERT INTO `consultas` (nombre, consulta, telefono) VALUES ('$nombre', '$consulta', '$telefono')";
+        $alta = "INSERT INTO `consultas` (nombre, consulta, telefono, estado) VALUES ('$nombre', '$consulta', '$telefono', 'Pendiente')";
 
         //verificacion en pantalla
 

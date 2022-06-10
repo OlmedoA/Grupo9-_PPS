@@ -367,3 +367,7 @@ li {
         font-size:25px;
     }
    }
+
+   option{
+       word-wrap: break-word;
+   }

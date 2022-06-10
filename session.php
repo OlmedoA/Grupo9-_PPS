@@ -21,7 +21,7 @@ if(isset($_SESSION['nombredelusuario']))
 }
 else
 {
-  header('location: login.php');
+  header('location: index.php');
 }
 
 if(isset($_POST['btncerrar']))

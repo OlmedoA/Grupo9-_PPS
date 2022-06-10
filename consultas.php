@@ -24,17 +24,17 @@
                   $dbuser = "root";
                   $dbpass = "";
                   $dbname = "jacesi";
-                  $conn = mysqli_connect($dbhost,$dbuser,$dbpass,$dbname);;
+                  $conn = mysqli_connect($dbhost,$dbuser,$dbpass,$dbname);
 
                   //toma los datos de la tabla consultas
-                  $sql = "SELECT * FROM consultas";
+                  $sql = "SELECT * FROM consultas WHERE estado='Pendiente'";
                   $res = mysqli_query($conn, $sql);           
                   while ($row=mysqli_fetch_object($res)){
-                  $nombre=$row->nombre;
-                  $consulta=$row->consulta;
-                  $telefono=$row->telefono;
-     
-               ?>
+                     $id=$row->id;
+                     $nombre=$row->nombre;
+                     $consulta=$row->consulta;
+                     $telefono=$row->telefono;
+                  ?>
 
                <tr>
                   <!--trae los datos y los muestra-->
@@ -42,8 +42,8 @@
                     <td data-label="Consulta"><?php echo $consulta;?></td>
                     <td data-label="Telefono"><?php echo "<a href='https://api.whatsapp.com/send?phone=54$telefono'>$telefono</a>";?></td>
                     <td data-label="Acciones">
-                        <a href=listaConsultas.php>
-                           <button type="button" class="btn btn-success" title="Contestado"><i class="fa-solid fa-check"></i></button>
+                        <a href=listaConsultas.php?id=<?php echo $id;?>>
+                           <button type="submit" class="btn btn-success" title="Contestado" name="contestado"><i class="fa-solid fa-check"></i></button>
                         </a>
                         <a href="GenerarPresupuesto.php?celular=<?php echo $telefono;?>">
                            <button type="button" class="btn btn-success" title="Generar presupuesto"><i class="fa-solid fa-plus"></i></button>

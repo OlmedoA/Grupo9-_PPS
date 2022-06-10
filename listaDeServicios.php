@@ -13,6 +13,7 @@ $conexion=mysqli_connect('localhost','root','','jacesi')
             <thead>
                <tr>
                    <!--columnas-->
+                  <th scope="col">ID</th>    
                   <th scope="col">Servicio</th>    
                   <th scope="col">Precio en pesos</th>      
                   <th scope="col">Acciones</th>       
@@ -26,15 +27,17 @@ $conexion=mysqli_connect('localhost','root','','jacesi')
             <tbody>
                <tr>
                    <!--trae los datos y los muestra-->
+                  <th data-label="ID"> <?php echo $mostrar['ID_Proced']?></th>
                   <th data-label="Servicio"> <?php echo $mostrar['Descrip']?></th>
                   <th data-label="Precio en pesos"> <?php echo $mostrar['Precio']?></th>
 
                    <!--boton para eliminar, conecta con eliminar.php-->              
                   <td data-label="Acciones">
                       <!--<button type="button" class="btn btn-danger"><i class="fa-regular fa-trash-can"><a href="eliminar.php"></i></button>-->
-                     <a href="eliminarServicio.php?Descrip=<?php echo $mostrar["Descrip"]; ?>" class="btn btn-danger"><i class="fa-regular fa-trash-can"></i></a>
+                     <a href="eliminarServicio_sql.php?Descrip=<?php echo $mostrar["Descrip"];?>" class="btn btn-danger"><i class="fa-regular fa-trash-can"></i></a>
                       <!--<button type="button" class="btn btn-danger"><i class="fa-regular fa-trash-can"><a href="eliminar.php"></i></button>-->
-                     <a href="#"class="btn btn-primary"><i class="fa-solid fa-pencil"></i></a>
+                     <a href="editarServicio.php?ID_Proced=<?php echo $mostrar["ID_Proced"]?>"class="btn btn-primary"><i class="fa-solid fa-pencil"></i></a>
+                     
                   </td>
                </tr>
             </tbody>
