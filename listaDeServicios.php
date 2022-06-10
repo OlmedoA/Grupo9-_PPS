@@ -34,7 +34,7 @@ $conexion=mysqli_connect('localhost','root','','jacesi')
                    <!--boton para eliminar, conecta con eliminar.php-->              
                   <td data-label="Acciones">
                       <!--<button type="button" class="btn btn-danger"><i class="fa-regular fa-trash-can"><a href="eliminar.php"></i></button>-->
-                     <a href="eliminarServicio.php?Descrip=<?php echo $mostrar["Descrip"];?>" class="btn btn-danger"><i class="fa-regular fa-trash-can"></i></a>
+                     <a href="eliminarServicio_sql.php?Descrip=<?php echo $mostrar["Descrip"];?>" class="btn btn-danger"><i class="fa-regular fa-trash-can"></i></a>
                       <!--<button type="button" class="btn btn-danger"><i class="fa-regular fa-trash-can"><a href="eliminar.php"></i></button>-->
                      <a href="editarServicio.php?ID_Proced=<?php echo $mostrar["ID_Proced"]?>"class="btn btn-primary"><i class="fa-solid fa-pencil"></i></a>
                      

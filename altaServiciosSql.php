@@ -25,10 +25,16 @@ while($a =mysqli_fetch_assoc($resultado)){
 if($existe==1){
     header("Location: altaServicios.php?mensaje=uno");
 }else{
-    $alta = "insert into servicios values ('','$Descrip','$Precio')";
-    $resultado_alta = mysqli_query($conn,$alta);
+    $cons= "SELECT ID_Proced from servicios";
+    $res = mysqli_query($conn, $cons);           
+    while ($row=mysqli_fetch_object($res)){
+        $id_proced=$row->ID_Proced;
+    }
+    $id = $id_proced+1;
+    $alta = "insert into servicios values ('$id','$Descrip','$Precio')";
+    $resultado_alta = mysqli_query($conn, $alta);
 
-    header("Location: bajaServicios.php");                           
+    header("Location: listaDeServicios.php");                           
 }
 
 //cierro el formulario y recargo la pagina anterior

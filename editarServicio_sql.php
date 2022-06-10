@@ -17,7 +17,7 @@ $precio = $_POST['precio'];
 $boton = $_POST['boton'];
 
 if($boton==0){ // si da este resultado no me efectua ningun cambio en la BD.
-    header("Location: bajaServicios.php");
+    header("Location: listaDeServicios.php");
    
 }
 else{ // si pasa por aca  efectua la query en la BD, modifica exitosamente la tabla y  me devuele a la seccion de lista de servicios 
@@ -27,6 +27,6 @@ else{ // si pasa por aca  efectua la query en la BD, modifica exitosamente la ta
  $resultado_editar = mysqli_query($conn,$editar);
  
 
- header("Location: bajaServicios.php");
+ header("Location: listaDeServicios.php");
 }
 ?>

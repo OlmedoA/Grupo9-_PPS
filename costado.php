@@ -34,7 +34,7 @@
                          <li><a href="#" id="titulo"><i class="fa-regular fa-computer iconos"></i><span>Servicios</span></a>
                                 <ul >
                                     <li><a href="altaServicios.php">Alta de servicio</a></li>
-                                <li><a href="bajaServicios.php">Lista de servicio</a></li>
+                                <li><a href="listaDeServicios.php">Lista de servicio</a></li>
                             </ul></li>
 
                         <!--Alta y baja de Empleados, solo visible por el admin-->
