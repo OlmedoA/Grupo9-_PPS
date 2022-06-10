@@ -23,7 +23,7 @@
                <tr>
                   <!--columnas-->
                   <th scope="col">Título</th>   
-                  <th scope="col">Num. Cliente</th>   
+                  <th scope="col">Núm. Cliente</th>   
                   <th scope="col">Fecha de realización</th>
                   <th scope="col">Creado por</th>
                   <th scope="col">Acciones</th>      
@@ -62,8 +62,8 @@
                      <td data-label="Fecha de realización"><?php echo $formateofecha; ?></td>
                      <td data-label="Creado por"><?php echo $por; ?></td>
                      <td data-label="Acciones">
-                        <a href="update.php?titulo=<?php echo $titulo;?>"><button type="button" class="btn btn-primary"><i class="fa-solid fa-pencil"></i></button></a>
-                        <a href="./print/print.php?titulo=<?php echo $titulo;?>"><button type="button" class="btn btn-warning"><i class="fa-solid fa-download"></i></button></a>
+                        <a href="update.php?titulo=<?php echo $titulo;?>"><button type="button" class="btn btn-primary" title="Editar"><i class="fa-solid fa-pencil"></i></button></a>
+                        <a href="./print/print.php?titulo=<?php echo $titulo;?>"><button type="button" class="btn btn-warning" title="Descargar"><i class="fa-solid fa-download"></i></button></a>
                      </td>
                   </tr>   
                <?php
