@@ -1,7 +1,19 @@
 <?php require_once "superior.php"?>
 <?php require_once "costado.php"?>
 <?php require_once "session.php" ?>
+<?php
+    if (isset($_GET['titulo'])){
 
+         $titulo=$_GET['titulo'];
+         $servername = "localhost";
+         $database = "jacesi";
+         $username = "root";
+         $password = "";
+         // crear conexion
+         $conn = mysqli_connect($servername, $username, $password, $database);
+         $query = mysqli_query($conn,"UPDATE `cerrados` SET `estado` = 'Desaprobado'  WHERE `titulo` = '$titulo'");  
+      }  
+?>
 <!--tabla de presupuestos-->
 <main class="main col">
    <div class="container">

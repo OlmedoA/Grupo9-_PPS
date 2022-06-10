@@ -4,7 +4,7 @@
     $dbpass="";
     $dbname="jacesi";
   
-        $conn=mysqli_connect($dbhost,$dbuser,$dbpass,$dbname);
+    $conn=mysqli_connect($dbhost,$dbuser,$dbpass,$dbname);
     if (isset($_GET['titulo'])){
       $titulo=$_GET['titulo'];
     } else {
@@ -18,6 +18,9 @@
     $fecha=$row->fecha;
     $formateo = DateTime::createFromFormat('Y-m-d', $fecha);
     $formateofecha = $formateo->format('d/m/Y');
+    $hasta = DateTime::createFromFormat("Y-m-d", date("Y-m-d", strtotime($fecha."+ 2 weeks")));
+    $formateohasta = $hasta->format('d/m/Y');
+
 ?>
 
 <?php ob_start(); ?>
@@ -64,14 +67,14 @@
 <table>
     <tr>
         <td><h1>Presupuesto</h1></td>
-        <td>Nro: <?php echo $cod ?></td>
-        <td>Fecha: <?php echo $formateofecha ?> </td>
+        <td>Nro: <?php echo $cod; ?></td>
+        <td>Fecha: <?php echo $formateofecha; ?> </td>
         
     </tr>
     <tr>
         <td></td>
-        <td><b>Proyecto</b> <br><?php echo $titulo ?></td>
-        <td><b>Fecha de vencimiento</b><br><br></td>
+        <td><b>Proyecto</b> <br><?php echo $titulo; ?></td>
+        <td><b>Fecha de vencimiento</b> <br><?php echo $formateohasta; ?>  </td>
     </tr>
 </table>
 

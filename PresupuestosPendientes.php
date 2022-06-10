@@ -55,7 +55,7 @@
      
                   ?>
 
-                  <tr>
+                   <tr>
                      <th scope="row" data-label="Título" name="titulo"><?php echo $titulo; ?></th>
                      <td data-label="Celular"><?php echo "<a href='https://api.whatsapp.com/send?phone=54$celular'>$celular</a>";?></td>
                      <td data-label="Fecha de realización"><?php echo $formateofecha; ?></td>
@@ -64,8 +64,8 @@
                      <td data-label="Acciones">
                         <a href="update.php?titulo=<?php echo $titulo;?>"><button type="button" class="btn btn-primary"><i class="fa-solid fa-pencil"></i></button></a>
                         <a href="./print/print.php?titulo=<?php echo $titulo;?>"><button type="button" class="btn btn-warning"><i class="fa-solid fa-download"></i></button></a>
-                        <button type="button" class="btn btn-success"><i class="fa-solid fa-check"></i></button>
-                        <button type="button" class="btn btn-danger"><i class="fa-regular fa-trash-can"></i></i></button>
+                        <a href="PresupuestosAprobados.php?titulo=<?php echo $titulo;?>"><button type="button" class="btn btn-success"><i class="fa-solid fa-check"></i></button></a>
+                        <a href="PresupuestosDesaprobados.php?titulo=<?php echo $titulo;?>"><button type="button" class="btn btn-danger"><i class="fa-regular fa-trash-can"></i></i></button></a>
                      </td>
                   </tr>  
                <?php
