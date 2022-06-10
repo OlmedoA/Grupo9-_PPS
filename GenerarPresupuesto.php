@@ -55,14 +55,14 @@
   <div class="modal-dialog">
     <div class="modal-content">
         <div class="modal-header">
-            <h5 class="modal-title" id="exampleModalLongTitle">Agregar o cambiar telefono y titulo</h5>
+            <h5 class="modal-title" id="exampleModalLongTitle">Agregar o cambiar teléfono y título</h5>
             <button type="button" class="close" data-dismiss="modal" aria-label="Close" value="<?php echo $titulo ?>">
             <span aria-hidden="true">&times;</span>
             </button>
         </div>
         <div class="modal-body">
             <form action=""  method="POST" class="row g-3 formStyle mx-auto py-4 px-4 form">
-                <label for="titulo" class="form-label">Titulo Presupuesto</label>
+                <label for="titulo" class="form-label">Título Presupuesto</label>
                 <input type="text" class="form-control"  id="title" name="title">
                 <br>
                 <label for="celular" class="form-label">Número de Celular del Cliente</label>
@@ -90,7 +90,7 @@
                 
             </div>
 
-            <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#datos">Agregar o cambiar teléfono y titulo</button>
+            <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#datos">Agregar o cambiar teléfono y título</button>
  
             <div class="col-12">
                  <!--servicio-->
