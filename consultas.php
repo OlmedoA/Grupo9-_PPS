@@ -42,7 +42,7 @@
                     <td data-label="Consulta"><?php echo $consulta;?></td>
                     <td data-label="Telefono"><?php echo "<a href='https://api.whatsapp.com/send?phone=54$telefono'>$telefono</a>";?></td>
                     <td data-label="Acciones">
-                        <a href=listaConsultas.php?id=<?php echo $id;?>>
+                        <a href="listaConsultas.php?id=<?php echo $id;?>">
                            <button type="submit" class="btn btn-success" title="Contestado" name="contestado"><i class="fa-solid fa-check"></i></button>
                         </a>
                         <a href="GenerarPresupuesto.php?celular=<?php echo $telefono;?>">
