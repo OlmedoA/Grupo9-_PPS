@@ -86,7 +86,7 @@ if(isset($_POST['btnconsulta'])){
             <div class="col-12">
                  <!--celular, type tel-->
                 <label for="celular" class="form-label">Número de Celular (sin espacios)</label>
-                <input type="tel" class="form-control"  id="celular" name="celular" size="14" required="required" placeholder="Código de area sin 0 + celular sin prefijo 15"> <!-- pattern="[0-9]{3}-[0-9]{4}-[0-9]{4}"--> 
+                <input type="tel" class="form-control"  id="celular" name="celular" size="14" required="required" placeholder="Código de área sin 0 + celular sin prefijo 15"> <!-- pattern="[0-9]{3}-[0-9]{4}-[0-9]{4}"--> 
             </div>  
             <!-- <div class="col-12">
              e-mail <label for="mail" class="form-label">Correo Electronico</label>
