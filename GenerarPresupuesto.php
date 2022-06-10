@@ -83,7 +83,7 @@
             <div class="col-12">
             
                 <label for="titulo" class="form-label">Título Presupuesto</label>
-                <input type="text" class="form-control"  id="title" name="title" placeholder="Agregue el titulo" readonly value="<?php echo $titulo ?>" required>
+                <input type="text" class="form-control"  id="title" name="title" placeholder="Agregue el título" readonly value="<?php echo $titulo ?>" required>
                 
                 <label for="celular" class="form-label">Número de Celular del Cliente</label>
                 <input type="tel" class="form-control"  id="celular" name="celular" placeholder="Agregue el teléfono" readonly value="<?php echo $celular ?>" required>
