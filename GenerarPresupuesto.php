@@ -66,7 +66,7 @@
                 <input type="text" class="form-control"  id="title" name="title">
                 <br>
                 <label for="celular" class="form-label">Número de Celular del Cliente</label>
-                <input type="tel" class="form-control"  id="celular" name="celular" value="<?php echo $celular ?>">
+                <input type="tel" class="form-control"  id="celular" name="celular" pattern="[0-9]{10}" value="<?php echo $celular ?>">
                 <br>
                 <button class="btn btn-primary" type="submit" name="setear">Guardar</button>
             </form>
@@ -86,7 +86,7 @@
                 <input type="text" class="form-control"  id="title" name="title" placeholder="Agregue el título" readonly value="<?php echo $titulo ?>" required>
                 
                 <label for="celular" class="form-label">Número de Celular del Cliente</label>
-                <input type="tel" class="form-control"  id="celular" name="celular" placeholder="Agregue el teléfono" readonly value="<?php echo $celular ?>" required>
+                <input type="tel" class="form-control"  id="celular" name="celular" placeholder="Agregue el teléfono" pattern="[0-9]{10}" readonly value="<?php echo $celular ?>" required>
                 
             </div>
 
@@ -122,7 +122,7 @@
             </div>
             </div>
              <!--boton-->
-            <button class="btn btn-primary" type="submit" name="agregar" onclick="mostrar()">Agregar a presupuesto</button>
+            <button class="btn btn-primary" type="submit" name="agregar">Agregar a presupuesto</button>
         </form>
         
     <div class="container" align="center" id="temporal">
@@ -162,11 +162,11 @@
                     ?>                 
                 </tbody> 
             </table>
-            <button class="btn btn-primary" type="submit" name="cerrar" onclick="ocultar()">Cerrar Presupuesto</button> 
+            <button class="btn btn-primary" type="submit" name="cerrar">Cerrar Presupuesto</button> 
         </form>  
    </div>
 
-<?php
+   <?php
     if(isset($_POST['cerrar'])){ 
         //conexion con la base de datos
         $servername = "localhost";
@@ -179,7 +179,12 @@
             die("No hay conexión: ".mysqli_connect_error());
         }
 
-        $cod = mt_rand(100000, 999999);
+        $consulta= "SELECT cod from cerrados";
+        $response = mysqli_query($conn, $consulta);           
+        while ($row=mysqli_fetch_object($response)){
+            $cod=$row->cod;
+        }
+        $cod = $cod + 1;
         $res = mysqli_query($conn, "SELECT * FROM pretemp");           
         while ($table=mysqli_fetch_object($res)){
             $titulo=$table->titulo;
@@ -200,6 +205,7 @@
             }
         }
         $consulta = mysqli_query($conn,  "TRUNCATE TABLE pretemp");
+        echo "<script>window.location= 'PresupuestosPendientes.php' </script>";
     }
 ?>
 

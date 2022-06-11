@@ -51,7 +51,10 @@
                      $color = '#F3EE37';
                   } elseif ($cantidad < 5){
                      $color = '#F45B5B';
+                  } elseif ($cantidad <= 0){
+                     $query = "UPDATE `cerrados` SET `estado` = 'Desaprobado'  WHERE `titulo` = '$titulo'";
                   }
+     
      
                   ?>
 
