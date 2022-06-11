@@ -36,7 +36,7 @@ if (isset($_GET['ID_Proced'])){
     <!--Formulario alta de usuarios-->
             <form action="editarServicio_sql.php"  method="POST" class="row g-3 formStyle mx-auto py-4 px-4 form">
                 <div class="form">
-                    <h1>EDITAR SERVICIO</h1>
+                    <h1>Editar Servicio</h1>
 
                 <div class="col-12">                    
                     <label for="id" class="form-label">ID</label>
@@ -44,7 +44,7 @@ if (isset($_GET['ID_Proced'])){
                 </div>
 
                 <div class="col-12">                    
-                    <label for="descrip" class="form-label">Descripcion</label>
+                    <label for="descrip" class="form-label">Descripción</label>
                     <input type="text" class="form-control" id="descrip" name="descrip" value="<?php echo $descrip ?>">
                 </div>
 
