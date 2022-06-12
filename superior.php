@@ -1,8 +1,11 @@
-<<<<<<< HEAD
+<?php
+/*/<<<<<<< HEAD
 
 =======
->>>>>>> 713e97210dfbe40dcc7e4b2d9c7235a7f952c76b
+>>>>>>> 713e97210dfbe40dcc7e4b2d9c7235a7f952c76b /*/
+?>
 <!DOCTYPE html>
+
 <html lang="es">
 
 <head>

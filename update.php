@@ -4,7 +4,7 @@
    if (isset($_GET['titulo'])){
       $titulo=$_GET['titulo'];
    } else {
-      header("location:/PresupuestosPendientes.php");
+      header("location: PresupuestosPendientes.php");
    }
 ?>         
       <form method="POST" class="row g-3 formStyle mx-auto py-4 px-4 form">
@@ -68,7 +68,7 @@
                   <br>
                </div>
                <div class="col-12" align="center">
-                  <button class="btn btn-primary" type="submit" name="cambiaruno">Cambiar</button>
+                  <button class="btn btn-primary" type="submit" name="cambiar">Cambiar</button>
                   <button class="btn btn-secondary" type="submit" name="eliminaruno">Eliminar</button>
                </div>
                <?php
@@ -76,15 +76,13 @@
                ?>
             </div>
          <div class="modal-footer">
-            <button class="btn btn-primary" type="submit" name="cambiartodos">Guardar</button>
-            <button class="btn btn-primary" type="submit" name="agregarnuevo">Agregar nuevo</button>
             <a href="PresupuestosPendientes.php"><button type="button" class="btn btn-secondary" data-dismiss="modal">Volver</button></a>
          </div>
       </form>
 
 <?php
 
-   if(isset($_POST['cambiaruno'])){ 
+   if(isset($_POST['cambiar'])){ 
       //conexion con la base de datos
       $servername = "localhost";
       $database = "jacesi";
@@ -109,7 +107,11 @@
          $precio=$row->Precio;
          $query1 = mysqli_query($conn,"UPDATE `pretemp` SET `subtotal` = '$precio' * '$cantidad'  WHERE `servicio` = '$servicio'");
       }
-      while ($table=mysqli_fetch_object($res)){
+	  $refe=$_GET['titulo'];
+	  $res = mysqli_query($conn, "SELECT * FROM pretemp");           
+        while ($table=mysqli_fetch_object($res)){
+			
+			
             $titulo=$table->titulo;
             $celular=$table->cel_cliente;
             $servicio=$table->servicio;
@@ -117,51 +119,22 @@
             $subtotal=$table->subtotal;
             $fecha=date("Y/m/d");
             $por=$_SESSION['nombredelusuario'];
+            $unitario = 0;
+			 $query = mysqli_query($conn,"UPDATE `cerrados` SET `titulo`='$titulo',`cel_cliente`='$celular',`servicio`='$servicio',`cantidad`='$cantidad',`unitario`='$unitario',`subtotal`='$subtotal',`estado`='Pendiente',`fecha`='$fecha',`creado_por`='$por' WHERE `titulo`='$refe'");
 
-      $unitario=0;
-      $fecha=date("Y/m/d");
-      $consulta = mysqli_query($conn,"UPDATE `cerrados` SET titulo = '$titulo', cel_cliente = '$celular', servicio = '$servicio', cantidad='$cantidad', unitario='$unitario', fecha='$fecha' WHERE servicio = '$servicio'");
-      $sql = "SELECT `Precio` FROM `servicios` WHERE `Descrip` = '$servicio'";
-      $response = mysqli_query($conn, $sql);           
-      while ($row=mysqli_fetch_object($response)){
-         $precio=$row->Precio;
-         $consulta = mysqli_query($conn, "UPDATE `cerrados` SET `unitario` = '$precio'  WHERE `servicio` = '$servicio'");
-         $consulta2 = mysqli_query($conn, "UPDATE `cerrados` SET `subtotal` = '$precio' * '$cantidad'  WHERE `servicio` = '$servicio'");
-      }
-   }
+            $sql = "SELECT `Precio` FROM `servicios` WHERE `Descrip` = '$servicio'";
+            $response = mysqli_query($conn, $sql);           
+            while ($row=mysqli_fetch_object($response)){
+                $precio=$row->Precio;
+                $cons = mysqli_query($conn, "UPDATE `cerrados` SET `unitario` = '$precio'  WHERE `servicio` = '$servicio'");
+            }
+        }
+		$consulta = mysqli_query($conn,  "TRUNCATE TABLE pretemp");
+		echo "<script>window.location= 'PresupuestosPendientes.php' </script>";
+   	
+
       
-   if(isset($_POST['cambiartodos'])){ 
-      //conexion con la base de datos
-      $servername = "localhost";
-      $database = "jacesi";
-      $username = "root";
-      $password = "";
-      // crear conexion
-      $conn = mysqli_connect($servername, $username, $password, $database);
-      if(!$conn){
-         die("No hay conexión: ".mysqli_connect_error());
-      }
-
-      $res = mysqli_query($conn, "SELECT * FROM pretemp WHERE titulo = '$titulo'");           
-      while ($table=mysqli_fetch_object($res)){
-         $titulo=$table->titulo;
-         $celular=$table->cel_cliente;
-         $servicio=$table->servicio;
-         $cantidad=$table->cantidad;
-         $unitario=0;
-         $fecha=date("Y/m/d"); 
-
-         $query = mysqli_query($conn,"UPDATE `cerrados` SET titulo = '$titulo', cel_cliente = '$celular', servicio='$servicio', cantidad='$cantidad', unitario='$unitario', fecha='$fecha' WHERE titulo = '$titulo'");
-
-         $sql = "SELECT `Precio` FROM `servicios` WHERE `Descrip` = '$servicio'";
-         $response = mysqli_query($conn, $sql);           
-         while ($row=mysqli_fetch_object($response)){
-            $precio=$row->Precio;
-            $cons = mysqli_query($conn, "UPDATE `cerrados` SET `unitario` = '$precio'  WHERE `servicio` = '$servicio'");
-            $cons2 = mysqli_query($conn,"UPDATE `cerrados` SET `subtotal` = '$precio' * '$cantidad'  WHERE `servicio` = '$servicio'");
-         }
-      }
-   }}
+}
 
 ?>
 

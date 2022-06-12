@@ -21,10 +21,10 @@
 
     if(isset($_POST['agregar'])){ 
         //conexion con la base de datos
-		$dbhost="localhost";
-		$dbuser="root";
-		$dbpass="";
-		$dbname="users";
+		$servername="localhost";
+		$username="root";
+		$password="";
+		$database="jacesi";
         // crear conexion
         $conn = mysqli_connect($servername, $username, $password, $database);
         if(!$conn){
@@ -36,7 +36,7 @@
         $servicio = $_POST['servicio'];
         $cantidad = $_POST['cantidad'];
         $subtotal = 0.00;
-        $query = mysqli_query($conn,"INSERT INTO `pretemp` (titulo, cel_cliente, servicio, cantidad, subtotal) VALUES ('$titulo', '$celular', '$servicio', '$cantidad', '$subtotal')");
+        $query = mysqli_query($conn,"INSERT INTO `pretemp` ( `titulo`, `cel_cliente`, `servicio`, `cantidad`, `subtotal`) VALUES ('$titulo', '$celular', '$servicio', '$cantidad', '$subtotal')");
 
         $sql = "SELECT `Precio` FROM `servicios` WHERE `Descrip` = '$servicio'";
         $res = mysqli_query($conn, $sql);           
@@ -180,13 +180,16 @@
         }
 
         $consulta= "SELECT cod from cerrados";
-        $response = mysqli_query($conn, $consulta);           
+        $response = mysqli_query($conn, $consulta);  
+		$cod=0;
         while ($row=mysqli_fetch_object($response)){
             $cod=$row->cod;
         }
         $cod = $cod + 1;
         $res = mysqli_query($conn, "SELECT * FROM pretemp");           
         while ($table=mysqli_fetch_object($res)){
+			
+			
             $titulo=$table->titulo;
             $celular=$table->cel_cliente;
             $servicio=$table->servicio;
