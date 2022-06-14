@@ -72,13 +72,10 @@ li {
     padding-bottom: 5px;
     margin: 0px;
     color: white;
-    font-size: 140%;
+    font-size: 32px;
     background-color: #3498DB;
-<<<<<<< HEAD
 
 
-=======
->>>>>>> 83f959fc5fe06afd5319c9e4289d01d659c625a9
 }
 /*logo jacesi*/
 .imagen{
@@ -139,139 +136,7 @@ li {
     align-items: center;
     padding: 5px 0;
 
-<<<<<<< HEAD
   }
-.imagen{
-    height: 80%;
-    width: 10%;
-}
-
-.dropdown-menu {
-    margin: 17px;
-    background: #262a34;
-    color: white;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.568);
-}
-
-.menuperfil {
-    color: white;
-}
-
-.menuperfil:focus {
-    background: #23ae6b;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.568);
-}
-
-.cerrar:hover {
-    background-color: #3498DB;
-   /* background-color: rgba(206, 65, 22, 0.877);*/
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.568);
-}
-
-.entrar:hover {
-    background-color: #3498DB;
-   /* background-color: rgba(206, 65, 22, 0.877);*/
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.568);
-}
-
-.entrar{
-    display: none;
-}
-
-.user {
-	position: absolute;
-    padding-right: 0px;
-	padding-top:8px;
-    font-size: 90%;
-	
-}
-
-.iconos{
-   font-size: 25px;
-   padding-right: 20px; 
-
-}
-li {
-    list-style: none;
-}
-
-/*BARRA LATERAL*/
-
-.barra-lateral {
-    
-    background-color: #3498DB;
-    /*background: #252121;*/
-    color: #fff;
-    min-width: 230px;
-    min-height: 100vh;
-   padding: 0;
-    /* padding: 0 !important;*/
-}
-
-.barra-lateral a {
-    color: #fff;   
-}
-.btn_menu0{
-    cursor: pointer;
-    padding:10px;
-    padding-left: 30px;
-    padding-bottom: 5px;
-    font-size: 30px;
-    color: black;
-
-}
-.btn_menu{
-    cursor: pointer;
-    padding:10px;
-    padding-left: 30px;
-    padding-bottom: 5px;
-    font-size: 30px;
-    color: white;
-
-}
-/*boton de menu lateral*/
-.boton .boton{
-	background-color: #003C5D;
-}
-
-/*ESTILOS MENU*/
-
-.barra-lateral .menu a {
-    display: block;
-    padding: 15px;
-    font-family: Roboto, sans-serif;
-    font-weight: 500;
-    border-bottom: 1px solid rgba(255, 255, 255, .1);
-   
-}
-
-.barra-lateral .menu a:hover {
-    /*background-color: rgba(255, 255, 255, 0.485);
-    background-color: rgba(255, 255, 255, .1);*/
-    background-color: #003C5D;
-    text-decoration: none;
-}
-
-#titulo{
-    cursor: default;
-}
-
-#titulo:hover{
-    background-color: transparent;
-}
-
-.active {
-    background: #003C5D;
-}
-
-.barra-lateral .menu a i {
-    margin-right: 20px;
-=======
->>>>>>> 83f959fc5fe06afd5319c9e4289d01d659c625a9
-}
-
-
-
 
 /*TABLAS*/
 .encabezado{
@@ -367,7 +232,21 @@ li {
         font-size:25px;
     }
    }
+   /*responsive barra superior*/
+@media screen and (max-width:600px){
+/*barra*/
+.barra {
+    font-size: 20px;
+}
+/*logo jacesi*/
+.imagen{
+    height: 70px;
+    width: 70px;
+}
+/*usuario*/
+.user {
+    font-size: 25px;
+}
 
-   option{
-       word-wrap: break-word;
-   }
+    
+}
