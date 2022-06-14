@@ -7,7 +7,7 @@
 
                 <div id="myDIV" class="barra-lateral col-12 col-sm-auto" style="display: none;">
                     <!--nav bar-->
-                    <nav class="menu d-flex d-sm-block justify-content-center flex-wrap">   
+                    <nav class="menu d-flex d-sm-block flex-wrap">   
 
                     <i onclick="myFunction()" class="fas fa-bars btn_menu"></i>
                         <!--lista-->              

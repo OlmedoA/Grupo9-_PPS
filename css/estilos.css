@@ -232,7 +232,7 @@ li {
         font-size:25px;
     }
    }
-   /*responsive barra superior*/
+/*responsive barra superior*/
 @media screen and (max-width:600px){
 /*barra*/
 .barra {
@@ -246,7 +246,11 @@ li {
 /*usuario*/
 .user {
     font-size: 25px;
+} 
 }
-
-    
+/*barra de navegacion*/
+@media screen and (max-width:600px){
+    .barra-lateral {
+        width: 100%;
+    }
 }
