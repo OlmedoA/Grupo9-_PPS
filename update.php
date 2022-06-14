@@ -40,25 +40,28 @@
                </div>
 
                <?php 
-			   //$cont=0;
+			   $cont=0;
                $query = "SELECT * FROM cerrados WHERE titulo = '$titulo'";
                $result = mysqli_query($conn, $query);
                while ($data=mysqli_fetch_object($result)){
                   $servicio=$data->servicio;
                   $cantidad=$data->cantidad;
                   $cod=$data->cod;
-				  //$cont=$cont + 1;
-				  //$dato="servicio".$cont."";
+				  $cont=$cont + 1;
+				  $dato="servicio".$cont."";
                ?>
                <div class="col-12">
                <!--servicio-->
                <label for="servicio" class="form-label">Servicio</label>
-               <select id="inputState" class="form-select form-control" name="servicio">
+                <select id="inputState" class="form-select form-control" name="<?php echo $dato;?>" >
+               
 
                <option selected><?php echo $servicio; ?></option>
                <?php
 			   
-			 //$dato2="cantidad".$cont."";
+			   $dato2="cantidad".$cont."";
+			   $dato3="cambiar".$cont."";
+			   $dato4="cod".$cont."";
                $conn = mysqli_connect($servername, $username, $password, $database);
                $queryservicios= mysqli_query($conn,"SELECT * FROM `servicios`");
                $nr = mysqli_num_rows($queryservicios);
@@ -71,15 +74,16 @@
                </div>
                <div class="col-12">
                   <label for="celular" class="form-label">Cantidad</label>
-                  <input type="tel" class="form-control"  id="cantidad" name="cantidad" value="<?php echo $cantidad; ?>">
+                  <input type="tel" class="form-control"  id="cantidad" name="<?php echo $dato2;?>" value="<?php echo $cantidad; ?>">
                   <br>
                </div>
 			   <div class="col-12">
-                  <input type="tel" class="form-control" style="display: none;"  id="cod" name="cod" value="<?php echo $cod; ?>">
+                  <input type="tel" class="form-control" style="display: none;"  id="cod" name="<?php echo $dato4;?>" value="<?php echo $cod; ?>">
                   <br>
                </div>
                <div class="col-12" align="center">
-                  <button class="btn btn-primary" type="submit" name="cambiar">Cambiar</button>
+			   
+                  <button class="btn btn-primary" type="submit" name="<?php echo $dato3;?>">Cambiar</button>
                   <button class="btn btn-secondary" type="submit" name="eliminaruno">Eliminar</button>
                </div>
                <?php
@@ -93,9 +97,8 @@
       </form>
 
 <?php
-
-   if(isset($_POST['cambiar'])){ 
-      //conexion con la base de datos
+	$cont=0;
+	 //conexion con la base de datos
       $servername = "localhost";
       $database = "jacesi";
       $username = "root";
@@ -105,11 +108,23 @@
       if(!$conn){
          die("No hay conexión: ".mysqli_connect_error());
       }
-	  $codi=$_POST['cod'];
+	
+    $query = "SELECT * FROM cerrados WHERE titulo = '$titulo'";
+    $result = mysqli_query($conn, $query);
+    while ($data=mysqli_fetch_object($result)){
+		$cont=$cont+1;
+		$data1="cambiar".$cont."";
+		$data2="servicio".$cont."";
+		$data3="cantidad".$cont."";
+		$data4="cod".$cont."";
+	if(isset($_POST[''.$data1.''])){ 
+	  $codi=$_POST[''.$data4.''];
+	  echo $data4;
+	  echo $codi;
       $titulo = $_POST['title'];
       $celular = $_POST['celular'];
-      $servicio = $_POST['servicio'];
-      $cantidad = $_POST['cantidad'];
+      $servicio = $_POST[''.$data2.''];
+      $cantidad = $_POST[''.$data3.''];
       $subtotal = 0.00;
       $cons = mysqli_query($conn,"INSERT INTO `pretemp` (id, titulo, cel_cliente, servicio, cantidad, subtotal) VALUES ('$codi','$titulo', '$celular', '$servicio', '$cantidad', '$subtotal')");
 
@@ -142,10 +157,10 @@
         }
 		$consulta = mysqli_query($conn,  "TRUNCATE TABLE pretemp");
 		echo "<script>window.location= 'PresupuestosPendientes.php' </script>";
-   	
-
-      
+		}
+		
 }
+
 /*/
 if(isset($_POST['cambiartodos'])){ 
       //conexion con la base de datos
