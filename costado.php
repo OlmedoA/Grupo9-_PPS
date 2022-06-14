@@ -5,7 +5,7 @@
             <div class="row">
 			
 
-                <div id="myDIV" class="barra-lateral col-12 col-sm-auto" style="display: none;">
+                <div id="myDIV" class="barra-lateral col-12 col-sm-auto">
                     <!--nav bar-->
                     <nav class="menu d-flex d-sm-block flex-wrap">   
 

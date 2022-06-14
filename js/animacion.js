@@ -1,12 +1,3 @@
-$(document).ready(function(){
-
-});
-function blockear(){
-var x = document.getElementById("myDIV");
-x.style.display = "block";
-}
-
-
 function myFunction() {
     var x = document.getElementById("myDIV");
     var c = document.getElementById("boton");

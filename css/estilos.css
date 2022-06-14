@@ -1,6 +1,11 @@
 body {
     background: #f1f1f1;
 }
+option {
+    width: 496px !important;
+    white-space:pre-wrap !important; 
+    word-wrap: break-word !important;
+  }
 
 /*BARRA LATERAL costado.php*/
 /*boton de menu lateral cerrado*/
@@ -34,15 +39,16 @@ body {
     background-color: #003C5D;
     text-decoration: none;
 }
-/*boton de menu lateral abierto*/
+
 .btn_menu{
-    cursor: pointer;
-    padding:10px;
-    padding-left: 30px;
-    padding-bottom: 5px;
-    font-size: 30px;
-    color: white;
+    display: none;
 }
+#myDIV{
+    display: block;
+}
+#boton{
+    display: none;
+} 
 /*lista*/
 ul{
     padding-left: 15px !important; 
@@ -143,6 +149,25 @@ li {
     text-align: center;
 }
 
+/*mediaquerys*/
+@media screen and (max-width:1300px) {
+    /*boton de menu lateral abierto*/
+    .btn_menu{
+        cursor: pointer;
+        padding:10px;
+        padding-left: 30px;
+        padding-bottom: 5px;
+        font-size: 30px;
+        color: white;
+        display: block;
+    }
+    #myDIV{
+        display: none;
+    }
+    #boton{
+        display: block;
+    }
+}
 
 
 

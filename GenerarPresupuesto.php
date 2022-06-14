@@ -95,7 +95,7 @@
             <div class="col-12">
                  <!--servicio-->
                 <label for="servicio" class="form-label">Servicio</label>
-                <select id="inputState" class="form-select form-control" name="servicio" required>
+                <select id="inputState" class="form-select form-control" name="servicio" size="2" required>
                 <option selected>Elegir servicio...</option>
                 <?php
                 //conexion con la base de datos
