@@ -46,7 +46,7 @@
                while ($data=mysqli_fetch_object($result)){
                   $servicio=$data->servicio;
                   $cantidad=$data->cantidad;
-                  $cod=$data->cod;
+                  $cod=$data->id;
 				  $con=$con + 1;
 				  $dato="servicio".$con."";
                ?>
@@ -62,6 +62,7 @@
 			   $dato2="cantidad".$con."";
 			   $dato3="cambiar".$con."";
 			   $dato4="cod".$con."";
+			   $dato5="eliminaruno".$con."";
                $conn = mysqli_connect($servername, $username, $password, $database);
                $queryservicios= mysqli_query($conn,"SELECT * FROM `servicios`");
                $nr = mysqli_num_rows($queryservicios);
@@ -84,7 +85,7 @@
                <div class="col-12" align="center">
 			   
                   <button class="btn btn-primary" type="submit" name="<?php echo $dato3;?>">Cambiar</button>
-                  <button class="btn btn-secondary" type="submit" name="eliminaruno">Eliminar</button>
+                  <button class="btn btn-secondary" type="submit" name="<?php echo $dato5;?>">Eliminar</button>
                </div>
                <?php
                }
@@ -98,7 +99,7 @@
 
 <?php
 
-	 if(!(isset($_POST['cambiartodos']))){
+//cambiar 1 solo
 	$cont=0;
 	 //conexion con la base de datos
       $servername = "localhost";
@@ -121,8 +122,6 @@
 		$data4="cod".$cont."";
 	if(isset($_POST[''.$data1.''])){ 
 	  $codi=$_POST[''.$data4.''];
-	  echo $data4;
-	  echo $codi;
       $titulo = $_POST['title'];
       $celular = $_POST['celular'];
       $servicio = $_POST[''.$data2.''];
@@ -148,7 +147,7 @@
             $fecha=date("Y/m/d");
             $por=$_SESSION['nombredelusuario'];
             $unitario = 0;
-			 $query = mysqli_query($conn,"UPDATE `cerrados` SET `titulo`='$titulo',`cel_cliente`='$celular',`servicio`='$servicio',`cantidad`='$cantidad',`unitario`='$unitario',`subtotal`='$subtotal',`estado`='Pendiente',`fecha`='$fecha',`creado_por`='$por' WHERE `cod`='$codi'");
+			 $query = mysqli_query($conn,"UPDATE `cerrados` SET `titulo`='$titulo',`cel_cliente`='$celular',`servicio`='$servicio',`cantidad`='$cantidad',`unitario`='$unitario',`subtotal`='$subtotal',`estado`='Pendiente',`fecha`='$fecha',`creado_por`='$por' WHERE `id`='$codi'");
 
             $sql = "SELECT `Precio` FROM `servicios` WHERE `Descrip` = '$servicio'";
             $response = mysqli_query($conn, $sql);           
@@ -162,7 +161,7 @@
 		}
 		
 	}
-}
+
 	 
 //cambiar todos
 $cont=0;
@@ -214,7 +213,7 @@ $data4="";
             $fecha=date("Y/m/d");
             $por=$_SESSION['nombredelusuario'];
             $unitario = 0;
-			 $query = mysqli_query($conn,"UPDATE `cerrados` SET `titulo`='$titulo',`cel_cliente`='$celular',`servicio`='$servicio',`cantidad`='$cantidad',`unitario`='$unitario',`subtotal`='$subtotal',`estado`='Pendiente',`fecha`='$fecha',`creado_por`='$por' WHERE `cod`='$codi'");
+			 $query = mysqli_query($conn,"UPDATE `cerrados` SET `titulo`='$titulo',`cel_cliente`='$celular',`servicio`='$servicio',`cantidad`='$cantidad',`unitario`='$unitario',`subtotal`='$subtotal',`estado`='Pendiente',`fecha`='$fecha',`creado_por`='$por' WHERE `id`='$codi'");
 
             $sql = "SELECT `Precio` FROM `servicios` WHERE `Descrip` = '$servicio'";
             $response = mysqli_query($conn, $sql);           
@@ -230,10 +229,9 @@ $data4="";
 		}
 		
 }
-
-/*/
-if(isset($_POST['cambiartodos'])){ 
-      //conexion con la base de datos
+//eliminar 1
+$cont=0;
+	 //conexion con la base de datos
       $servername = "localhost";
       $database = "jacesi";
       $username = "root";
@@ -243,54 +241,18 @@ if(isset($_POST['cambiartodos'])){
       if(!$conn){
          die("No hay conexión: ".mysqli_connect_error());
       }
-	  $tit=$_GET['titulo'];
-	  $query = "SELECT * FROM cerrados WHERE titulo = '$tit'";
-      $result = mysqli_query($conn, $query);
-	  $conta=0;
-	  while ($data=mysqli_fetch_object($result)){
-	  $refes=$data->servicio;
-	  $conta=$conta + 1;
-	  $data1="servicio".$conta."";
-	  $data2="cantidad".$conta."";
-      $titulo = $_POST['title'];
-      $celular = $_POST['celular'];
-      $servicio = $_POST["".$data1.""];
-      $cantidad = $_POST["".$data2.""];
-      $subtotal = 0.00;
-      $cons = mysqli_query($conn,"INSERT INTO `pretemp` (titulo, cel_cliente, servicio, cantidad, subtotal) VALUES ('$titulo', '$celular', '$servicio', '$cantidad', '$subtotal')");
-
-      $query = "SELECT `Precio` FROM `servicios` WHERE `Descrip` = '$servicio'";
-      $result = mysqli_query($conn, $query);           
-      while ($row=mysqli_fetch_object($result)){
-         $precio=$row->Precio;
-         $query1 = mysqli_query($conn,"UPDATE `pretemp` SET `subtotal` = '$precio' * '$cantidad'  WHERE `servicio` = '$servicio'");
-      }
-	  $res = mysqli_query($conn, "SELECT * FROM pretemp");           
-        while ($table=mysqli_fetch_object($res)){
-			
-			
-            $titulo=$table->titulo;
-            $celular=$table->cel_cliente;
-            $servicio=$table->servicio;
-            $cantidad=$table->cantidad;
-            $subtotal=$table->subtotal;
-            $fecha=date("Y/m/d");
-            $por=$_SESSION['nombredelusuario'];
-            $unitario = 0;
-			 $query = mysqli_query($conn,"UPDATE `cerrados` SET `titulo`='$titulo',`cel_cliente`='$celular',`servicio`='$servicio',`cantidad`='$cantidad',`unitario`='$unitario',`subtotal`='$subtotal',`estado`='Pendiente',`fecha`='$fecha',`creado_por`='$por' WHERE `servicio`='$refes'");
-
-            $sql = "SELECT `Precio` FROM `servicios` WHERE `Descrip` = '$servicio'";
-            $response = mysqli_query($conn, $sql);           
-            while ($row=mysqli_fetch_object($response)){
-                $precio=$row->Precio;
-                $cons = mysqli_query($conn, "UPDATE `cerrados` SET `unitario` = '$precio'  WHERE `servicio` = '$servicio'");
-            }
-        }
-	  }
-		$consulta = mysqli_query($conn,  "TRUNCATE TABLE pretemp");
-		//echo "<script>window.location= 'PresupuestosPendientes.php' </script>";
-	}/*/
 	
+    $query = "SELECT * FROM cerrados WHERE titulo = '$titulo'";
+    $result = mysqli_query($conn, $query);
+    while ($data=mysqli_fetch_object($result)){
+		$cont=$cont+1;
+		$data1="eliminaruno".$cont."";
+		$data4="cod".$cont."";
+	if(isset($_POST[''.$data1.''])){ 
+	  $codi=$_POST[''.$data4.''];
+      $cons = mysqli_query($conn,"DELETE FROM `cerrados` WHERE id=$codi");
+	}
+	}
 ?>
 
 <?php require_once "inferior.php"?>
