@@ -40,7 +40,7 @@ if (isset($_GET['ID_Proced'])){
 
                 <div class="col-12">                    
                     <label for="id" class="form-label">ID</label>
-                    <input type="text" class="form-control" id="id" name="id" value="<?php echo $id ?>">
+                    <input type="text" class="form-control" id="id" name="id" value="<?php echo $id ?>" readonly = "readonly">
                 </div>
 
                 <div class="col-12">                    
