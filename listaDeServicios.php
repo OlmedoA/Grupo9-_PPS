@@ -12,8 +12,7 @@ $conexion=mysqli_connect('localhost','root','','jacesi')
          <h1 class="encabezado">Lista de Servicios</h1>
             <thead>
                <tr>
-                   <!--columnas-->
-                  <th scope="col">ID</th>    
+                   <!--columnas-->  
                   <th scope="col">Servicio</th>    
                   <th scope="col">Precio en pesos</th>      
                   <th scope="col">Acciones</th>       
@@ -27,9 +26,8 @@ $conexion=mysqli_connect('localhost','root','','jacesi')
             <tbody>
                <tr>
                    <!--trae los datos y los muestra-->
-                  <th data-label="ID"> <?php echo $mostrar['ID_Proced']?></th>
                   <th data-label="Servicio"> <?php echo $mostrar['Descrip']?></th>
-                  <th data-label="Precio en pesos"> <?php echo $mostrar['Precio']?></th>
+                  <th data-label="Precio en pesos"> $<?php echo $mostrar['Precio']?></th>
 
                    <!--boton para eliminar, conecta con eliminar.php-->              
                   <td data-label="Acciones">
