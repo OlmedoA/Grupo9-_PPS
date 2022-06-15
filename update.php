@@ -139,15 +139,15 @@
         while ($table=mysqli_fetch_object($res)){
 			
 			
-            $titulo=$table->titulo;
-            $celular=$table->cel_cliente;
+          //$titulo=$table->titulo;
+          //$celular=$table->cel_cliente;
             $servicio=$table->servicio;
             $cantidad=$table->cantidad;
             $subtotal=$table->subtotal;
             $fecha=date("Y/m/d");
             $por=$_SESSION['nombredelusuario'];
             $unitario = 0;
-			 $query = mysqli_query($conn,"UPDATE `cerrados` SET `titulo`='$titulo',`cel_cliente`='$celular',`servicio`='$servicio',`cantidad`='$cantidad',`unitario`='$unitario',`subtotal`='$subtotal',`estado`='Pendiente',`fecha`='$fecha',`creado_por`='$por' WHERE `cod`='$codi'");
+			 $query = mysqli_query($conn,"UPDATE `cerrados` SET `servicio`='$servicio',`cantidad`='$cantidad',`unitario`='$unitario',`subtotal`='$subtotal',`estado`='Pendiente',`fecha`='$fecha',`creado_por`='$por' WHERE `cod`='$codi'");
 
             $sql = "SELECT `Precio` FROM `servicios` WHERE `Descrip` = '$servicio'";
             $response = mysqli_query($conn, $sql);           
