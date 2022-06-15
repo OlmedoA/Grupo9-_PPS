@@ -46,7 +46,7 @@
                while ($data=mysqli_fetch_object($result)){
                   $servicio=$data->servicio;
                   $cantidad=$data->cantidad;
-                  $cod=$data->id;
+                  $cod=$data->cod;
 				  $con=$con + 1;
 				  $dato="servicio".$con."";
                ?>
@@ -147,7 +147,7 @@
             $fecha=date("Y/m/d");
             $por=$_SESSION['nombredelusuario'];
             $unitario = 0;
-			 $query = mysqli_query($conn,"UPDATE `cerrados` SET `titulo`='$titulo',`cel_cliente`='$celular',`servicio`='$servicio',`cantidad`='$cantidad',`unitario`='$unitario',`subtotal`='$subtotal',`estado`='Pendiente',`fecha`='$fecha',`creado_por`='$por' WHERE `id`='$codi'");
+			 $query = mysqli_query($conn,"UPDATE `cerrados` SET `titulo`='$titulo',`cel_cliente`='$celular',`servicio`='$servicio',`cantidad`='$cantidad',`unitario`='$unitario',`subtotal`='$subtotal',`estado`='Pendiente',`fecha`='$fecha',`creado_por`='$por' WHERE `cod`='$codi'");
 
             $sql = "SELECT `Precio` FROM `servicios` WHERE `Descrip` = '$servicio'";
             $response = mysqli_query($conn, $sql);           
@@ -213,7 +213,7 @@ $data4="";
             $fecha=date("Y/m/d");
             $por=$_SESSION['nombredelusuario'];
             $unitario = 0;
-			 $query = mysqli_query($conn,"UPDATE `cerrados` SET `titulo`='$titulo',`cel_cliente`='$celular',`servicio`='$servicio',`cantidad`='$cantidad',`unitario`='$unitario',`subtotal`='$subtotal',`estado`='Pendiente',`fecha`='$fecha',`creado_por`='$por' WHERE `id`='$codi'");
+			 $query = mysqli_query($conn,"UPDATE `cerrados` SET `titulo`='$titulo',`cel_cliente`='$celular',`servicio`='$servicio',`cantidad`='$cantidad',`unitario`='$unitario',`subtotal`='$subtotal',`estado`='Pendiente',`fecha`='$fecha',`creado_por`='$por' WHERE `cod`='$codi'");
 
             $sql = "SELECT `Precio` FROM `servicios` WHERE `Descrip` = '$servicio'";
             $response = mysqli_query($conn, $sql);           
@@ -250,7 +250,8 @@ $cont=0;
 		$data4="cod".$cont."";
 	if(isset($_POST[''.$data1.''])){ 
 	  $codi=$_POST[''.$data4.''];
-      $cons = mysqli_query($conn,"DELETE FROM `cerrados` WHERE id=$codi");
+      $cons = mysqli_query($conn,"DELETE FROM `cerrados` WHERE cod=$codi");
+	  echo "<script>window.location= 'PresupuestosPendientes.php' </script>";
 	}
 	}
 ?>
