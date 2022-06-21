@@ -125,9 +125,12 @@
             <button class="btn btn-primary" type="submit" name="agregar">Agregar a presupuesto</button>
         </form>
         
-    <div class="container" align="center" id="temporal">
+    <div class="container" align="center" id="app">
         <form method="POST">
             <table class="table col-12">
+                <div class="col-sm-4" style="float: left; text-align: left;">
+                    <label><b> 1 USD$ = {{ calcularResultado }} ARS$ </b></label>
+                </div>
                 <thead>
                     <tr>
                         <!--columnas-->
