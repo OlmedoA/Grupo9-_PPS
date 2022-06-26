@@ -156,7 +156,7 @@
                     <tr>
                         <!--trae los datos y los muestra-->
                         <td scope="row" data-label="Items"><?php echo $items;?></td>
-                        <td data-label="Servicio" name="servicio"><?php echo $servicio;?></td>
+                        <th data-label="Servicio:" name="servicio"><?php echo $servicio;?></th>
                         <td data-label="Cantidad" name="cantidad"><?php echo $cantidad;?></td>
                         <td data-label="Subtotal" name="subtotal">ARS$<?php echo $subtotal;?></td>
                     </tr>   

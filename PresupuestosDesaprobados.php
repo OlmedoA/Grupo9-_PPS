@@ -57,7 +57,7 @@
                   ?>
 
                    <tr>
-                     <th scope="row" data-label="Título" name="titulo"><?php echo $titulo; ?></th>
+                     <th scope="row" data-label="Título: " name="titulo"><?php echo $titulo; ?></th>
                      <td data-label="Celular"><?php echo "<a href='https://api.whatsapp.com/send?phone=54$celular'>$celular</a>";?></td>
                      <td data-label="Fecha de realización"><?php echo $formateofecha; ?></td>
                      <td data-label="Creado por"><?php echo $por; ?></td>

@@ -27,19 +27,25 @@ $conexion=mysqli_connect('localhost','root','','users')
             <?php
              //muestra a todos menos al admin
             $sql="SELECT * from login where usuario != 'Admin'";
-
-            $result= mysqli_query($conexion,$sql);
-            while($mostrar=mysqli_fetch_array($result)){
-               ?>
+                  $res = mysqli_query($conn, $sql);           
+                  while ($row=mysqli_fetch_object($res)){
+                     $usuario=$row->usuario;
+                     $nombre=$row->nombre;
+                     $apellido=$row->apellido;
+                     $fechaalta=$row->fechaalta;
+                     $telefono=$row->telefono;
+                     $mail=$row->mail;
+                     $usuario=$row->usuario;
+                  ?>
             <tbody>
                <tr>
                    <!--trae los datos y los muestra-->
-                  <th data-label="Nombre"> <?php echo $mostrar['nombre']?></th>
-                  <th data-label="Apellido"> <?php echo $mostrar['apellido']?></th>
-                  <td data-label="Fecha de alta"><?php echo $mostrar['fechaalta'] ?></td>
-                  <td data-label="Telefono"><?php echo $mostrar['telefono'] ?></td>
-                  <td data-label="Mail"><?php echo $mostrar['mail'] ?></td>
-                  <td data-label="Usuario"><?php echo $mostrar['usuario'] ?></td> 
+                  <th data-label="Nombre"> <?php echo $nombre?></th>
+                  <th data-label="Apellido"> <?php echo $apellido?></th>
+                  <td data-label="Fecha de alta"><?php echo $fechaalta ?></td>
+                  <td data-label="Telefono"><?php echo "<a href='https://api.whatsapp.com/send?phone=54$telefono'>$telefono</a>";?></td>
+                  <td data-label="Mail"><?php echo $mail ?></td>
+                  <td data-label="Usuario"><?php echo $usuario ?></td> 
 
                    <!--boton para eliminar, conecta con eliminar.php-->              
                   <td data-label="Eliminar">
