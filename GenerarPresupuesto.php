@@ -128,7 +128,7 @@
     <div class="container" id="app">
         <form method="POST">
             <table class="table col-12">
-                <div class="col-sm-4" style="float: left; text-align: left;">
+                <div class="col-sm-4 conversor" style="float: left; text-align: left;">
                     <label><b> 1 USD$ = {{ calcularResultado }} ARS$ </b></label>
                 </div>
                 <thead>

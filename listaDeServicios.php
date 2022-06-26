@@ -10,7 +10,7 @@ $conexion=mysqli_connect('localhost','root','','jacesi')
       <!--tabla de baja de empleados-->
       <table class="table col-12">
          <h1 class="encabezado">Lista de Servicios</h1>
-         <div class="col-sm-4">
+         <div class="col-sm-4 conversor">
             <label><b> 1 USD$ = {{ calcularResultado }} ARS$ </b></label>
          </div>
             <thead>

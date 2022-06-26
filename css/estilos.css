@@ -157,6 +157,9 @@ li {
 .botonCerrarPresupuesto{
     text-align: center;
 }
+.conversor{
+    font-size: 21px;
+}
 /*mediaquerys*/
 @media screen and (max-width:1300px) {
     /*boton de menu lateral abierto*/
