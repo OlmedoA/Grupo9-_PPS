@@ -172,60 +172,6 @@ li {
 
 
 /*mediaquerys
-
-@media screen and (max-width:1300px) {
-    .barra-lateral {
-        min-width: auto;
-    }
-    .barra-lateral .menu a span {
-        display: none;
-    }
-    .barra-lateral .menu a i {
-        margin: 0;
-    }
-    .barra {
-        min-width: auto;
-    }
-    .dropdown-menu {
-        margin: 20px -79px 0px;
-    }
-}
-@media screen and (max-width:575px) {
-    .barra-lateral {
-        min-height: auto;
-    }
-    .barra-lateral .menu a {
-        display: inline-block;
-        border-bottom: none;
-    }
-    .dropdown-menu {
-        margin: 20px -78px 0px;
-    }
-    .logocppe {
-        width: 100%;
-    }
-    body {
-        background: #f1f1f1;
-        font-size: 16px;
-        overflow: visible;
-    }
-}
-@media screen and (max-width:575px) {
-    .barra-lateral {
-        height: auto;
-    }
-    .barra-lateral.menu a {
-        display: inline-block;
-        border-bottom: none;
-    }
-    .dropdown-menu {
-        margin: 20px -78 0px;
-    }
-    body {
-        font-size: 16px;
-        overflow: visible;
-    }
-}*/
 /*responsive tablas*/
 @media screen and (max-width:1000px){
     .table{
