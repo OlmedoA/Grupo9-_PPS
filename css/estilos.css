@@ -149,9 +149,12 @@ li {
     text-align: center;
 }
 
+/*BOTON EDITAR PRESUPUESTO*/
 .botonesEditar{
     text-align: center;
 }
+
+/*BOTON CERRAR PRESUPUESTO*/
 .botonCerrarPresupuesto{
     text-align: center;
 }
