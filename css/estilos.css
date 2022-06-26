@@ -149,6 +149,12 @@ li {
     text-align: center;
 }
 
+.botonesEditar{
+    text-align: center;
+}
+.botonCerrarPresupuesto{
+    text-align: center;
+}
 /*mediaquerys*/
 @media screen and (max-width:1300px) {
     /*boton de menu lateral abierto*/

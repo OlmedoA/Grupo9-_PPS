@@ -125,7 +125,7 @@
             <button class="btn btn-primary" type="submit" name="agregar">Agregar a presupuesto</button>
         </form>
         
-    <div class="container" align="center" id="app">
+    <div class="container" id="app">
         <form method="POST">
             <table class="table col-12">
                 <div class="col-sm-4" style="float: left; text-align: left;">
@@ -165,7 +165,9 @@
                     ?>                 
                 </tbody> 
             </table>
-            <button class="btn btn-primary" type="submit" name="cerrar">Cerrar Presupuesto</button> 
+            <div class="botonCerrarPresupuesto">
+                <button class="btn btn-primary" type="submit" name="cerrar">Cerrar Presupuesto</button> 
+            </div>
         </form>  
    </div>
 

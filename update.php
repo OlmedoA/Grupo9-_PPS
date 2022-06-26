@@ -82,7 +82,7 @@
                   <input type="tel" class="form-control" style="display: none;"  id="cod" name="<?php echo $dato4;?>" value="<?php echo $cod; ?>">
                   <br>
                </div>
-               <div class="col-12" align="center">
+               <div class="col-12 botonesEditar">
 			   
                   <button class="btn btn-primary" type="submit" name="<?php echo $dato3;?>">Cambiar</button>
                   <button class="btn btn-secondary" type="submit" name="<?php echo $dato5;?>">Eliminar</button>
