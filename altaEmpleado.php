@@ -24,12 +24,12 @@
                 <div class="col-12">
                     <!--celular, type tel-->
                     <label for="celular" class="form-label">Teléfono</label>
-                    <input type="tel" class="form-control"  id="telefono" name="telefono" required="required">
+                    <input type="tel" class="form-control"  id="telefono" name="telefono" required="required" pattern="[0-9]{10}">
                 </div>  
                 <div class="col-12">
                     <!--mail, type mail-->
                     <label for="mail" class="form-label">Mail</label>
-                    <input type="mail" class="form-control"  id="mail" name="mail" required="required">
+                    <input type="mail" class="form-control"  id="mail" name="mail" required="required" pattern="[a-zA-Z0-9_]+([.][a-zA-Z0-9_]+)*@[a-zA-Z0-9_]+([.][a-zA-Z0-9_]+)*[.][a-zA-Z]{1,5}">
                 </div> 
                 <div class="col-12">
                     <!--fechaalta, type date-->
