@@ -27,10 +27,12 @@ body{
 .imagen{
     height: 90px;
     width: 90px;
+    text-align: center;
 } 
 .jace{
     font-size: 35px;
     color: #3498DB;
+    text-align: center;
 }
 .log{
     visibility: hidden !important;
@@ -42,6 +44,10 @@ textarea{
     width: 300px; 
     height: 80px;
 
+}
+/*captcha*/
+.captcha{
+  text-align: center;
 }
 
  /*links redes sociales*/ 

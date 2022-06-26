@@ -74,7 +74,7 @@ if(isset($_POST['btnconsulta'])){
             
             <div class="form">
             <!--logo-->
-            <div class="col-12 jace" align="center">
+            <div class="col-12 jace">
                 <img src="img/logo.png" alt="" class="imagen"> JACE-SI
             </div>
              <h1 class="titulito">Mesa de ayuda</h1>
@@ -98,7 +98,7 @@ if(isset($_POST['btnconsulta'])){
                 <textarea name="consulta" id="consulta" class="w-100"rows="4" required="required" placeholder="Escriba su consulta"></textarea><br><br>
             </div>                
            <!-- <div class="g-recaptcha" data-sitekey="site key"></div>   crear recaptcha y copiar la llave -->   
-            <div class="col-12"  align="center">
+            <div class="col-12 captcha">
                 <label for="captcha" class="form-label">Resuelva el captcha para continuar</label><br>
                 <img src="captcha.php" alt="CAPTCHA" class="captcha-image"><i class="fas fa-redo refresh-captcha"></i><br><br>
                 <input type="text" id="captcha" name="captcha_challenge" required>
