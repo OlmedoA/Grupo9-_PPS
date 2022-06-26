@@ -32,8 +32,8 @@ $conexion=mysqli_connect('localhost','root','','jacesi')
             <tbody>
                <tr>
                    <!--trae los datos y los muestra-->
-                  <th data-label="Servicio"> <?php echo $descrip?></th>
-                  <th data-label="Precio en pesos" id="pesos">$<?php echo $precio?></th>
+                  <th data-label="Servicio:"> <?php echo $descrip?></th>
+                  <td data-label="Precio en pesos" id="pesos">$<?php echo $precio?></td>
 
                    <!--boton para eliminar, conecta con eliminar.php-->              
                   <td data-label="Acciones">
