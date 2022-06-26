@@ -4,7 +4,7 @@ new Vue({
 
     data:{
         monedas: {},
-        cantidad: 0,
+        cantidad: 1,
         from: 'USD',
         to: 'ARS',
         result: 0
@@ -13,6 +13,7 @@ new Vue({
 //llama a los datos ingresados
     mounted(){
         this.getMonedas();
+        this.convertirMoneda();
     },
 
 //detalles a la hora de imprimir resultados 
@@ -21,7 +22,7 @@ new Vue({
             return Object.values(this.monedas);
         },
         calcularResultado(){
-            return(Number(this.cantidad) * this.result + (Number(this.cantidad) * this.result) * 65 / 100).toFixed(3);
+            return(Number(this.cantidad) * this.result + (Number(this.cantidad) * this.result) * 65 / 100).toFixed(2);
         },
         monedaConvertida(){
             return this.to;
