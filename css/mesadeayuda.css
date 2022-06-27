@@ -134,3 +134,9 @@ footer {
     color: #3498DB;
   }
 }
+
+@media screen and (max-width:500px){
+  .link{
+      font-size: 13px;
+  }
+}
