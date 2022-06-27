@@ -79,7 +79,7 @@
         <!--formulario para generar presupuesto-->
         <form action=""  method="POST" class="row g-3 formStyle mx-auto py-4 px-4 form">
             <div class="form">
-                <h1>Generar presupuesto</h1>
+                <h1 class="encabezado">Generar presupuesto</h1>
             <div class="col-12">
             
                 <label for="titulo" class="form-label">Título Presupuesto</label>

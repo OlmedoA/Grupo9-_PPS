@@ -1,5 +1,6 @@
 body {
     background: #f1f1f1;
+    width: 100%;
 }
 option {
     width: 496px !important;
@@ -80,6 +81,7 @@ li {
     color: white;
     font-size: 32px;
     background-color: #3498DB;
+    width:100%
 
 
 }
@@ -160,6 +162,7 @@ li {
 .conversor{
     font-size: 21px;
 }
+
 /*mediaquerys*/
 @media screen and (max-width:1300px) {
     /*boton de menu lateral abierto*/

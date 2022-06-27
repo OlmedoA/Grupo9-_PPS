@@ -10,7 +10,7 @@
     <!--Formulario alta de usuarios-->
             <form action="altaEmpleadoSql.php"  method="POST" class="row g-3 formStyle mx-auto py-4 px-4 form">
                 <div class="form">
-                    <h1>Alta de empleados</h1>
+                    <h1 class="encabezado">Alta de empleados</h1>
                 <div class="col-12">
                     <!--nombre, type text -->
                     <label for="nombre" class="form-label">Nombre</label>
