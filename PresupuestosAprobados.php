@@ -31,7 +31,7 @@
                   <th scope="col">Acciones</th>      
                </tr>          
             </thead>
-            <tbody>
+            
                <?php 
                   //conexion con la base de datos
                   $servername = "localhost";
@@ -67,9 +67,9 @@
                   }
      
                   ?>
-
+               <tbody>
                    <tr>
-                     <th scope="row" data-label="Título" name="titulo"><?php echo $titulo; ?></th>
+                     <th data-label="Título: " ><?php echo $titulo; ?></th>
                      <td data-label="Celular"><?php echo "<a href='https://api.whatsapp.com/send?phone=54$celular'>$celular</a>";?></td>
                      <td data-label="Fecha de realización"><?php echo $formateofecha; ?></td>
                      <td data-label="Fecha de vencimiento" style = "background-color:<?php echo $color; ?>;"><?php echo $intervalo->format('%a d&iacute;as'); ?></td>
@@ -79,10 +79,11 @@
                         <a href="./print/print.php?titulo=<?php echo $titulo;?>"><button type="button" class="btn btn-warning" title="Descargar"><i class="fa-solid fa-download"></i></button></a>
                      </td>
                   </tr> 
+               </tbody>   
                <?php
                }
                ?> 
-            </tbody>
+            
       </table>
    </div>
 </main>

@@ -18,7 +18,7 @@
                   <th scope="col">Acciones</th>      
                </tr>         
             </thead>
-            <tbody>
+            
                <?php 
                   //conexion con la base de datos
                   $servername = "localhost";
@@ -57,9 +57,9 @@
      
      
                   ?>
-
+               <tbody>
                    <tr>
-                     <th scope="row" data-label="Título" name="titulo"><?php echo $titulo; ?></th>
+                     <th data-label="Título" name="titulo"><?php echo $titulo; ?></th>
                      <td data-label="Celular"><?php echo "<a href='https://api.whatsapp.com/send?phone=54$celular'>$celular</a>";?></td>
                      <td data-label="Fecha de realización"><?php echo $formateofecha; ?></td>
                      <td data-label="Fecha de vencimiento" style = "background-color:<?php echo $color; ?>;"><?php echo $intervalo->format('%a d&iacute;as'); ?></td>
@@ -70,11 +70,12 @@
                         <a href="PresupuestosAprobados.php?titulo=<?php echo $titulo;?>"><button type="button" class="btn btn-success" title="Aprobar"><i class="fa-solid fa-check"></i></button></a>
                         <a href="PresupuestosDesaprobados.php?titulo=<?php echo $titulo;?>"><button type="button" class="btn btn-danger" title="Desaprobar"><i class="fa-regular fa-trash-can"></i></i></button></a>
                      </td>
-                  </tr>  
+                  </tr>
+               </tbody>  
                <?php
                }
                ?> 
-            </tbody>
+            
       </table>
    </div>
 
