@@ -117,8 +117,6 @@
 </table>
     <div class="final">
         <h4>Subtotal: $<?php echo $total;?></h4>
-        <h4>Ajustes                         </h4>
-        <h2>$<?php echo $total;?></h2>
     </div>
 </html>
 
